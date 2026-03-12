@@ -1,0 +1,678 @@
+/*
+ * hall-of-fame.css — VBCA Hall of Fame
+ * Prestige page. Championship Gold is the DOMINANT color on this page.
+ * Three boldness marks:
+ *   1. Ghost year numerals (200px Archivo Black at 6% opacity via ::before)
+ *   2. Gold full-bleed inversion section (About HOF strip — gold bg, navy type)
+ *   3. HOF card left-border gold accent per brand-guide
+ */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hof-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .hof-hero {
+    min-height: 620px;
+  }
+}
+
+.hof-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hof-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hof-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim-heavy);
+  /* Subtle infield texture overlay */
+  background-image: var(--scrim-heavy), var(--texture-infield);
+}
+
+.hof-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-11);
+  padding-bottom: var(--space-9);
+  color: var(--color-white);
+  max-width: 800px;
+}
+
+.hof-hero__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+.hof-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: var(--color-gold-light);
+  margin: 0;
+}
+
+/* ============================================================
+   SECTION EYEBROWS
+   ============================================================ */
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin: 0 0 var(--space-4);
+  display: block;
+}
+
+/* On gold background — navy eyebrow with gold rule (inverted) */
+.section-eyebrow--navy {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+
+/* On dark navy background — gold eyebrow */
+.section-eyebrow--gold {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+}
+
+/* ============================================================
+   ABOUT THE HOF — CHAMPIONSHIP GOLD INVERSION
+   Gold is DOMINANT background; navy type reads as engraved brass.
+   ============================================================ */
+
+.hof-about {
+  background: var(--color-gold);
+  background-image: var(--texture-infield);
+  padding: var(--section-padding) 0;
+}
+
+.hof-about__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  .hof-about__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-9);
+  }
+}
+
+.hof-about__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-5);
+}
+
+.hof-about__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.hof-about__body:last-child {
+  margin-bottom: 0;
+}
+
+/* Stat cards on gold section — navy background (full inversion) */
+.hof-about__stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.hof-stat-card {
+  background: var(--color-primary);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.hof-stat-card--wide {
+  padding: var(--space-5) var(--space-7);
+}
+
+.hof-stat-card__number {
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-gold);
+}
+
+.hof-stat-card__label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.hof-stat-card__label--lg {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-heading);
+  color: var(--color-gold);
+  text-transform: none;
+  letter-spacing: var(--tracking-normal);
+}
+
+/* ============================================================
+   ANNUAL AWARDS
+   ============================================================ */
+
+.hof-awards {
+  background: var(--color-surface-cream);
+  padding: var(--section-padding) 0;
+}
+
+.hof-awards__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.hof-awards__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  line-height: var(--leading-body-lg);
+  margin: 0 0 var(--space-7);
+  max-width: 640px;
+}
+
+.hof-awards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 769px) {
+  .hof-awards__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.award-card {
+  background: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-7);
+  border-top: 3px solid var(--color-gold);
+}
+
+.award-card__icon {
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+}
+
+.award-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.award-card__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin: 0 0 var(--space-3);
+}
+
+.award-card__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ============================================================
+   HOF CLASS TABS
+   ============================================================ */
+
+.hof-classes {
+  background: var(--bg-white);
+  padding: var(--section-padding) 0;
+}
+
+.hof-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.hof-tab {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+  margin-bottom: -2px;
+  letter-spacing: var(--tracking-wide);
+}
+
+.hof-tab:hover {
+  color: var(--color-primary);
+}
+
+.hof-tab--active,
+.hof-tab[aria-selected="true"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-gold);
+}
+
+/* ============================================================
+   HOF CLASS PANELS — Ghost Numeral via ::before
+   ============================================================ */
+
+.hof-class-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ghost year numeral — brand-guide spec: 200px desktop, 120px mobile */
+.hof-class-panel::before {
+  content: var(--ghost-year);
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-family: var(--font-display);
+  font-size: var(--hof-ghost-size);
+  font-weight: var(--weight-black);
+  color: var(--hof-ghost-color);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.hof-class-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-7);
+}
+
+.hof-class-header__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.hof-class-header__ceremony {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ============================================================
+   HOF INDUCTEE GRID
+   ============================================================ */
+
+.hof-inductee-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 769px) {
+  .hof-inductee-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .hof-inductee-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.hof-inductee-grid--pending {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 769px) {
+  .hof-inductee-grid--pending {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* HOF Card — Championship Gold left border per brand-guide */
+.hof-card {
+  background: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border-left: var(--card-hof-accent);
+  overflow: hidden;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.hof-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--color-primary);
+}
+
+.hof-card--placeholder {
+  opacity: 0.7;
+}
+
+.hof-card__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.hof-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hof-card__photo--placeholder {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hof-card__photo--placeholder::after {
+  content: 'Photo Coming';
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hof-card__body {
+  padding: var(--space-4) var(--space-5);
+}
+
+.hof-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.hof-card__school {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.hof-card__stats {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold-dark);
+  margin: 0 0 var(--space-2);
+}
+
+.hof-card__bio {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+/* Pending notice */
+.hof-pending-notice {
+  grid-column: 1 / -1;
+  background: rgba(var(--color-gold-rgb), 0.1);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.3);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.hof-pending-notice__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* ============================================================
+   NOMINATION SECTION
+   ============================================================ */
+
+.hof-nominate {
+  background: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--section-padding) 0;
+}
+
+.hof-nominate__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 769px) {
+  .hof-nominate__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.hof-nominate__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-gold);
+  margin: 0 0 var(--space-5);
+}
+
+.hof-nominate__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 var(--space-4);
+}
+
+.hof-nominate__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* Nomination Form */
+.hof-nominate__form {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-7);
+}
+
+.hof-nominate__form-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-6);
+}
+
+.nominate-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.form-input {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  background: var(--input-bg);
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  padding: var(--input-padding);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+.form-input--textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  color: var(--btn-primary-text);
+  background: var(--btn-primary-bg);
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  border: none;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition);
+  align-self: flex-start;
+}
+
+.btn-primary:hover {
+  background: var(--btn-primary-bg-hover);
+}
+
+.form-fallback {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: var(--space-4) 0 0;
+  text-align: center;
+}
+
+.form-fallback__link {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form-fallback__link:hover {
+  color: var(--color-secondary-dark);
+}
+
+/* ============================================================
+   CONTAINER UTILITY (if not in global.css)
+   ============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}

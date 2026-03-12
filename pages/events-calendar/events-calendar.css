@@ -1,0 +1,541 @@
+/*
+ * events-calendar.css
+ * Virginia Baseball Coaches Association — Events Calendar Page
+ * UI/UX Designer output — 2026-03-11
+ *
+ * Imports: ../../global/brand.css (via global.css)
+ * Mobile-first — min-width media queries only
+ * No hardcoded colors — CSS vars only
+ * No inline styles — no style blocks in HTML
+ */
+
+/* ============================================================
+   SECTION UTILITIES
+   ============================================================ */
+
+.section-cream {
+  background-color: var(--color-surface-cream);
+}
+
+.section-dark {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+}
+
+.section-navy-stripe {
+  background-color: var(--color-primary-dark);
+  background-image: var(--texture-infield);
+}
+
+/* ============================================================
+   SECTION EYEBROW LABEL
+   ============================================================ */
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-5);
+  line-height: 1;
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--btn-primary-bg-hover);
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.ec-header {
+  padding-top: var(--space-11);
+  padding-bottom: var(--space-9);
+}
+
+.ec-header__inner {
+  max-width: 800px;
+}
+
+.ec-header__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+}
+
+.ec-header__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.80);
+  margin: 0;
+}
+
+/* ============================================================
+   PHASE 1 NOTICE BANNER
+   ============================================================ */
+
+.ec-notice {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ec-notice__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.ec-notice__text strong {
+  color: var(--color-text);
+}
+
+/* ============================================================
+   UPCOMING EVENTS
+   ============================================================ */
+
+.ec-upcoming {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.ec-upcoming__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-7);
+}
+
+/* Events grid — card layout */
+.ec-events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* ============================================================
+   EVENT CARD
+   ============================================================ */
+
+.ec-event-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+.ec-event-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Card header — badge + meta info */
+.ec-event-card__header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Event type badge */
+.ec-event-card__badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.ec-event-card__badge--convention {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.ec-event-card__badge--allstar {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.ec-event-card__badge--clinic {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.ec-event-card__badge--regional {
+  background-color: var(--color-text-muted);
+  color: var(--color-white);
+}
+
+.ec-event-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ec-event-card__date {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.ec-event-card__location {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+
+/* Card body */
+.ec-event-card__body {
+  padding: var(--space-5);
+  flex: 1;
+}
+
+.ec-event-card__title {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-card);
+}
+
+.ec-event-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: rgba(17, 24, 39, 0.80);
+  margin: 0;
+}
+
+/* Card footer — CTA + Calendar button */
+.ec-event-card__footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.ec-event-card__cta {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--transition-fast);
+}
+
+.ec-event-card__cta:hover,
+.ec-event-card__cta:focus-visible {
+  color: var(--color-secondary-dark);
+  text-decoration: underline;
+}
+
+/* Add to Calendar button */
+.ec-event-card__cal-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.ec-event-card__cal-btn:hover:not(:disabled),
+.ec-event-card__cal-btn:focus-visible:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ec-event-card__cal-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   ADD TO CALENDAR EXPLAINER STRIP
+   ============================================================ */
+
+.ec-cal-explainer {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.ec-cal-explainer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.ec-cal-explainer__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.ec-cal-explainer__text p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.80);
+  margin: 0;
+}
+
+.ec-cal-explainer__icons {
+  display: flex;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.ec-cal-explainer__icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.ec-cal-explainer__icon-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.50);
+  text-align: center;
+}
+
+/* ============================================================
+   PAST EVENTS ARCHIVE
+   ============================================================ */
+
+.ec-past {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.ec-past__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-7);
+}
+
+.ec-past__list {
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.ec-past__item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+}
+
+.ec-past__item-year {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.ec-past__item-title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.ec-past__item-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.ec-past__item-link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--transition-fast);
+}
+
+.ec-past__item-link:hover,
+.ec-past__item-link:focus-visible {
+  color: var(--color-secondary-dark);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   SUBMIT AN EVENT CTA
+   ============================================================ */
+
+.ec-submit {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.ec-submit__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.ec-submit__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.ec-submit__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.80);
+  margin: 0;
+}
+
+/* ============================================================
+   DESKTOP UPGRADES (min-width: 769px)
+   ============================================================ */
+
+@media (min-width: 769px) {
+
+  .ec-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ec-cal-explainer__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ec-cal-explainer__text {
+    max-width: 560px;
+  }
+
+  .ec-submit__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-9);
+  }
+
+  .ec-submit__text {
+    flex: 1;
+  }
+
+  .ec-submit__action {
+    flex-shrink: 0;
+  }
+
+  .ec-past__item-year {
+    font-size: 48px;
+    min-width: 80px;
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOP (min-width: 1100px)
+   ============================================================ */
+
+@media (min-width: 1100px) {
+
+  .ec-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ec-event-card__header {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}

@@ -1,0 +1,842 @@
+/*
+ * about.css — Virginia Baseball Coaches Association
+ * Page: About Us
+ * UI/UX Designer — 2026-03-11
+ *
+ * Visual boldness moment: Virginia state shape as CSS clip-path
+ * in the Statewide Reach section — brand-specified layout departure.
+ */
+
+/* ============================================================
+   SHARED SECTION LABEL (also used in global but scoped here)
+   ============================================================ */
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.about-hero {
+  background: linear-gradient(160deg, #092678 0%, #0a1a4a 100%);
+  background-image: var(--texture-infield);
+  padding: var(--space-11) var(--container-padding) var(--space-9);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+  padding-top: var(--nav-height);
+}
+
+.about-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  line-height: 1.0;
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.about-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: rgba(255, 255, 255, 0.80);
+  line-height: var(--leading-body-lg);
+  max-width: 620px;
+  margin: 0;
+}
+
+/* ============================================================
+   ORIGIN STORY
+   ============================================================ */
+
+.about-origin {
+  background-color: var(--color-surface-cream);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.about-origin__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about-origin__content {
+  max-width: 720px;
+}
+
+.about-origin__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-text);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.about-origin__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-body-lg);
+  margin: 0 0 var(--space-5) 0;
+}
+
+/* Pull Quote — typographic break between origin paragraphs */
+.about-origin__quote {
+  border-left: 4px solid var(--color-secondary);
+  margin: var(--space-8) 0;
+  padding: var(--space-5) var(--space-6);
+  background-color: var(--color-white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+}
+
+.about-origin__quote-text {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.about-origin__quote-source {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  font-style: normal;
+}
+
+/* ============================================================
+   MISSION PILLARS
+   ============================================================ */
+
+.about-pillars {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.about-pillars__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about-pillars__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-8) 0;
+  text-align: center;
+}
+
+.about-pillars__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.about-pillar {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius);
+  padding: var(--space-7) var(--space-6);
+  text-align: center;
+}
+
+.about-pillar__icon {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.about-pillar__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: 0;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.about-pillar__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+/* ============================================================
+   STATEWIDE REACH — Virginia State Map (Brand Boldness Moment)
+   CSS clip-path polygon approximating Virginia's geographic outline
+   ============================================================ */
+
+.about-statewide {
+  background-color: var(--color-surface-cream);
+  padding: var(--space-9) var(--container-padding);
+  overflow: hidden;
+}
+
+.about-statewide__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.about-statewide__label {
+  margin-bottom: var(--space-3);
+}
+
+.about-statewide__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.about-statewide__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  line-height: var(--leading-body-lg);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.about-statewide__regions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-statewide__region {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.about-statewide__region-marker {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  margin-top: 6px;
+  box-shadow: 0 0 0 3px rgba(179, 27, 27, 0.20);
+}
+
+.about-statewide__region-name {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-1) 0;
+  letter-spacing: 0;
+}
+
+.about-statewide__region-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.about-statewide__client-note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ============================================================
+   VIRGINIA STATE SHAPE — CSS clip-path polygon
+   The polygon approximates Virginia's geographic outline.
+   Coordinates reference: VA is a roughly rectangular state
+   with the eastern panhandle (Northern Virginia) projecting
+   northeast and the Eastern Shore peninsula on the far right.
+   The shape is placed in the right column flush right,
+   extending slightly beyond the container on desktop.
+   ============================================================ */
+
+.about-statewide__map-col {
+  display: none; /* hidden on mobile — shown at 769px+ */
+}
+
+.about-statewide__va-shape {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 560 / 260;
+  margin-left: auto;
+}
+
+/*
+ * Virginia state shape — CSS clip-path polygon
+ * Points trace the approximate geographic outline of Virginia.
+ * The eastern Delmarva/panhandle notch is approximated at the
+ * top-right; the western mountain ridge curves down-left.
+ * Coordinates in percentage of 560×260 bounding box.
+ */
+.about-statewide__va-fill {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-primary);
+  clip-path: polygon(
+    /* Northern border — west to east, with slight eastward lean */
+    0% 30%,
+    8% 26%,
+    16% 24%,
+    24% 22%,
+    32% 20%,
+    40% 19%,
+    48% 18%,
+    /* Northern VA panhandle projection — northeast jog */
+    56% 16%,
+    64% 12%,
+    70% 8%,
+    75% 4%,
+    /* Top-right corner (panhandle tip) */
+    80% 2%,
+    /* Eastern border — angling southeast */
+    86% 6%,
+    90% 12%,
+    /* Chesapeake Bay notch */
+    92% 20%,
+    /* Eastern Shore peninsula — southeastern projection */
+    96% 22%,
+    100% 28%,
+    100% 52%,
+    96% 56%,
+    92% 62%,
+    /* Eastern Shore bottom */
+    88% 68%,
+    84% 74%,
+    80% 72%,
+    76% 68%,
+    72% 64%,
+    68% 62%,
+    /* Hampton Roads coast */
+    64% 68%,
+    60% 74%,
+    56% 78%,
+    50% 80%,
+    44% 78%,
+    38% 74%,
+    32% 70%,
+    /* Southern border — east to west, roughly straight */
+    26% 68%,
+    20% 66%,
+    14% 64%,
+    8% 62%,
+    /* Southwest corner */
+    2% 60%,
+    0% 56%,
+    /* Western border — straight north */
+    0% 30%
+  );
+  box-shadow: 8px 8px 32px rgba(13, 34, 64, 0.22);
+}
+
+/* Regional dot markers on the map */
+.about-statewide__dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 3px rgba(179, 27, 27, 0.30);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Central — Richmond area (~45% x, ~45% y of shape) */
+.about-statewide__dot--central {
+  left: 52%;
+  top: 50%;
+}
+
+/* South — Hampton Roads (~70% x, ~65% y) */
+.about-statewide__dot--south {
+  left: 68%;
+  top: 62%;
+}
+
+/* Valley — Harrisonburg area (~30% x, ~38% y) */
+.about-statewide__dot--valley {
+  left: 30%;
+  top: 38%;
+}
+
+/* West — Roanoke/Appalachian (~18% x, ~48% y) */
+.about-statewide__dot--west {
+  left: 16%;
+  top: 48%;
+}
+
+/* Map label text */
+.about-statewide__map-label {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.80);
+  z-index: 2;
+  transform: translate(-50%, 0);
+  white-space: nowrap;
+}
+
+.about-statewide__map-label--central {
+  left: 52%;
+  top: 54%;
+}
+
+.about-statewide__map-label--south {
+  left: 68%;
+  top: 66%;
+}
+
+.about-statewide__map-label--valley {
+  left: 30%;
+  top: 28%;
+}
+
+.about-statewide__map-label--west {
+  left: 14%;
+  top: 52%;
+}
+
+/* ============================================================
+   BY THE NUMBERS
+   ============================================================ */
+
+.about-numbers {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.about-numbers__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-numbers__label {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  /* Override section-label for dark bg */
+  color: var(--color-secondary);
+}
+
+.about-numbers__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-8) 0;
+}
+
+.about-numbers__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6) var(--space-5);
+}
+
+.about-numbers__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.about-numbers__figure {
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.about-numbers__descriptor {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ============================================================
+   ABCA PARTNERSHIP
+   ============================================================ */
+
+.about-abca {
+  background-color: var(--color-surface-cream);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.about-abca__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about-abca__label {
+  margin-bottom: var(--space-3);
+}
+
+.about-abca__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.about-abca__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  line-height: var(--leading-body-lg);
+  max-width: 720px;
+  margin: 0 0 var(--space-7) 0;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-primary);
+  border: var(--btn-secondary-border);
+  padding: var(--btn-secondary-padding);
+  border-radius: var(--btn-secondary-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-primary-bg-hover);
+}
+
+/* ============================================================
+   PROGRAMS OVERVIEW
+   ============================================================ */
+
+.about-programs {
+  background-color: var(--color-white);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.about-programs__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about-programs__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-8) 0;
+}
+
+.about-programs__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.about-program-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.about-program-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.about-program-card__image-wrap {
+  overflow: hidden;
+}
+
+.about-program-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.about-program-card:hover .about-program-card__image {
+  transform: scale(1.02);
+}
+
+.about-program-card__image-wrap--placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.about-program-card__content {
+  padding: var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-program-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-text);
+  margin: 0 0 var(--space-3) 0;
+  letter-spacing: 0;
+}
+
+.about-program-card__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: rgba(17, 24, 39, 0.80);
+  line-height: var(--leading-body);
+  margin: 0 0 var(--space-4) 0;
+  flex: 1;
+}
+
+.about-program-card__link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  align-self: flex-start;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.about-program-card__link:hover {
+  border-bottom-color: var(--color-secondary);
+}
+
+/* ============================================================
+   TIM MERRY COMMITMENT QUOTE
+   Full-width dark navy typographic section
+   ============================================================ */
+
+.about-commitment {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-11) var(--container-padding);
+}
+
+.about-commitment__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-commitment__quote {
+  margin: 0;
+  padding: 0;
+}
+
+.about-commitment__quote-text {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.about-commitment__source {
+  font-style: normal;
+}
+
+.about-commitment__attribution {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+  font-style: normal;
+}
+
+/* ============================================================
+   JOIN CTA
+   ============================================================ */
+
+.about-join {
+  background-color: var(--color-surface-cream);
+  padding: var(--space-9) var(--container-padding);
+  text-align: center;
+}
+
+.about-join__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about-join__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-7) 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-join__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-7);
+}
+
+/* ============================================================
+   RESPONSIVE — MIN-WIDTH: 600px
+   ============================================================ */
+
+@media (min-width: 600px) {
+  .about-pillars__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-numbers__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-programs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-join__actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MIN-WIDTH: 769px
+   ============================================================ */
+
+@media (min-width: 769px) {
+  .about-statewide__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .about-statewide__map-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Map column overflows container slightly to the right for boldness */
+    margin-right: calc(-1 * var(--container-padding));
+  }
+
+  .about-statewide__va-shape {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .about-pillars__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about-programs__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-numbers__grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .about-commitment__quote-text {
+    font-size: calc(var(--text-h2) * 1.1);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MIN-WIDTH: 1024px
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  .about-statewide__va-shape {
+    max-width: 600px;
+  }
+}

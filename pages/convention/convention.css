@@ -1,0 +1,930 @@
+/*
+ * convention.css — VBCA Annual Convention Page
+ * Imports: ../../global/brand.css (via global.css)
+ * Mobile-first — min-width media queries only
+ * No inline styles, no hardcoded colors — CSS vars only
+ */
+
+/* ============================================================
+   BUTTON SYSTEM (page-scoped)
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-button);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--btn-primary-radius);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  line-height: 1;
+}
+
+.btn--primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: var(--btn-primary-padding);
+  border: 2px solid transparent;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--btn-primary-bg-hover);
+  outline: none;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-primary);
+  padding: var(--btn-secondary-padding);
+  border: var(--btn-secondary-border);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-white);
+  outline: none;
+}
+
+.btn--ghost-white {
+  background: transparent;
+  color: var(--color-white);
+  padding: var(--btn-secondary-padding);
+  border: 2px solid var(--color-white);
+}
+
+.btn--ghost-white:hover,
+.btn--ghost-white:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.btn--sm {
+  padding: 8px 16px;
+  font-size: var(--text-body-sm);
+}
+
+/* ============================================================
+   SECTION LABEL (gold-rule crimson treatment)
+   ============================================================ */
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+/* Light treatment: on dark navy backgrounds */
+.section-label--light {
+  color: var(--color-secondary);
+  border-left-color: var(--color-gold);
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ============================================================
+   CONVENTION HERO
+   Full-bleed client photo with scrim + content over
+   ============================================================ */
+
+.convention-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+
+.convention-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.convention-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.convention-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim-hero);
+}
+
+.convention-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-padding-hero) var(--container-padding);
+  width: 100%;
+}
+
+.convention-hero__content {
+  max-width: 720px;
+}
+
+.convention-hero__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+}
+
+.convention-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
+  margin-bottom: var(--space-6);
+}
+
+/* Event meta (date + venue) */
+.convention-hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+
+.convention-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.convention-meta-item__icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.convention-meta-item em {
+  color: rgba(255, 255, 255, 0.65);
+  font-style: normal;
+}
+
+/* Hero CTAs */
+.convention-hero__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+@media (min-width: 480px) {
+  .convention-hero__ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.convention-calendar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.convention-calendar-group__label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   EVENT OVERVIEW
+   ============================================================ */
+
+.convention-overview {
+  background: var(--bg-cream);
+  padding: var(--section-padding) 0;
+}
+
+.convention-overview__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 769px) {
+  .convention-overview__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-10);
+  }
+}
+
+.convention-overview__text {
+  flex: 1;
+}
+
+.convention-overview__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+
+.convention-overview__text p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
+
+.convention-overview__includes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.convention-overview__includes li {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  padding-left: var(--space-6);
+  position: relative;
+  line-height: var(--leading-body);
+}
+
+.convention-overview__includes li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: var(--weight-bold);
+}
+
+.convention-overview__image {
+  flex: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+
+.convention-overview__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   SCHEDULE / AGENDA
+   ============================================================ */
+
+.convention-schedule {
+  background: var(--bg-white);
+  padding: var(--section-padding) 0;
+}
+
+.convention-schedule__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+
+.convention-schedule__notice {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-8);
+  max-width: 680px;
+}
+
+.convention-agenda {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-divider);
+}
+
+.agenda-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+@media (min-width: 600px) {
+  .agenda-item {
+    flex-direction: row;
+    gap: var(--space-8);
+  }
+}
+
+.agenda-item__time {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  white-space: nowrap;
+  min-width: 120px;
+  padding-top: 2px;
+}
+
+.agenda-item--featured .agenda-item__time {
+  color: var(--color-gold);
+}
+
+.agenda-item__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: var(--leading-card);
+  margin-bottom: var(--space-3);
+}
+
+.agenda-item--featured .agenda-item__title {
+  color: var(--color-secondary);
+}
+
+.agenda-item__content p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   SPEAKERS
+   ============================================================ */
+
+.convention-speakers {
+  background: var(--bg-cream);
+  padding: var(--section-padding) 0;
+}
+
+.convention-speakers__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+
+.convention-speakers__notice {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 600px) {
+  .speakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .speakers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.speaker-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+}
+
+.speaker-card__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-surface-cream);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.speaker-card__avatar-initials {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+}
+
+.speaker-card__name {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.speaker-card__affiliation {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+/* ============================================================
+   HALL OF FAME RECEPTION
+   ============================================================ */
+
+.convention-hof {
+  background: var(--color-primary);
+  background-image: var(--texture-infield), linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  padding: var(--section-padding) 0;
+}
+
+.convention-hof__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 769px) {
+  .convention-hof__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-10);
+  }
+}
+
+.convention-hof__text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.convention-hof__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+}
+
+.convention-hof__text p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-5);
+}
+
+.convention-hof__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  color: var(--color-gold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-align: center;
+}
+
+.convention-hof__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: var(--leading-body);
+  text-align: center;
+  margin-top: var(--space-3);
+  max-width: 180px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-weight: var(--weight-semibold);
+}
+
+.convention-hof__stat {
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CONVENTION GALLERY
+   ============================================================ */
+
+.convention-gallery {
+  background: var(--bg-white);
+  padding: var(--section-padding) 0;
+}
+
+.convention-gallery__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+
+.convention-gallery__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  max-width: 640px;
+  margin-bottom: var(--space-8);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 769px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--color-surface-cream);
+  aspect-ratio: 3 / 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   VENUE & HOTEL
+   ============================================================ */
+
+.convention-venue {
+  background: var(--bg-cream);
+  padding: var(--section-padding) 0;
+}
+
+.convention-venue__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+  max-width: 680px;
+}
+
+.convention-venue__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  max-width: 600px;
+  margin-bottom: var(--space-8);
+}
+
+.convention-venue__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 769px) {
+  .convention-venue__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-8);
+  }
+}
+
+/* Map placeholder */
+.convention-venue__map {
+  flex: 1.5;
+  min-height: 360px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.venue-map-placeholder {
+  width: 100%;
+  height: 360px;
+  background: var(--color-primary);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-map-placeholder__inner {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  padding: var(--space-7);
+}
+
+.venue-map-placeholder__inner svg {
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+}
+
+.venue-map-placeholder__inner p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-5);
+}
+
+.venue-map-placeholder__link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-gold);
+  text-decoration: underline;
+  font-weight: var(--weight-semibold);
+}
+
+.venue-map-placeholder__link:hover {
+  color: var(--color-gold-light);
+}
+
+/* Hotel & Calendar info panel */
+.convention-venue__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.convention-hotel__heading,
+.convention-calendar-options__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: var(--leading-heading);
+  margin-bottom: var(--space-4);
+}
+
+.convention-hotel__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin-bottom: var(--space-5);
+}
+
+.convention-hotel__btn {
+  display: block;
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.convention-hotel__coming-soon {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.convention-hotel__email-link {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.convention-calendar-options p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin-bottom: var(--space-5);
+}
+
+.convention-calendar-options__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.convention-calendar-btn {
+  text-align: center;
+  width: 100%;
+}
+
+/* ============================================================
+   REGISTRATION CTA
+   ============================================================ */
+
+.convention-register {
+  background: var(--color-secondary);
+  padding: var(--section-padding) 0;
+  text-align: center;
+}
+
+.convention-register__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.convention-register__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 520px;
+  margin: 0 auto var(--space-7);
+}
+
+.convention-register__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+@media (min-width: 480px) {
+  .convention-register__ctas {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.convention-register .section-label--light {
+  display: inline-block;
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================================
+   FAQ — ACCORDION
+   ============================================================ */
+
+.convention-faq {
+  background: var(--bg-white);
+  padding: var(--section-padding) 0;
+}
+
+.convention-faq__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+.faq-list {
+  max-width: 760px;
+  border-top: 1px solid var(--color-divider);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.faq-item__question {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-6) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  line-height: var(--leading-body);
+  transition: color var(--transition);
+}
+
+.faq-item__question:hover {
+  color: var(--color-secondary);
+}
+
+.faq-item__question[aria-expanded="true"] {
+  color: var(--color-secondary);
+}
+
+.faq-item__icon {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-secondary);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+  line-height: 1;
+}
+
+.faq-item__question[aria-expanded="true"] .faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.faq-item__answer {
+  padding-bottom: var(--space-6);
+}
+
+.faq-item__answer[hidden] {
+  display: none;
+}
+
+.faq-item__answer p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.faq-item__answer a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}

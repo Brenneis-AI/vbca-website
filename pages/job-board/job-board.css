@@ -1,0 +1,603 @@
+/*
+ * job-board.css — Virginia Baseball Coaches Association
+ * Page: Job Board
+ * Brand: Commonwealth Athletic Authority
+ * Mobile-first — min-width media queries only
+ * No hardcoded colors — CSS vars from brand.css only
+ */
+
+/* ============================================================
+   SECTION EYEBROW — Category label system (brand-standard)
+   ============================================================ */
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin: 0 0 var(--space-4) 0;
+  display: block;
+}
+
+/* ============================================================
+   BUTTONS (page-scoped)
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--btn-primary-bg-hover);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--btn-secondary-padding);
+  border: var(--btn-secondary-border);
+  border-radius: var(--btn-secondary-radius);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   PAGE HEADER — Bold typographic treatment
+   Split background: left navy bar + cream main
+   ============================================================ */
+.jb-header {
+  background: var(--bg-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-11) var(--container-padding) var(--space-9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ghost "JOBS" text — typographic depth element */
+.jb-header::before {
+  content: 'JOBS';
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-size: clamp(80px, 20vw, 260px);
+  color: rgba(255, 255, 255, 0.04);
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.jb-header__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.jb-header .section-eyebrow {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+}
+
+.jb-header__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin: 0 0 var(--space-5) 0;
+  max-width: 780px;
+}
+
+.jb-header__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: 620px;
+}
+
+/* ============================================================
+   PHASE NOTICE
+   ============================================================ */
+.jb-phase-notice {
+  background: var(--bg-cream);
+  padding: var(--space-5) var(--container-padding);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.jb-phase-notice__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.jb-phase-notice__inner {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+}
+
+.jb-phase-notice__icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.jb-phase-notice__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.jb-phase-notice__link {
+  color: var(--color-secondary);
+  font-weight: var(--weight-semibold);
+}
+.jb-phase-notice__link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   FILTER BAR
+   ============================================================ */
+.jb-filters {
+  background: var(--bg-cream);
+  padding: var(--space-6) var(--container-padding);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.jb-filters__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.jb-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.jb-filter-group__label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  min-width: 60px;
+}
+
+.jb-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.jb-filter-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.jb-filter-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.jb-filter-btn--active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+@media (min-width: 769px) {
+  .jb-filters__container {
+    flex-direction: row;
+    gap: var(--space-6);
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   JOB LISTINGS
+   ============================================================ */
+.jb-listings {
+  background: var(--bg-cream);
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.jb-listings__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.jb-listings__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-7) 0;
+}
+
+/* JOB GRID */
+.job-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+/* JOB CARD */
+.job-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.job-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--color-primary);
+}
+
+/* Badges row */
+.job-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.job-badge {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+  line-height: 1.5;
+}
+
+.job-badge--level {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.job-badge--region {
+  background: var(--color-surface-cream);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.job-badge--type {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+/* Card body */
+.job-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.job-card__title {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin: 0;
+  line-height: var(--leading-card);
+}
+
+.job-card__org {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.job-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: rgba(17, 24, 39, 0.80);
+  line-height: var(--leading-body);
+  margin: var(--space-2) 0 0 0;
+}
+
+/* Card footer */
+.job-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-divider);
+}
+
+.job-card__deadline {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.job-card__deadline-label {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.job-card__cta {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.job-card__cta:hover {
+  color: var(--color-secondary-dark);
+  text-decoration: underline;
+}
+
+@media (min-width: 769px) {
+  .job-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .job-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   LOGIN GATE
+   ============================================================ */
+.jb-login-gate {
+  background: var(--bg-primary);
+  background-image: var(--texture-infield);
+  border-radius: var(--radius);
+  padding: var(--space-7) var(--space-6);
+}
+
+.jb-login-gate__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+.jb-login-gate__icon {
+  color: var(--color-gold);
+}
+
+.jb-login-gate__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.jb-login-gate__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: var(--leading-body);
+  margin: 0;
+  max-width: 560px;
+}
+
+.jb-login-gate__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.jb-login-gate__actions .btn-secondary {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+.jb-login-gate__actions .btn-secondary:hover,
+.jb-login-gate__actions .btn-secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+}
+
+@media (min-width: 769px) {
+  .jb-login-gate__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+  }
+  .jb-login-gate__copy {
+    flex: 1;
+  }
+}
+
+/* ============================================================
+   POST A POSITION
+   ============================================================ */
+.jb-post {
+  background: var(--bg-white);
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.jb-post__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.jb-post__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.jb-post__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.jb-post__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  margin: 0 0 var(--space-6) 0;
+  max-width: 540px;
+}
+
+/* Typography graphic — roster-style visual */
+.jb-post__graphic {
+  background: var(--color-primary);
+  background-image: var(--texture-infield);
+  border-radius: var(--radius);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.jb-post__graphic-line {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  display: block;
+}
+
+.jb-post__graphic-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: var(--space-3);
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .jb-post__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   MEMBER CTA
+   ============================================================ */
+.jb-member-cta {
+  background: var(--bg-primary);
+  background-image: var(--texture-infield);
+  padding: var(--section-padding) var(--container-padding);
+  text-align: center;
+}
+
+.jb-member-cta__container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.jb-member-cta__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.jb-member-cta__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+/* ============================================================
+   FOCUS VISIBLE — Accessibility
+   ============================================================ */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

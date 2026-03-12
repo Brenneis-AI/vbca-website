@@ -1,0 +1,833 @@
+/*
+ * index.css — Virginia Baseball Coaches Association — Home Page
+ * Page-specific styles for index.html
+ * Imports from global/brand.css (via global.css) — uses CSS variables only
+ * Mobile-first, min-width queries ONLY
+ */
+
+/* ============================================================
+   HERO — HOME
+   CSS placeholder background pending client action photo
+   ============================================================ */
+
+.hero--home {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__bg--placeholder {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 55%,
+    var(--color-primary-light) 100%
+  );
+}
+
+/* ============================================================
+   STATS STRIP (Social Proof)
+   Navy background, 4-column stat callout grid
+   ============================================================ */
+
+.section-stats {
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+}
+
+.section-stats .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6) var(--space-5);
+}
+
+.section-stats .stat-callout__number {
+  color: var(--color-white);
+  font-size: var(--text-stat);
+}
+
+.section-stats .stat-callout__number--small {
+  font-size: var(--text-h2);
+}
+
+.section-stats .stat-callout__label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-body-sm);
+}
+
+/* ============================================================
+   MISSION PILLARS — Dual-surface split
+   Visual Boldness Commitment 2:
+   Navy left half / Cream right half split background
+   ============================================================ */
+
+.section-mission {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.section-mission__split {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-primary) 50%,
+    var(--color-surface-cream) 50%,
+    var(--color-surface-cream) 100%
+  );
+  z-index: 0;
+}
+
+.section-mission__inner {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-padding) 0;
+}
+
+.section-mission__header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+  padding: 0 var(--container-padding);
+  /* Header spans full width — navy bg shows behind cream overlay for this row */
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+  margin-top: calc(-1 * var(--section-padding));
+}
+
+.section-mission__headline {
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+}
+
+.section-mission__pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.mission-pillar {
+  padding: var(--space-7) var(--container-padding);
+}
+
+.mission-pillar--navy {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.mission-pillar--cream {
+  background-color: var(--color-surface-cream);
+  color: var(--color-text);
+}
+
+.mission-pillar__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-4);
+  color: var(--color-gold);
+}
+
+.mission-pillar--cream .mission-pillar__icon {
+  color: var(--color-secondary);
+}
+
+.mission-pillar__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-snug);
+}
+
+.mission-pillar--navy .mission-pillar__title {
+  color: var(--color-white);
+}
+
+.mission-pillar--cream .mission-pillar__title {
+  color: var(--color-primary);
+}
+
+.mission-pillar__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  margin-bottom: 0;
+}
+
+.mission-pillar--navy .mission-pillar__text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================================
+   PROBLEM STRIP
+   Cream background, body copy, stat callout break
+   ============================================================ */
+
+.section-problem__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-problem__headline {
+  font-size: var(--text-h2);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--tracking-snug);
+}
+
+.section-problem__copy {
+  margin-bottom: var(--space-6);
+}
+
+/* Stat callout visual break — per copywriter spec */
+.problem-stat-callout {
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--space-5) var(--space-6);
+  background-color: var(--color-white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  margin: var(--space-6) 0;
+}
+
+.problem-stat-callout__text {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: var(--leading-heading);
+  margin-bottom: 0;
+  font-style: normal;
+}
+
+.section-problem__close {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+/* ============================================================
+   MEMBERSHIP CARDS
+   3-column pricing grid
+   ============================================================ */
+
+.section-header {
+  margin-bottom: var(--space-9);
+}
+
+.section-header h2 {
+  color: var(--color-primary);
+  margin-top: var(--space-3);
+}
+
+.membership-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-7);
+}
+
+.membership-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.membership-card .card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-6);
+}
+
+.membership-card__featured-label {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--space-2) var(--space-4);
+}
+
+.membership-card__tier {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-normal);
+  margin-bottom: var(--space-4);
+}
+
+.membership-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.membership-card__amount {
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  color: var(--color-secondary);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+}
+
+.membership-card__period {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-semibold);
+}
+
+.membership-card__who {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-5);
+}
+
+.membership-card__benefits {
+  list-style: none;
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  flex: 1;
+}
+
+.membership-card__benefits li {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  line-height: var(--leading-body);
+}
+
+.membership-card__benefits li::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.membership-card__benefits li:last-child {
+  border-bottom: none;
+}
+
+.membership-card__tag {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.membership-compare-link {
+  padding-top: var(--space-4);
+}
+
+.membership-compare-link__anchor {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.membership-compare-link__anchor:hover {
+  color: var(--color-secondary-dark);
+}
+
+/* ============================================================
+   FEATURED EVENTS
+   Cream bg, 3-card grid
+   ============================================================ */
+
+.section-events .section-header h2 {
+  color: var(--color-primary);
+}
+
+.event-card__meta {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-body);
+}
+
+.event-card__date,
+.event-card__location {
+  display: block;
+}
+
+.event-card__date em {
+  font-style: italic;
+}
+
+.event-card__image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* ============================================================
+   HALL OF FAME FEATURE
+   Visual Boldness 1: ghost "HOF" behind content (via hof-ghost-numeral)
+   Navy + texture bg, gold text treatment
+   ============================================================ */
+
+.section-hof {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+.section-label--gold {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+}
+
+.section-hof__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+.section-hof__copy {
+  max-width: 600px;
+}
+
+.section-hof__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-5);
+}
+
+.section-hof__body {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  margin-bottom: var(--space-7);
+}
+
+.section-hof__class-label {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: 2px solid var(--color-gold);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-5);
+}
+
+.hof-inductee-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.hof-inductee-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 140px;
+}
+
+.hof-inductee-card__photo {
+  width: 140px;
+  height: 175px;
+  object-fit: cover;
+  object-position: top;
+  border: var(--card-hof-accent);
+  border-radius: var(--radius);
+}
+
+.hof-inductee-card__photo-placeholder {
+  width: 140px;
+  height: 175px;
+  border-radius: var(--radius);
+}
+
+.hof-inductee-card__name {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-gold-light);
+  text-align: center;
+  line-height: var(--leading-card);
+}
+
+/* ============================================================
+   HOW IT WORKS / 3 STEPS
+   Cream background, numbered steps row
+   ============================================================ */
+
+.section-steps .section-header h2 {
+  color: var(--color-primary);
+}
+
+.steps-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.step-item {
+  flex: 1;
+  max-width: 100%;
+}
+
+.step-item__number {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: var(--weight-black);
+  color: var(--color-secondary);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-3);
+}
+
+.step-item__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.step-item__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin-bottom: 0;
+}
+
+.step-item__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  display: block;
+}
+
+.steps-cta {
+  margin-top: var(--space-7);
+}
+
+/* ============================================================
+   TRANSFORMATION SECTION
+   Visual Boldness 3: crimson (#B31B1B) full-bleed background
+   Tim Merry quote as typographic moment
+   ============================================================ */
+
+.section-transformation__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+.section-transformation__headline {
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-5);
+}
+
+.section-transformation__copy p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+}
+
+.section-transformation__quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Pull quote variant for transformation section */
+.pull-quote--large .pull-quote__text {
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  font-style: italic;
+}
+
+.pull-quote--large::before {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 100px;
+}
+
+.pull-quote--large .pull-quote__attribution {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-body-sm);
+  margin-top: var(--space-4);
+}
+
+.transformation-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  opacity: 0.75;
+}
+
+/* ============================================================
+   SPONSORS STRIP
+   White bg, carousel placeholder
+   ============================================================ */
+
+.section-sponsors .section-header h2 {
+  color: var(--color-primary);
+}
+
+.sponsors-carousel-placeholder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  justify-content: center;
+  padding: var(--space-6) 0;
+}
+
+.sponsors-cta {
+  margin-top: var(--space-6);
+}
+
+/* ============================================================
+   NEWSLETTER
+   Cream background, split form layout
+   ============================================================ */
+
+.section-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+.section-newsletter__copy h2 {
+  color: var(--color-primary);
+  margin-top: var(--space-3);
+}
+
+.section-newsletter__copy p {
+  color: var(--color-text);
+  font-size: var(--text-body-lg);
+}
+
+.newsletter-form {
+  max-width: 560px;
+  width: 100%;
+}
+
+.newsletter-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.newsletter-form .form-group:last-of-type {
+  margin-bottom: var(--space-6);
+}
+
+.newsletter-form__privacy {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+  line-height: var(--leading-body);
+}
+
+.newsletter-form__privacy-link {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.newsletter-form__privacy-link:hover {
+  color: var(--color-secondary-dark);
+}
+
+.form-label__optional {
+  color: var(--color-text-muted);
+  font-weight: var(--weight-regular);
+  font-style: italic;
+}
+
+/* ============================================================
+   CLOSING CTA
+   Dark navy, centered, two-button row
+   ============================================================ */
+
+.section-closing-cta {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+.section-closing-cta__headline {
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-5);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-closing-cta__body {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--text-body-lg);
+  margin-bottom: var(--space-7);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-closing-cta__btns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   RESPONSIVE — min-width ONLY
+   ============================================================ */
+
+@media (min-width: 600px) {
+  .hero--home {
+    min-height: 600px;
+  }
+
+  .section-closing-cta__btns {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form__row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 769px) {
+
+  .hero--home {
+    min-height: 700px;
+  }
+
+  /* Stats: 4 columns */
+  .section-stats .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Mission pillars: 2x2 grid on desktop */
+  .section-mission__pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Mission header spans full width above the 2-col grid */
+  .section-mission__header {
+    padding-left: calc(var(--container-max) / 2 - 100px);
+    padding-right: calc(var(--container-max) / 2 - 100px);
+  }
+
+  /* HOF: side-by-side */
+  .section-hof__inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .section-hof__copy {
+    flex: 1;
+  }
+
+  .section-hof__inductees {
+    flex: 1;
+  }
+
+  /* Steps: horizontal row on desktop */
+  .steps-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .step-item__divider {
+    width: 1px;
+    height: auto;
+    align-self: stretch;
+    margin: var(--space-4) 0;
+  }
+
+  /* Transformation: side by side */
+  .section-transformation__inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .section-transformation__copy {
+    flex: 1.2;
+  }
+
+  .section-transformation__quote {
+    flex: 1;
+  }
+
+  /* Membership: 3 columns */
+  .membership-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Newsletter: side by side */
+  .section-newsletter__inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .section-newsletter__copy {
+    flex: 1;
+    padding-right: var(--space-7);
+  }
+
+  .section-newsletter__form {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .hero--home {
+    min-height: 760px;
+  }
+
+  .section-mission__header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Mission header centers within container */
+  .section-mission__header {
+    text-align: center;
+  }
+}

@@ -1,0 +1,504 @@
+/*
+ * privacy-policy.css — Virginia Baseball Coaches Association
+ * Page: Privacy Policy & Terms of Service
+ * UI/UX Designer Agent — 2026-03-11
+ *
+ * Imports: ../../global/brand.css (via global.css)
+ * Layout: Cream page background, two-column TOC + content on desktop,
+ *         single-column stacked on mobile.
+ * No inline styles. No hardcoded colors. CSS vars only.
+ */
+
+/* ============================================================
+   PAGE HERO / HEADER
+   ============================================================ */
+
+.privacy-hero {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.privacy-hero__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.privacy-hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--color-secondary);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.privacy-hero__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.privacy-hero__meta {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.privacy-hero__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-lighter);
+  font-style: italic;
+  margin: 0;
+  max-width: 640px;
+}
+
+@media (min-width: 769px) {
+  .privacy-hero {
+    padding: calc(var(--section-padding) * 1.25) var(--container-padding);
+  }
+
+  .privacy-hero__headline {
+    font-size: var(--text-h1);
+    max-width: 760px;
+  }
+}
+
+
+/* ============================================================
+   BODY SECTION — TOC + DOCUMENT LAYOUT
+   ============================================================ */
+
+.privacy-body {
+  background-color: var(--color-surface-cream);
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.privacy-body__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .privacy-body__container {
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-9);
+  }
+}
+
+
+/* ============================================================
+   TABLE OF CONTENTS (Sidebar)
+   ============================================================ */
+
+.privacy-toc {
+  /* On mobile: stacked above content */
+}
+
+.privacy-toc__inner {
+  background-color: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  position: relative;
+}
+
+/* Sticky sidebar on desktop */
+@media (min-width: 900px) {
+  .privacy-toc__inner {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-5));
+  }
+}
+
+.privacy-toc__heading {
+  font-family: var(--font-body);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-4) 0;
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.privacy-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.privacy-toc__item {
+  /* top-level item */
+}
+
+.privacy-toc__link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  border-left: 3px solid var(--color-gold);
+  padding-left: var(--space-3);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.privacy-toc__link:hover,
+.privacy-toc__link:focus-visible {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.privacy-toc__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.privacy-toc__sublist {
+  list-style: none;
+  margin: var(--space-1) 0 var(--space-2) var(--space-3);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.privacy-toc__sublink {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color var(--transition-fast);
+}
+
+.privacy-toc__sublink:hover,
+.privacy-toc__sublink:focus-visible {
+  color: var(--color-secondary);
+}
+
+.privacy-toc__sublink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   LEGAL DOCUMENT CONTENT
+   ============================================================ */
+
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+}
+
+
+/* ============================================================
+   SECTION WRAPPER (Privacy Policy / Terms of Service blocks)
+   ============================================================ */
+
+.privacy-section {
+  background-color: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-7);
+}
+
+.privacy-section__label-row {
+  margin-bottom: var(--space-4);
+}
+
+.privacy-section__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--color-secondary);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+}
+
+.privacy-section__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.privacy-section__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-6) 0;
+  max-width: 72ch;
+}
+
+@media (min-width: 769px) {
+  .privacy-section {
+    padding: var(--space-8);
+  }
+
+  .privacy-section__heading {
+    font-size: var(--text-h2);
+  }
+}
+
+
+/* ============================================================
+   HORIZONTAL RULE DIVIDER (between subsections)
+   ============================================================ */
+
+.privacy-rule {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--space-7) 0;
+}
+
+
+/* ============================================================
+   SUBSECTIONS
+   ============================================================ */
+
+.privacy-subsection {
+  /* Container for each H3 + copy block */
+}
+
+.privacy-subsection__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: 0;
+  line-height: var(--leading-heading);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.privacy-subsection p {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-4) 0;
+  max-width: 72ch;
+}
+
+.privacy-subsection p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 769px) {
+  .privacy-subsection p {
+    font-size: var(--text-body-lg);
+  }
+}
+
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+
+.privacy-list {
+  list-style: none;
+  margin: var(--space-3) 0 var(--space-4) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.privacy-list li {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  padding-left: var(--space-5);
+  position: relative;
+  max-width: 72ch;
+}
+
+.privacy-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+@media (min-width: 769px) {
+  .privacy-list li {
+    font-size: var(--text-body-lg);
+  }
+}
+
+/* Third-party services list — additional spacing for service entries */
+.privacy-list--services li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+
+/* ============================================================
+   CALLOUT BOX — "We do not sell..." highlight
+   ============================================================ */
+
+.privacy-callout {
+  background-color: var(--color-surface-cream);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-5) 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  line-height: var(--leading-body);
+  max-width: 72ch;
+}
+
+@media (min-width: 769px) {
+  .privacy-callout {
+    font-size: var(--text-body-lg);
+  }
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+.privacy-link {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.privacy-link:hover,
+.privacy-link:focus-visible {
+  color: var(--color-secondary);
+}
+
+.privacy-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.privacy-ext-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.privacy-ext-link:hover,
+.privacy-ext-link:focus-visible {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.privacy-ext-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   ADDRESS BLOCK
+   ============================================================ */
+
+.privacy-address {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+  font-style: normal;
+  background-color: var(--color-surface-cream);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  padding: var(--space-5) var(--space-6);
+  display: inline-block;
+  margin-top: var(--space-3);
+}
+
+.privacy-address strong {
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+
+/* ============================================================
+   PENDING / PLACEHOLDER COPY FLAG
+   ============================================================ */
+
+.privacy-pending {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-1);
+}
+
+
+/* ============================================================
+   TERMS SECTION — Slightly different border treatment
+   to visually distinguish it from the Privacy Policy block
+   ============================================================ */
+
+.privacy-section--terms {
+  border-top: 4px solid var(--color-primary);
+}
+
+
+/* ============================================================
+   SCROLL OFFSET — Account for sticky nav when using anchor links
+   ============================================================ */
+
+.privacy-subsection,
+.privacy-section {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-5));
+}

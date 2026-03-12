@@ -1,0 +1,500 @@
+/*
+ * contact.css — VBCA Contact Page
+ * No hero image — bold typographic header on deep navy.
+ * Layout: navy header → cream form section (2-col: form + sidebar)
+ *   → white category cards section
+ * Three boldness marks:
+ *   1. Oversized email address in header — navy bg, gold-tinted display treatment
+ *   2. Form layout breaks the standard single-column stack with a 2-col row for name+email
+ *   3. Category cards with crimson-top accent and hover state that tilts border to navy
+ */
+
+/* ============================================================
+   PAGE HEADER — Navy, typographic, no image
+   ============================================================ */
+
+.contact-header {
+  background: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-11) 0 var(--space-9);
+}
+
+.contact-header__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin: 0 0 var(--space-5);
+}
+
+.contact-header__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 var(--space-7);
+  max-width: 560px;
+}
+
+/* Direct email displayed large in header — design boldness moment */
+.contact-header__email-strip {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: var(--space-6);
+}
+
+.contact-header__direct-email {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.contact-header__direct-email:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ============================================================
+   CONTACT MAIN (FORM + SIDEBAR)
+   ============================================================ */
+
+.contact-main {
+  background: var(--color-surface-cream);
+  padding: var(--section-padding) 0;
+}
+
+.contact-main__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 900px) {
+  .contact-main__grid {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-9);
+    align-items: start;
+  }
+}
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+
+.contact-form-wrap {
+  background: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-7);
+}
+
+.contact-form-wrap__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-6);
+}
+
+/* Success state */
+.form-success {
+  background: rgba(var(--color-primary-rgb), 0.05);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.15);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.form-success__icon {
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.form-success__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.form-success__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+/* Error banner */
+.form-error-banner {
+  background: rgba(var(--color-secondary-rgb), 0.06);
+  border: 1px solid rgba(var(--color-secondary-rgb), 0.2);
+  border-left: 3px solid var(--color-secondary);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.form-error-banner__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.form-error-banner__link {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Contact Form Fields */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Two-column row for name + email — layout boldness */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.form-required {
+  color: var(--color-secondary);
+}
+
+.form-input {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  background: var(--input-bg);
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  padding: var(--input-padding);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236B7280' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: var(--leading-body);
+}
+
+.form-field-error {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  color: var(--color-error);
+  letter-spacing: 0.02em;
+}
+
+.contact-form__submit {
+  align-self: flex-start;
+  margin-top: var(--space-2);
+}
+
+/* ============================================================
+   CONTACT INFO SIDEBAR
+   ============================================================ */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.contact-info__block {
+  background: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--space-6);
+}
+
+.contact-info__block--join {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.contact-info__heading {
+  font-family: var(--font-body);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin: 0 0 var(--space-4);
+}
+
+.contact-info__block--join .contact-info__heading {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+}
+
+.contact-info__email {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: var(--tracking-snug);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.contact-info__email:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-info__response {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+}
+
+.contact-info__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-lighter);
+  margin: 0;
+}
+
+/* Social links */
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-social__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color var(--transition);
+}
+
+.contact-social__link:hover {
+  color: var(--color-secondary);
+}
+
+.contact-social__link svg {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.contact-social__link:hover svg {
+  color: var(--color-secondary);
+}
+
+/* Join block */
+.contact-info__join-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: var(--leading-body);
+  margin: 0 0 var(--space-5);
+}
+
+/* ============================================================
+   CATEGORY CARDS
+   ============================================================ */
+
+.contact-categories {
+  background: var(--color-white);
+  padding: var(--section-padding) 0;
+}
+
+.contact-categories__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-7);
+}
+
+.contact-categories__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 481px) {
+  .contact-categories__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 769px) {
+  .contact-categories__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.contact-cat-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-cream);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  border-top: 3px solid var(--color-secondary);
+  padding: var(--space-6) var(--space-5);
+  text-decoration: none;
+  transition: box-shadow var(--transition), border-top-color var(--transition);
+  box-shadow: var(--card-shadow);
+}
+
+.contact-cat-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-top-color: var(--color-primary);
+}
+
+.contact-cat-card__icon {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-4);
+  transition: color var(--transition);
+}
+
+.contact-cat-card:hover .contact-cat-card__icon {
+  color: var(--color-primary);
+}
+
+.contact-cat-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.contact-cat-card__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin: 0 0 var(--space-4);
+  flex: 1;
+}
+
+.contact-cat-card__link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+.contact-cat-card:hover .contact-cat-card__link {
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   SHARED BUTTON
+   ============================================================ */
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  color: var(--btn-primary-text);
+  background: var(--btn-primary-bg);
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  border: none;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--btn-primary-bg-hover);
+}
+
+/* ============================================================
+   CONTAINER UTILITY
+   ============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}

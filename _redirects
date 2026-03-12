@@ -1,0 +1,8 @@
+/pages/home/home.html  /  301
+/pages/home/home       /  301
+
+# Convention path alias — page built at /pages/convention/ but many nav links reference /pages/annual-convention/
+# Added by QA Agent (CRITICAL-001 fix — partial; UI/UX Designer must also correct HTML nav links)
+/pages/annual-convention/annual-convention.html  /pages/convention/convention.html  301
+/pages/annual-convention/convention.html          /pages/convention/convention.html  301
+/pages/annual-convention/                         /pages/convention/convention.html  301

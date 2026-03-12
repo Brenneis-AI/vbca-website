@@ -1,0 +1,450 @@
+/*
+ * board-of-directors.css — Virginia Baseball Coaches Association
+ * Page: Board of Directors
+ * UI/UX Designer — 2026-03-11
+ */
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.board-header {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.board-header__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.board-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-4);
+}
+
+.board-header__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-5) 0;
+  max-width: 860px;
+}
+
+.board-header__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: var(--leading-body-lg);
+  max-width: 700px;
+  margin: 0;
+}
+
+/* ============================================================
+   MISSION STRIP
+   ============================================================ */
+
+.board-mission-strip {
+  background-color: var(--color-secondary);
+  padding: var(--space-5) var(--container-padding);
+}
+
+.board-mission-strip__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.board-mission-strip__text {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin: 0;
+}
+
+/* ============================================================
+   BOARD GRID
+   ============================================================ */
+
+.board-grid-section {
+  background-color: var(--color-surface-cream);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.board-grid-section__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.board-grid-section__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-8) 0;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+/* ============================================================
+   BOARD CARDS
+   ============================================================ */
+
+.board-card {
+  background-color: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.board-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Featured card — Tim Merry, spans full width on mobile, first position */
+.board-card--featured {
+  border-top: 3px solid var(--color-secondary);
+}
+
+.board-card__photo-wrap {
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--color-primary);
+}
+
+.board-card__photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.board-card:hover .board-card__photo {
+  transform: scale(1.02);
+}
+
+.board-card__content {
+  padding: var(--space-5) var(--space-5) var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: 0;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.board-card__title {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.board-card__affiliation {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.board-card__bio {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+  margin: 0 0 var(--space-4) 0;
+  flex: 1;
+}
+
+.board-card__bio--pending {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.board-card__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  border-left: 2px solid var(--color-gold);
+  padding-left: var(--space-3);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.board-card__contact {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  align-self: flex-start;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+  margin-top: auto;
+}
+
+.board-card__contact:hover {
+  border-bottom-color: var(--color-secondary);
+}
+
+/* ============================================================
+   REGIONAL COMMITTEES TABLE
+   ============================================================ */
+
+.board-regions {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--space-9) var(--container-padding);
+}
+
+.board-regions__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.board-label--dark {
+  /* Inherits .board-label but on dark bg — override color to keep crimson/gold combo */
+  color: var(--color-secondary);
+}
+
+.board-regions__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.board-regions__intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: var(--leading-body-lg);
+  max-width: 680px;
+  margin: 0 0 var(--space-7) 0;
+}
+
+.board-regions__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
+}
+
+.board-regions__table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.board-regions__th {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--color-secondary);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.board-regions__row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background-color var(--transition-fast);
+}
+
+.board-regions__row:last-child {
+  border-bottom: none;
+}
+
+.board-regions__row:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.board-regions__td {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.80);
+  padding: var(--space-4) var(--space-5);
+  vertical-align: top;
+  line-height: var(--leading-body);
+}
+
+.board-regions__td--region {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.board-regions__td--pending {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.board-regions__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.45);
+  font-style: italic;
+  margin: var(--space-5) 0 0 0;
+}
+
+/* ============================================================
+   JOIN THE MISSION CTA
+   ============================================================ */
+
+.board-cta {
+  background-color: var(--color-surface-cream);
+  padding: var(--space-9) var(--container-padding);
+  text-align: center;
+}
+
+.board-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.board-cta__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.board-cta__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  line-height: var(--leading-body-lg);
+  margin: 0 0 var(--space-7) 0;
+}
+
+.btn-cta-primary {
+  display: inline-block;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-cta-primary:hover {
+  background-color: var(--btn-primary-bg-hover);
+}
+
+/* ============================================================
+   RESPONSIVE — MIN-WIDTH: 600px
+   ============================================================ */
+
+@media (min-width: 600px) {
+  .board-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Featured card always spans full row at 600px */
+  .board-card--featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .board-card--featured .board-card__photo-wrap {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  .board-card--featured .board-card__photo {
+    height: 100%;
+    min-height: 280px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MIN-WIDTH: 769px
+   ============================================================ */
+
+@media (min-width: 769px) {
+  .board-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Featured card stays full-width on desktop */
+  .board-card--featured {
+    grid-column: 1 / -1;
+  }
+
+  .board-card--featured .board-card__photo-wrap {
+    width: 320px;
+  }
+
+  .board-card--featured .board-card__name {
+    font-size: var(--text-h2);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MIN-WIDTH: 1024px
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  .board-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .board-card--featured .board-card__photo-wrap {
+    width: 360px;
+  }
+}

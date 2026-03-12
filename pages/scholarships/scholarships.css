@@ -1,0 +1,588 @@
+/*
+ * scholarships.css — VBCA Scholarship / Donate Page
+ * Surface rhythm: hero (navy dark) → how-fund-works (cream) → who-benefits (white)
+ *   → donate (navy dark) → stats (cream) → apply (white split)
+ */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.schol-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .schol-hero {
+    min-height: 580px;
+  }
+}
+
+.schol-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.schol-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.schol-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim-hero);
+}
+
+.schol-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-11);
+  padding-bottom: var(--space-9);
+  color: var(--color-white);
+  max-width: 720px;
+}
+
+.schol-hero__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+.schol-hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 var(--space-7);
+  max-width: 600px;
+}
+
+.schol-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* ============================================================
+   SECTION EYEBROWS
+   ============================================================ */
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin: 0 0 var(--space-4);
+  display: block;
+}
+
+.section-eyebrow--gold {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+}
+
+/* ============================================================
+   HOW THE FUND WORKS
+   ============================================================ */
+
+.schol-how {
+  background: var(--color-surface-cream);
+  padding: var(--section-padding) 0;
+}
+
+.schol-how__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  .schol-how__inner {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-9);
+  }
+}
+
+.schol-how__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-5);
+}
+
+.schol-how__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  margin: 0 0 var(--space-5);
+}
+
+.schol-how__body:last-child {
+  margin-bottom: 0;
+}
+
+/* Stat Callout */
+.schol-how__stat-callout {
+  display: flex;
+  align-items: stretch;
+}
+
+.schol-stat {
+  background: var(--color-primary);
+  border-radius: var(--radius);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  gap: var(--space-3);
+}
+
+.schol-stat__pct {
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-gold);
+}
+
+.schol-stat__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 180px;
+}
+
+.schol-stat__emphasis {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin: 0;
+}
+
+/* ============================================================
+   WHO BENEFITS
+   ============================================================ */
+
+.schol-who {
+  background: var(--color-white);
+  padding: var(--section-padding) 0;
+}
+
+.schol-who__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-7);
+}
+
+.schol-who__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 769px) {
+  .schol-who__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.benefit-card {
+  background: var(--color-surface-cream);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--space-7);
+  border-top: 3px solid var(--color-secondary);
+}
+
+.benefit-card__icon {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.benefit-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.benefit-card__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ============================================================
+   DONATION CTA
+   ============================================================ */
+
+.schol-donate {
+  background: var(--color-primary);
+  background-image: var(--texture-infield);
+  padding: var(--section-padding) 0;
+}
+
+.schol-donate__inner {
+  max-width: 680px;
+}
+
+.schol-donate__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-gold);
+  margin: 0 0 var(--space-6);
+}
+
+.schol-donate__lead {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-white);
+  margin: 0 0 var(--space-3);
+}
+
+.schol-donate__list {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 var(--space-7);
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.schol-donate__list li::marker {
+  color: var(--color-gold);
+}
+
+.schol-donate__amounts {
+  margin-bottom: var(--space-7);
+}
+
+.schol-donate__amounts-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 var(--space-3);
+}
+
+.schol-amount-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.schol-amount-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  background: var(--color-gold);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-5);
+  text-decoration: none;
+  letter-spacing: var(--tracking-wider);
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+}
+
+.schol-amount-btn:hover {
+  background: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+}
+
+.schol-amount-btn--other {
+  background: transparent;
+  color: var(--color-gold);
+}
+
+.schol-amount-btn--other:hover {
+  background: rgba(var(--color-gold-rgb), 0.15);
+}
+
+.schol-donate__cta {
+  margin-bottom: var(--space-6);
+  display: inline-block;
+}
+
+.schol-donate__legal {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  line-height: var(--leading-body);
+}
+
+/* ============================================================
+   SCHOLARSHIP STATS
+   ============================================================ */
+
+.schol-stats {
+  background: var(--color-surface-cream);
+  padding: var(--section-padding) 0;
+}
+
+.schol-stats__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.schol-stats__placeholder {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-6);
+}
+
+.schol-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 601px) {
+  .schol-stats__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.schol-data-card {
+  background: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--space-6) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.schol-data-card__number {
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-primary);
+}
+
+.schol-data-card__label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.schol-stats__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ============================================================
+   APPLY SECTION
+   ============================================================ */
+
+.schol-apply {
+  background: var(--color-white);
+  padding: var(--section-padding) 0;
+}
+
+.schol-apply__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  .schol-apply__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-9);
+  }
+}
+
+.schol-apply__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-5);
+}
+
+.schol-apply__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  margin: 0 0 var(--space-5);
+}
+
+.schol-apply__contact {
+  margin-bottom: var(--space-5);
+}
+
+.schol-apply__contact-email {
+  margin: 0 0 var(--space-2);
+}
+
+.schol-apply__email-link {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-secondary);
+  text-decoration: none;
+  letter-spacing: var(--tracking-tight);
+}
+
+.schol-apply__email-link:hover {
+  color: var(--color-secondary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.schol-apply__contact-note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: var(--leading-body);
+}
+
+.schol-apply__phase2 {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Join column */
+.schol-apply__join {
+  background: var(--color-surface-cream);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  padding: var(--space-7);
+  border-top: 3px solid var(--color-primary);
+}
+
+.schol-apply__join-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.schol-apply__join-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  margin: 0 0 var(--space-6);
+}
+
+/* ============================================================
+   SHARED BUTTON
+   ============================================================ */
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  color: var(--btn-primary-text);
+  background: var(--btn-primary-bg);
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  border: none;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--btn-primary-bg-hover);
+}
+
+/* ============================================================
+   CONTAINER UTILITY
+   ============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}

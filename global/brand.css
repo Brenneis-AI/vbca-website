@@ -1,0 +1,402 @@
+/*
+ * brand.css — Virginia Baseball Coaches Association
+ * Visual Identity: Commonwealth Athletic Authority
+ * Brand Agent output — 2026-03-11
+ *
+ * USAGE: This file is imported at the top of global.css.
+ * All CSS custom properties are defined here. No layout or component styles.
+ * Mobile-first: :root defaults are mobile values.
+ * @media (min-width: 769px) blocks upgrade variables for desktop.
+ */
+
+/* ============================================================
+   GOOGLE FONTS IMPORT
+   Archivo Black (900) — display headers
+   Source Sans Pro (400, 600, 700) — body text
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black:wght@900&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+/* ============================================================
+   ROOT / MOBILE-FIRST DEFAULTS
+   ============================================================ */
+:root {
+
+  /* ----------------------------------------------------------
+     COLOR PALETTE — Core
+     ---------------------------------------------------------- */
+
+  /* Primary: Commonwealth Navy — institutional anchor */
+  --color-primary:           #0D2240;
+  --color-primary-rgb:       13, 34, 64;
+
+  /* Primary variants */
+  --color-primary-dark:      #081629;
+  --color-primary-light:     #1A3A6B;
+
+  /* Secondary: Virginia Crimson — CTA energy, emphasis */
+  --color-secondary:         #B31B1B;
+  --color-secondary-rgb:     179, 27, 27;
+  --color-secondary-dark:    #961616;
+  --color-secondary-light:   #CC2222;
+
+  /* Accent: Championship Gold — HOF and ceremony contexts ONLY */
+  --color-gold:              #C9A84C;
+  --color-gold-rgb:          201, 168, 76;
+  --color-gold-light:        #E8CC7A;
+  --color-gold-dark:         #B8953D;
+
+  /* Neutral Dark: Dugout Black — body text */
+  --color-text:              #111827;
+  --color-text-rgb:          17, 24, 39;
+
+  /* Neutral Light: Chalk Line Cream — warm content background */
+  --color-surface-cream:     #F5F0E8;
+  --color-surface-cream-rgb: 245, 240, 232;
+
+  /* Pure white — cards, nav, inputs */
+  --color-white:             #FFFFFF;
+  --color-white-rgb:         255, 255, 255;
+
+  /* ----------------------------------------------------------
+     COLOR PALETTE — Utility
+     ---------------------------------------------------------- */
+
+  /* Muted text — metadata, dates, placeholder, secondary labels */
+  --color-text-muted:        #6B7280;
+  --color-text-muted-rgb:    107, 114, 128;
+
+  /* Lighter text — captions, fine print */
+  --color-text-lighter:      #9CA3AF;
+
+  /* Border — cards and form fields on cream backgrounds */
+  --color-border:            #D1C9BA;
+  --color-border-rgb:        209, 201, 186;
+
+  /* Input border — slightly warmer than general border */
+  --color-input-border:      #D1C9BA;
+
+  /* Error — form errors, validation */
+  --color-error:             #B31B1B;
+
+  /* Divider — light horizontal rules */
+  --color-divider:           #E5DDD0;
+
+  /* ----------------------------------------------------------
+     SURFACE BACKGROUNDS
+     ---------------------------------------------------------- */
+
+  /* Page-level backgrounds */
+  --bg-primary:              var(--color-primary);     /* Dark hero, HOF, footer */
+  --bg-cream:                var(--color-surface-cream); /* Content sections */
+  --bg-white:                var(--color-white);       /* Cards, nav, inputs */
+  --bg-gold:                 var(--color-gold);        /* HOF ceremonial section ONLY */
+
+  /* ----------------------------------------------------------
+     HERO SCRIM AND OVERLAY VARIABLES
+     Dark hero images with text overlays — multiple intensities
+     ---------------------------------------------------------- */
+
+  /* Standard hero scrim — full-width dark overlay on hero images */
+  --scrim-hero:              linear-gradient(
+                               to bottom,
+                               rgba(13, 34, 64, 0.72) 0%,
+                               rgba(13, 34, 64, 0.55) 60%,
+                               rgba(13, 34, 64, 0.72) 100%
+                             );
+
+  /* Heavy scrim — high-text-density hero sections */
+  --scrim-heavy:             linear-gradient(
+                               to bottom,
+                               rgba(13, 34, 64, 0.88) 0%,
+                               rgba(13, 34, 64, 0.75) 100%
+                             );
+
+  /* Side scrim — for split-image/text layouts */
+  --scrim-side:              linear-gradient(
+                               to right,
+                               rgba(13, 34, 64, 0.92) 0%,
+                               rgba(13, 34, 64, 0.70) 55%,
+                               rgba(13, 34, 64, 0.00) 100%
+                             );
+
+  /* Bottom scrim — for image cards with caption overlays */
+  --scrim-bottom:            linear-gradient(
+                               to top,
+                               rgba(13, 34, 64, 0.90) 0%,
+                               rgba(13, 34, 64, 0.40) 50%,
+                               rgba(13, 34, 64, 0.00) 100%
+                             );
+
+  /* Texture overlay — HOF and footer section diagonal infield texture */
+  --texture-infield:         repeating-linear-gradient(
+                               -45deg,
+                               rgba(255, 255, 255, 0.03) 0px,
+                               rgba(255, 255, 255, 0.03) 1px,
+                               transparent 1px,
+                               transparent 6px
+                             );
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — FONT FAMILIES
+     ---------------------------------------------------------- */
+
+  --font-display:            'Archivo Black', 'Impact', 'Arial Black', sans-serif;
+  --font-body:               'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — FONT SIZES (Mobile defaults)
+     ---------------------------------------------------------- */
+
+  /* Display / Hero */
+  --text-h1:                 48px;
+  --text-h2:                 32px;
+  --text-h3:                 24px;
+  --text-h4:                 18px;
+  --text-h5:                 13px;
+  --text-h6:                 11px;
+
+  /* Stat callouts */
+  --text-stat:               48px;
+
+  /* Body */
+  --text-body-lg:            17px;
+  --text-body:               15px;
+  --text-body-sm:            13px;
+
+  /* UI elements */
+  --text-nav:                14px;
+  --text-button:             14px;
+  --text-label:              12px;
+  --text-caption:            11px;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — LINE HEIGHTS
+     ---------------------------------------------------------- */
+
+  --leading-tight:           1.0;
+  --leading-snug:            1.05;
+  --leading-heading:         1.1;
+  --leading-card:            1.2;
+  --leading-body:            1.65;
+  --leading-body-lg:         1.7;
+  --leading-relaxed:         1.75;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — LETTER SPACING
+     ---------------------------------------------------------- */
+
+  --tracking-tight:          -0.02em;   /* H1 display */
+  --tracking-snug:           -0.01em;   /* H2 display */
+  --tracking-normal:         0;
+  --tracking-wide:           0.04em;    /* Nav links */
+  --tracking-wider:          0.06em;    /* Buttons */
+  --tracking-widest:         0.12em;    /* H6 micro labels */
+  --tracking-label:          0.18em;    /* Section category labels (crimson uppercase) */
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — FONT WEIGHTS
+     ---------------------------------------------------------- */
+
+  --weight-regular:          400;
+  --weight-semibold:         600;
+  --weight-bold:             700;
+  --weight-black:            900;
+
+  /* ----------------------------------------------------------
+     SPACING SCALE (8px base)
+     ---------------------------------------------------------- */
+
+  --space-1:                 4px;
+  --space-2:                 8px;
+  --space-3:                 12px;
+  --space-4:                 16px;
+  --space-5:                 24px;
+  --space-6:                 32px;
+  --space-7:                 48px;
+  --space-8:                 64px;
+  --space-9:                 80px;
+  --space-10:                96px;
+  --space-11:                120px;
+
+  /* ----------------------------------------------------------
+     LAYOUT VARIABLES (Mobile defaults)
+     ---------------------------------------------------------- */
+
+  --container-max:           1200px;
+  --container-padding:       20px;
+
+  --section-padding:         48px;         /* top/bottom for all sections */
+  --section-padding-hero:    72px;          /* hero sections on mobile */
+
+  /* ----------------------------------------------------------
+     BORDER RADIUS
+     ---------------------------------------------------------- */
+
+  --radius-sm:               2px;
+  --radius:                  4px;          /* standard — architectural precision */
+  --radius-md:               6px;
+  --radius-full:             9999px;       /* pills only — use sparingly */
+
+  /* ----------------------------------------------------------
+     BOX SHADOWS
+     ---------------------------------------------------------- */
+
+  /* Card shadow — navy-tinted */
+  --shadow-card:             0 2px 8px rgba(13, 34, 64, 0.08);
+  --shadow-card-hover:       0 4px 16px rgba(13, 34, 64, 0.14);
+
+  /* Elevated (modal, dropdown) */
+  --shadow-elevated:         0 8px 32px rgba(13, 34, 64, 0.18);
+
+  /* Nav shadow on scroll */
+  --shadow-nav:              0 1px 0 rgba(13, 34, 64, 0.08);
+
+  /* Focus ring */
+  --focus-ring:              0 0 0 2px rgba(13, 34, 64, 0.12);
+
+  /* ----------------------------------------------------------
+     TRANSITIONS
+     ---------------------------------------------------------- */
+
+  --transition-fast:         0.15s ease;
+  --transition:              0.2s ease;
+  --transition-slow:         0.3s ease;
+
+  /* ----------------------------------------------------------
+     Z-INDEX SCALE
+     ---------------------------------------------------------- */
+
+  --z-base:                  1;
+  --z-card:                  10;
+  --z-dropdown:              100;
+  --z-sticky:                200;
+  --z-nav:                   300;
+  --z-modal:                 400;
+  --z-toast:                 500;
+
+  /* ----------------------------------------------------------
+     CARD SYSTEM
+     ---------------------------------------------------------- */
+
+  --card-bg:                 var(--color-white);
+  --card-border:             1px solid var(--color-border);
+  --card-radius:             var(--radius);
+  --card-shadow:             var(--shadow-card);
+  --card-shadow-hover:       var(--shadow-card-hover);
+
+  /* HOF card left accent border */
+  --card-hof-accent:         2px solid var(--color-gold);
+
+  /* Membership featured card top accent */
+  --card-featured-accent:    2px solid var(--color-secondary);
+
+  /* ----------------------------------------------------------
+     BUTTON SYSTEM
+     ---------------------------------------------------------- */
+
+  /* Primary — Virginia Crimson */
+  --btn-primary-bg:          var(--color-secondary);
+  --btn-primary-bg-hover:    var(--color-secondary-dark);
+  --btn-primary-text:        var(--color-white);
+  --btn-primary-padding:     14px 28px;
+  --btn-primary-radius:      3px;
+
+  /* Secondary — outline */
+  --btn-secondary-border:    2px solid currentColor;
+  --btn-secondary-padding:   12px 26px;
+  --btn-secondary-radius:    3px;
+
+  /* Gold — HOF/ceremony contexts ONLY */
+  --btn-gold-bg:             var(--color-gold);
+  --btn-gold-bg-hover:       var(--color-gold-dark);
+  --btn-gold-text:           var(--color-primary);
+  --btn-gold-padding:        14px 28px;
+  --btn-gold-radius:         3px;
+
+  /* ----------------------------------------------------------
+     FORM ELEMENTS
+     ---------------------------------------------------------- */
+
+  --input-bg:                var(--color-white);
+  --input-border:            1px solid var(--color-input-border);
+  --input-border-focus:      var(--color-primary);
+  --input-shadow-focus:      var(--focus-ring);
+  --input-radius:            3px;
+  --input-padding:           10px 14px;
+  --input-font-size:         var(--text-body);
+  --input-placeholder-color: var(--color-text-muted);
+
+  /* ----------------------------------------------------------
+     NAVIGATION
+     ---------------------------------------------------------- */
+
+  --nav-bg:                  var(--color-white);
+  --nav-bg-hero:             transparent;          /* start transparent over dark heroes */
+  --nav-text:                var(--color-primary);
+  --nav-text-hero:           var(--color-white);   /* on dark hero before scroll */
+  --nav-link-font-size:      var(--text-nav);
+  --nav-link-weight:         var(--weight-semibold);
+  --nav-link-tracking:       var(--tracking-wide);
+  --nav-link-hover:          var(--color-secondary);
+  --nav-link-active:         var(--color-secondary);
+  --nav-height:              64px;
+  --nav-height-desktop:      72px;
+
+  /* ----------------------------------------------------------
+     SECTION CATEGORY LABEL SYSTEM
+     The gold-rule + crimson-uppercase treatment for section entries
+     ---------------------------------------------------------- */
+
+  --label-font-size:         11px;
+  --label-weight:            var(--weight-bold);
+  --label-color:             var(--color-secondary);
+  --label-tracking:          var(--tracking-label);
+  --label-accent-border:     2px solid var(--color-gold);
+  --label-padding-left:      10px;
+
+  /* ----------------------------------------------------------
+     VISUAL BOLDNESS — HOF CLASS YEAR GHOST NUMERAL
+     Large ghost year rendered behind inductee grids
+     ---------------------------------------------------------- */
+
+  --hof-ghost-size:          120px;       /* mobile */
+  --hof-ghost-color:         rgba(13, 34, 64, 0.06);
+
+}
+
+/* ============================================================
+   DESKTOP UPGRADES (min-width: 769px)
+   Override mobile-first defaults for larger screens
+   ============================================================ */
+@media (min-width: 769px) {
+  :root {
+
+    /* Container */
+    --container-padding:       40px;
+
+    /* Section padding */
+    --section-padding:         80px;
+    --section-padding-hero:    120px;
+
+    /* Typography — Desktop sizes */
+    --text-h1:                 80px;
+    --text-h2:                 52px;
+    --text-h3:                 36px;
+    --text-h4:                 22px;
+    --text-h5:                 14px;
+    --text-h6:                 12px;
+    --text-stat:               72px;
+    --text-body-lg:            18px;
+    --text-body:               16px;
+    --text-body-sm:            14px;
+    --text-nav:                15px;
+    --text-button:             15px;
+
+    /* HOF ghost numeral — desktop */
+    --hof-ghost-size:          200px;
+
+    /* Nav height */
+    --nav-height:              var(--nav-height-desktop);
+
+  }
+}

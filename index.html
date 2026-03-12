@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title: Short fallback per seo-spec.md implementation instructions (43 chars) -->
+  <title>Virginia Baseball Coaches Association | VBCA</title>
+
+  <!-- Meta Description: Short fallback per seo-spec.md (106 chars) -->
+  <meta name="description" content="VBCA unites, educates, develops, and supports baseball coaches across Virginia. Join today starting at $25.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://virginia-baseball-coaches-association-website.netlify.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Virginia Baseball Coaches Association | VBCA">
+  <meta property="og:description" content="VBCA unites, educates, develops, and supports baseball coaches across Virginia. Join today starting at $25.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://virginia-baseball-coaches-association-website.netlify.app/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="global/brand.css">
+  <link rel="stylesheet" href="global/global.css">
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Structured Data — Home page JSON-LD (from schema-spec.md, verbatim) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NGO",
+        "@id": "#organization",
+        "name": "Virginia Baseball Coaches Association",
+        "alternateName": "VBCA",
+        "url": "https://vbca.org",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vbca.org/wp-content/uploads/2023/09/Copy-of-1200x600-CS-Logo-Menu-and-Theme-Brand-5.png"
+        },
+        "description": "The Virginia Baseball Coaches Association (VBCA) is a 501(c)3 nonprofit professional organization dedicated to uniting, educating, developing, and supporting baseball coaches across Virginia at youth, high school, and collegiate levels.",
+        "foundingDate": "2018",
+        "nonprofitStatus": "Nonprofit501c3",
+        "email": "tmerry@vbca.org",
+        "areaServed": {
+          "@type": "State",
+          "name": "Virginia",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "United States"
+          }
+        },
+        "knowsAbout": [
+          "Baseball coaching",
+          "Amateur baseball",
+          "Coach development",
+          "Virginia baseball"
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "American Baseball Coaches Association",
+          "alternateName": "ABCA",
+          "url": "https://abca.org"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Virginia Baseball Coaches Association",
+        "url": "https://vbca.org",
+        "publisher": {
+          "@id": "#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://vbca.org/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "name": "Virginia Baseball Coaches Association — Unite, Educate, Develop and Support",
+        "url": "https://vbca.org/",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://vbca.org"
+        },
+        "about": {
+          "@id": "#organization"
+        },
+        "description": "The official home of the Virginia Baseball Coaches Association. Join VBCA to connect with coaches statewide, access events, resources, and the Annual Convention at UVA Darden."
+      }
+    ]
+  }
+  </script>
+  <!-- SCHEMA TODO (before go-live): confirm official founding year (research indicates ~8 years old as of 2026, estimated 2018 — client should verify) -->
+  <!-- SCHEMA TODO (before go-live): confirm canonical domain (vbca.org vs. new Netlify URL — update all url fields before go-live) -->
+  <!-- SCHEMA TODO (before go-live): confirm social media profiles (X/Twitter, Instagram, Facebook) to add as sameAs array on NGO entity -->
+</head>
+<body>
+
+  <!-- Skip link — first focusable element in body -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Site Header — root level, hero variant (transparent → white on scroll) -->
+  <header class="site-header site-header--hero" id="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Virginia Baseball Coaches Association — Home">
+        <span class="nav-logo__mark">VBCA</span>
+        <span class="nav-logo__sub">Virginia Baseball Coaches Association</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link nav-link--active" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/membership/membership.html" class="nav-link">Membership</a>
+          </li>
+          <li class="nav-item nav-item--has-dropdown">
+            <a href="pages/events-calendar/events-calendar.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Events</a>
+            <ul class="nav-dropdown" role="list">
+              <li class="nav-dropdown__item"><a href="pages/convention/convention.html" class="nav-dropdown__link">Annual Convention</a></li>
+              <li class="nav-dropdown__item"><a href="pages/virginia-all-star-game/virginia-all-star-game.html" class="nav-dropdown__link">Virginia All-Star Game</a></li>
+              <li class="nav-dropdown__item"><a href="pages/events-calendar/events-calendar.html" class="nav-dropdown__link">Events Calendar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-dropdown">
+            <a href="pages/resource-library/resource-library.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Resources</a>
+            <ul class="nav-dropdown" role="list">
+              <li class="nav-dropdown__item"><a href="pages/job-board/job-board.html" class="nav-dropdown__link">Job Board</a></li>
+              <li class="nav-dropdown__item"><a href="pages/resource-library/resource-library.html" class="nav-dropdown__link">Resource Library</a></li>
+              <li class="nav-dropdown__item"><a href="pages/news/news.html" class="nav-dropdown__link">News</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--has-dropdown">
+            <a href="pages/about/about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">About</a>
+            <ul class="nav-dropdown" role="list">
+              <li class="nav-dropdown__item"><a href="pages/about/about.html" class="nav-dropdown__link">About Us</a></li>
+              <li class="nav-dropdown__item"><a href="pages/board-of-directors/board-of-directors.html" class="nav-dropdown__link">Board of Directors</a></li>
+              <li class="nav-dropdown__item"><a href="pages/hall-of-fame/hall-of-fame.html" class="nav-dropdown__link">Hall of Fame</a></li>
+              <li class="nav-dropdown__item"><a href="pages/scholarships/scholarships.html" class="nav-dropdown__link">Scholarships</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="pages/contact/contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-util">
+        <a href="pages/member-portal/member-portal.html" class="nav-util__login">Member Login</a>
+        <a href="https://givebutter.com/9XMk3k" class="btn-nav-cta" target="_blank" rel="noopener noreferrer">Join Now</a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-overlay">
+        <span class="nav-hamburger__line"></span>
+        <span class="nav-hamburger__line"></span>
+        <span class="nav-hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+  <!-- nav-overlay is injected by nav.js — do not include as a static HTML element -->
+
+  <main id="main-content">
+
+    <!-- =====================================================
+         SECTION 1: HERO
+         Full-bleed navy CSS placeholder (client photo pending)
+         Motion Moment 1: hero-entrance animation on .hero__content
+         ===================================================== -->
+    <section class="hero hero--home" aria-label="Hero">
+      <!-- CSS placeholder background — priority replacement with client action photo -->
+      <div class="hero__bg hero__bg--placeholder" aria-hidden="true"></div>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__eyebrow">The Virginia Baseball Coaches Association</span>
+          <h1 class="hero__headline">Virginia Baseball Coaches. One Community. One Commonwealth.</h1>
+          <p class="hero__subhead">Coaching is one of the most demanding, most important jobs in the game. You deserve a professional home that matches your commitment.</p>
+          <div class="hero__ctas">
+            <a href="https://givebutter.com/9XMk3k" class="btn-primary" target="_blank" rel="noopener noreferrer">Join the VBCA — Starting at $25</a>
+            <a href="pages/membership/membership.html" class="btn-secondary btn-secondary--light">Learn About Membership</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2: SOCIAL PROOF STRIP
+         Stat callouts — eight years serving Virginia baseball
+         ===================================================== -->
+    <section class="section section-stats section--navy section-animate" aria-label="By the numbers">
+      <div class="container">
+        <h2 class="section-stats__headline visually-hidden">Eight Years Serving Virginia Baseball</h2>
+        <div class="stat-grid">
+          <div class="stat-callout section-animate-child">
+            <span class="stat-callout__number">37</span>
+            <span class="stat-callout__label">Hall of Fame Inductees</span>
+          </div>
+          <div class="stat-callout section-animate-child">
+            <span class="stat-callout__number">4</span>
+            <span class="stat-callout__label">Induction Classes</span>
+          </div>
+          <div class="stat-callout section-animate-child">
+            <span class="stat-callout__number">$25</span>
+            <span class="stat-callout__label">Membership Starting At</span>
+          </div>
+          <div class="stat-callout section-animate-child">
+            <span class="stat-callout__number stat-callout__number--small">All</span>
+            <span class="stat-callout__label">Levels &amp; Regions, Statewide</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 3: MISSION PILLARS STRIP
+         Visual Boldness Commitment 2: Dual-surface split
+         Navy left half / Cream right half
+         ===================================================== -->
+    <section class="section section-mission section-animate" aria-labelledby="mission-heading">
+      <div class="section-mission__split" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-mission__inner">
+          <div class="section-mission__header">
+            <span class="section-label">Our Mission</span>
+            <h2 class="section-mission__headline" id="mission-heading">Unite. Educate. Develop. Support.</h2>
+          </div>
+          <div class="section-mission__pillars">
+            <div class="mission-pillar mission-pillar--navy section-animate-child">
+              <div class="mission-pillar__icon" aria-hidden="true">
+                <!-- Unite icon: community/people group -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="26" cy="14" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <path d="M4 32c0-5.523 4.477-10 10-10h2M36 32c0-5.523-4.477-10-10-10h-2M20 32c0-3.866-3.134-7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="20" cy="18" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <h3 class="mission-pillar__title">Unite</h3>
+              <p class="mission-pillar__text">Connecting coaches across every region of the commonwealth — from Appalachia to the Northern Virginia suburbs — into one statewide professional community.</p>
+            </div>
+            <div class="mission-pillar mission-pillar--navy section-animate-child">
+              <div class="mission-pillar__icon" aria-hidden="true">
+                <!-- Educate icon: graduation cap / open book -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 8L4 16l16 8 16-8-16-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                  <path d="M12 20v8c0 2.209 3.582 4 8 4s8-1.791 8-4v-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                  <path d="M36 16v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="mission-pillar__title">Educate</h3>
+              <p class="mission-pillar__text">Clinics, conventions, Zoom calls, and peer learning that keep you current, competitive, and sharp. The game evolves. Your coaching should too.</p>
+            </div>
+            <div class="mission-pillar mission-pillar--cream section-animate-child">
+              <div class="mission-pillar__icon" aria-hidden="true">
+                <!-- Develop icon: upward growth arrow -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 34V10M20 10l-8 8M20 10l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 28h4v6H8zM18 22h4v12h-4zM28 16h4v18h-4z" fill="currentColor" opacity="0.3"/>
+                </svg>
+              </div>
+              <h3 class="mission-pillar__title">Develop</h3>
+              <p class="mission-pillar__text">Development doesn't stop when your playing days end. VBCA exists to help coaches grow their craft, their careers, and their programs.</p>
+            </div>
+            <div class="mission-pillar mission-pillar--cream section-animate-child">
+              <div class="mission-pillar__icon" aria-hidden="true">
+                <!-- Support icon: shield / handshake -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 4l14 5v10c0 8.284-6.268 15.542-14 17C12.268 34.542 6 27.284 6 19V9l14-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                  <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="mission-pillar__title">Support</h3>
+              <p class="mission-pillar__text">Resources, recognition, and a network of coaches who understand exactly what this job demands — because they live it too.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4: PROBLEM STRIP (SB7 — Character + Problem)
+         Cream background, body copy + stat callout visual break
+         ===================================================== -->
+    <section class="section section-problem section--cream section-animate" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="section-problem__inner">
+          <div class="section-problem__copy">
+            <span class="section-label">The Reality of Coaching in Virginia</span>
+            <h2 class="section-problem__headline" id="problem-heading">Coaching Is a Calling. It Shouldn't Feel Like Isolation.</h2>
+            <p>You give everything to your program — your players, your community, your craft. But most days, you're figuring things out alone. No statewide network. No professional community. No recognized home for Virginia baseball coaches.</p>
+            <p>The feeling isn't failure. It's the result of a gap that's existed in Virginia baseball for too long: coaches who dedicate their careers to the game but have no collective voice, no peer learning, and no institution that fights for their recognition.</p>
+          </div>
+          <!-- Visual break: stat callout per copywriter spec -->
+          <div class="section-problem__stat-break">
+            <blockquote class="problem-stat-callout">
+              <p class="problem-stat-callout__text">Virginia has hundreds of high school and collegiate programs. Until 2018, coaches had nowhere to gather statewide.</p>
+            </blockquote>
+          </div>
+          <div class="section-problem__cta-row">
+            <p class="section-problem__close">Virginia baseball coaches have earned a professional organization that treats coaching as the serious profession it is — not just a volunteer role or a seasonal obligation.</p>
+            <a href="https://givebutter.com/9XMk3k" class="btn-primary" target="_blank" rel="noopener noreferrer">Join the VBCA Today</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5: MEMBERSHIP PREVIEW
+         3-card pricing grid (cream background, white cards)
+         ===================================================== -->
+    <section class="section section-membership section--white section-animate" aria-labelledby="membership-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Choose Your Membership</span>
+          <h2 id="membership-heading">One Community. Three Ways In.</h2>
+        </div>
+        <div class="membership-cards">
+          <!-- Card 1: Individual Coach — $25/yr -->
+          <article class="card membership-card section-animate-child" aria-label="Individual Coach membership">
+            <div class="card__body">
+              <span class="card__label">Individual</span>
+              <h3 class="membership-card__tier">Individual Coach</h3>
+              <div class="membership-card__price">
+                <span class="membership-card__amount">$25</span>
+                <span class="membership-card__period">/ year</span>
+              </div>
+              <p class="membership-card__who">One coach, any level, any school.</p>
+              <ul class="membership-card__benefits" aria-label="Individual membership benefits">
+                <li>Annual Convention access</li>
+                <li>Statewide coach network</li>
+                <li>Job board access</li>
+                <li>Resource library <span class="membership-card__tag">(launching Phase 2)</span></li>
+                <li>Hall of Fame eligibility</li>
+                <li>Zoom clinics</li>
+              </ul>
+              <a href="https://givebutter.com/9XMk3k" class="btn-primary" target="_blank" rel="noopener noreferrer">Join as Individual Coach</a>
+            </div>
+          </article>
+          <!-- Card 2: 5-Coach Staff Package — $100/yr (featured) -->
+          <article class="card membership-card card--featured section-animate-child" aria-label="5-Coach Staff Package membership">
+            <div class="membership-card__featured-label">Most Popular for Teams</div>
+            <div class="card__body">
+              <span class="card__label">Staff</span>
+              <h3 class="membership-card__tier">5-Coach Staff Package</h3>
+              <div class="membership-card__price">
+                <span class="membership-card__amount">$100</span>
+                <span class="membership-card__period">/ year</span>
+              </div>
+              <p class="membership-card__who">Up to 5 coaches from the same school or organization.</p>
+              <ul class="membership-card__benefits" aria-label="Staff membership benefits">
+                <li>All individual benefits for each member of your staff</li>
+                <li>Simplified group registration through Givebutter</li>
+                <li>10% of your fee funds the VBCA Scholarship Program</li>
+              </ul>
+              <a href="https://givebutter.com/7mC6Df" class="btn-primary" target="_blank" rel="noopener noreferrer">Register Your Staff</a>
+            </div>
+          </article>
+          <!-- Card 3: VBCA x ABCA Joint — $75/yr -->
+          <article class="card membership-card section-animate-child" aria-label="VBCA x ABCA Joint Membership">
+            <div class="card__body">
+              <span class="card__label">Joint</span>
+              <h3 class="membership-card__tier">VBCA &times; ABCA Joint</h3>
+              <div class="membership-card__price">
+                <span class="membership-card__amount">$75</span>
+                <span class="membership-card__period">/ year</span>
+              </div>
+              <p class="membership-card__who">Coaches who want statewide AND national access.</p>
+              <ul class="membership-card__benefits" aria-label="VBCA x ABCA Joint membership benefits">
+                <li>Full VBCA membership benefits</li>
+                <li>Full American Baseball Coaches Association (ABCA) national membership</li>
+                <li>Access to ABCA resources, events, and national coaching community</li>
+                <li>Dual-membership for one discounted rate</li>
+              </ul>
+              <a href="https://abca.org/ABCA-VBCA" class="btn-secondary" target="_blank" rel="noopener noreferrer">Get Dual Access</a>
+            </div>
+          </article>
+        </div>
+        <div class="membership-compare-link text-center">
+          <a href="pages/membership/membership.html" class="membership-compare-link__anchor">Compare All Membership Benefits &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6: FEATURED EVENTS
+         3-card event grid
+         ===================================================== -->
+    <section class="section section-events section--cream section-animate" aria-labelledby="events-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Upcoming Events</span>
+          <h2 id="events-heading">Mark Your Calendar</h2>
+        </div>
+        <div class="card-grid card-grid--3">
+          <!-- Event Card 1: Annual Convention -->
+          <article class="card event-card section-animate-child" aria-label="Annual Convention event">
+            <div class="event-card__image-wrap">
+              <img src="https://vbca.org/wp-content/uploads/2026/01/20251203_VBCA_Convention_OM_0027-scaled.jpg" alt="Virginia Baseball Coaches Association Annual Convention — coaches gathered at UVA Darden School of Business" width="400" height="225" loading="lazy" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__label">Convention</span>
+              <h3 class="card__title">Annual Convention</h3>
+              <p class="event-card__meta">
+                <span class="event-card__date">December 2026 <em>(exact dates TBD)</em></span><br>
+                <span class="event-card__location">UVA Darden School of Business, Charlottesville, VA</span>
+              </p>
+              <p class="card__text">The premier gathering of Virginia baseball coaches. Clinics, speakers, the Hall of Fame induction ceremony, and a night among peers who understand the profession.</p>
+              <a href="pages/convention/convention.html" class="card__cta">Convention Details &rarr;</a>
+            </div>
+          </article>
+          <!-- Event Card 2: Virginia All-Star Game -->
+          <article class="card event-card section-animate-child" aria-label="Virginia All-Star Game event">
+            <div class="event-card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1651329006282-d20e78a0216e?w=400&h=225&fit=crop&q=85" alt="Baseball player at bat during a game — Virginia All-Star Game" width="400" height="225" loading="lazy" class="card__image">
+            </div>
+            <div class="card__body">
+              <span class="card__label">All-Star Game</span>
+              <h3 class="card__title">Virginia All-Star Game</h3>
+              <p class="event-card__meta">
+                <span class="event-card__date">2026 <em>(date TBD)</em></span><br>
+                <span class="event-card__location">Location TBD</span>
+              </p>
+              <p class="card__text">Virginia's top senior talent. Nominated by coaches, selected by region, competing on one stage. A flagship VBCA program.</p>
+              <a href="pages/virginia-all-star-game/virginia-all-star-game.html" class="card__cta">Learn About the Game &rarr;</a>
+            </div>
+          </article>
+          <!-- Event Card 3: Zoom Clinics — CSS placeholder image -->
+          <article class="card event-card section-animate-child" aria-label="VBCA Zoom Clinics">
+            <div class="event-card__image-wrap">
+              <div class="event-card__image-placeholder img-placeholder card__image" aria-hidden="true" role="presentation">
+                <span>Online Clinics</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <span class="card__label">Clinic</span>
+              <h3 class="card__title">Zoom Clinics</h3>
+              <p class="event-card__meta">
+                <span class="event-card__date">Ongoing throughout the year</span><br>
+                <span class="event-card__location">Online</span>
+              </p>
+              <p class="card__text">VBCA Zoom clinics bring expert coaching instruction directly to you — no travel required. VBCA members receive access.</p>
+              <a href="pages/events-calendar/events-calendar.html" class="card__cta">View All Events &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7: HALL OF FAME FEATURE
+         Visual Boldness 1: ghost numerals behind HOF content
+         Dark navy, gold text, texture overlay
+         ===================================================== -->
+    <section class="section section-hof section--navy section--textured section-animate hof-ghost-numeral" data-year="HOF" aria-labelledby="hof-heading">
+      <div class="container">
+        <div class="section-hof__inner">
+          <div class="section-hof__copy">
+            <span class="section-label section-label--gold">VBCA Hall of Fame</span>
+            <h2 class="section-hof__headline" id="hof-heading">Honoring the Coaches Who Made Virginia Baseball What It Is.</h2>
+            <p class="section-hof__body">Thirty-seven coaches. Four induction classes. Each one a career defined by the players they developed, the programs they built, and the communities they shaped. The VBCA Hall of Fame is Virginia baseball's most prestigious coaching recognition.</p>
+            <a href="pages/hall-of-fame/hall-of-fame.html" class="btn-gold">See All Inductees &rarr;</a>
+          </div>
+          <div class="section-hof__inductees">
+            <h3 class="section-hof__class-label">Class of 2025</h3>
+            <div class="hof-inductee-row">
+              <!-- HOF Inductee headshots from image-spec.md -->
+              <figure class="hof-inductee-card">
+                <img src="https://vbca.org/wp-content/uploads/2025/11/Blackley.jpg" alt="VBCA Hall of Fame inductee — Class of 2025" width="200" height="250" loading="lazy" class="hof-inductee-card__photo">
+                <figcaption class="hof-inductee-card__name">Class of 2025</figcaption>
+              </figure>
+              <figure class="hof-inductee-card">
+                <img src="https://vbca.org/wp-content/uploads/2025/10/1-1.jpg" alt="VBCA Hall of Fame inductee — Class of 2025" width="200" height="250" loading="lazy" class="hof-inductee-card__photo">
+                <figcaption class="hof-inductee-card__name">Class of 2025</figcaption>
+              </figure>
+              <!-- Needs Client Review: client to confirm which 2025 inductees to feature + supply names -->
+              <figure class="hof-inductee-card hof-inductee-card--placeholder">
+                <div class="hof-inductee-card__photo-placeholder img-placeholder img-placeholder--gold" aria-hidden="true" role="presentation">
+                  <span>Photo Pending</span>
+                </div>
+                <figcaption class="hof-inductee-card__name">Class of 2025</figcaption>
+              </figure>
+            </div>
+            <p class="section-hof__client-note"><!-- NEEDS CLIENT REVIEW: Featured inductee names and additional headshots — client to confirm which 2025 HOF inductees to prominently feature. --></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 8: HOW IT WORKS (SB7 — Plan)
+         3-step process strip, cream bg
+         ===================================================== -->
+    <section class="section section-steps section--cream section-animate" aria-labelledby="steps-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">How to Join</span>
+          <h2 id="steps-heading">Three Steps. One Community.</h2>
+        </div>
+        <div class="steps-row">
+          <div class="step-item section-animate-child">
+            <div class="step-item__number" aria-hidden="true">01</div>
+            <h3 class="step-item__title">Choose Your Membership Tier</h3>
+            <p class="step-item__text">Individual coach, staff package, or VBCA &times; ABCA joint membership — starting at $25 per year.</p>
+          </div>
+          <div class="step-item__divider" aria-hidden="true"></div>
+          <div class="step-item section-animate-child">
+            <div class="step-item__number" aria-hidden="true">02</div>
+            <h3 class="step-item__title">Complete Payment via Givebutter</h3>
+            <p class="step-item__text">Secure payment through Givebutter, the nonprofit platform trusted by organizations like ours. Takes less than two minutes.</p>
+          </div>
+          <div class="step-item__divider" aria-hidden="true"></div>
+          <div class="step-item section-animate-child">
+            <div class="step-item__number" aria-hidden="true">03</div>
+            <h3 class="step-item__title">Access VBCA Benefits Immediately</h3>
+            <p class="step-item__text">Convention registration, job board access, statewide network, and the resources that come with being part of Virginia baseball's professional community.</p>
+          </div>
+        </div>
+        <div class="text-center steps-cta">
+          <a href="https://givebutter.com/9XMk3k" class="btn-primary" target="_blank" rel="noopener noreferrer">Join Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 9: TRANSFORMATION / SUCCESS VISION (SB7)
+         Visual Boldness 3: crimson background surface — unexpected inversion
+         Tim Merry quote as typographic moment
+         ===================================================== -->
+    <section class="section section-transformation section--crimson section-animate" aria-labelledby="transformation-heading">
+      <div class="container">
+        <div class="section-transformation__inner">
+          <div class="section-transformation__copy">
+            <span class="section-label section-label--gold">The VBCA Difference</span>
+            <h2 class="section-transformation__headline" id="transformation-heading">From Isolated to Indispensable.</h2>
+            <p>Imagine showing up to the Annual Convention at UVA Darden — a room full of coaches who have faced the same challenges, built the same kinds of programs, and understand what it means to give this game everything you have. Coaches you've heard of. Coaches who will know your name.</p>
+            <p>That's what membership in the Virginia Baseball Coaches Association looks like in practice. Not a newsletter or a login portal — a community. A professional home for every coach in the commonwealth who believes that Virginia baseball should be as strong as the coaches who build it.</p>
+            <a href="https://givebutter.com/9XMk3k" class="btn-secondary btn-secondary--light" target="_blank" rel="noopener noreferrer">Join the Community</a>
+          </div>
+          <div class="section-transformation__quote">
+            <figure class="pull-quote pull-quote--large">
+              <blockquote>
+                <p class="pull-quote__text">"Better coaches create better players and, more importantly, better people."</p>
+              </blockquote>
+              <figcaption class="pull-quote__attribution">
+                Tim Merry, Founder &amp; Executive Director, VBCA
+              </figcaption>
+            </figure>
+            <div class="section-transformation__image">
+              <img src="https://images.unsplash.com/photo-1620740528428-59fb523a484a?w=800&h=450&fit=crop&q=85" alt="Leather baseball mitt — symbol of the craft and commitment of Virginia's coaching community" width="800" height="450" loading="lazy" class="transformation-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 10: SPONSORS STRIP
+         Placeholder carousel — client logos pending
+         ===================================================== -->
+    <section class="section section-sponsors section--white section-animate" aria-labelledby="sponsors-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Proud Partners of Virginia Baseball</span>
+          <h2 id="sponsors-heading">Organizations That Believe in This Mission</h2>
+        </div>
+        <!-- Sponsor carousel placeholder — page-specific JS (sponsors carousel) handled by developer agent -->
+        <div class="sponsors-carousel-placeholder" role="region" aria-label="Current VBCA sponsors">
+          <div class="sponsor-logo-placeholder">Sponsor Logo</div>
+          <div class="sponsor-logo-placeholder">Sponsor Logo</div>
+          <div class="sponsor-logo-placeholder">Sponsor Logo</div>
+          <div class="sponsor-logo-placeholder">Sponsor Logo</div>
+          <div class="sponsor-logo-placeholder">Sponsor Logo</div>
+          <!-- NEEDS CLIENT REVIEW: Sponsor logos, names, and URLs — all carousel content requires client input before go-live -->
+        </div>
+        <div class="text-center sponsors-cta">
+          <a href="pages/become-a-sponsor/become-a-sponsor.html" class="btn-secondary">Become a Sponsor &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 11: NEWSLETTER SIGNUP
+         Form section — cream background
+         ===================================================== -->
+    <section class="section section-newsletter section--cream section-animate" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="section-newsletter__inner">
+          <div class="section-newsletter__copy">
+            <span class="section-label">Stay in the Loop</span>
+            <h2 id="newsletter-heading">Clinics, Events, and Coaching Resources — Delivered.</h2>
+            <p>Get VBCA announcements, event reminders, and coaching resources sent directly to you. No noise. Just Virginia baseball.</p>
+          </div>
+          <div class="section-newsletter__form">
+            <!-- Form: no functional submit in Phase 1; structure present for Phase 2 integration -->
+            <form class="newsletter-form" action="#" method="post" novalidate aria-label="Newsletter signup form">
+              <div class="newsletter-form__row">
+                <div class="form-group">
+                  <label class="form-label" for="nl-first-name">First Name</label>
+                  <input class="form-input" type="text" id="nl-first-name" name="first_name" autocomplete="given-name" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="nl-last-name">Last Name</label>
+                  <input class="form-input" type="text" id="nl-last-name" name="last_name" autocomplete="family-name" placeholder="Last name" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nl-school">School / Organization</label>
+                <input class="form-input" type="text" id="nl-school" name="school" placeholder="Your school or organization">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nl-email">Email Address <span aria-hidden="true">*</span></label>
+                <input class="form-input" type="email" id="nl-email" name="email" autocomplete="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nl-phone">Phone <span class="form-label__optional">(optional — for SMS updates)</span></label>
+                <input class="form-input" type="tel" id="nl-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
+              </div>
+              <button type="submit" class="btn-primary">Sign Me Up</button>
+              <p class="newsletter-form__privacy">We respect your information. Unsubscribe anytime. Read our <a href="pages/privacy-policy/privacy-policy.html" class="newsletter-form__privacy-link">Privacy Policy</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 12: CLOSING CTA
+         Dark navy — direct call to action
+         ===================================================== -->
+    <section class="section section-closing-cta section--navy section--textured section-animate" aria-labelledby="closing-cta-heading">
+      <div class="container text-center">
+        <span class="section-label section-label--gold">Ready to Join?</span>
+        <h2 class="section-closing-cta__headline" id="closing-cta-heading">Virginia Baseball Has a Professional Home. You Should Too.</h2>
+        <p class="section-closing-cta__body">Join the Virginia Baseball Coaches Association and become part of the organization that defines Virginia baseball.</p>
+        <div class="section-closing-cta__btns">
+          <a href="https://givebutter.com/9XMk3k" class="btn-primary" target="_blank" rel="noopener noreferrer">Join the VBCA — Starting at $25</a>
+          <a href="pages/membership/membership.html" class="btn-secondary btn-secondary--light">Compare Membership Options</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       SITE FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <svg class="footer-va-outline" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+      <polygon fill="white" fill-opacity="0.04" points="
+        0,60 40,55 80,50 120,52 160,48 200,45 240,50 260,46 300,44 340,46 380,48
+        420,44 460,46 500,48 530,50 560,55 590,52 620,48 650,52 670,58 690,65
+        710,75 730,90 750,105 760,120 770,130 780,118 790,105 800,100
+        800,200 780,210 760,205 740,215 720,220 700,218 680,225 660,230
+        640,228 620,235 600,240 580,235 560,242 540,238 520,245 500,240
+        480,235 460,230 440,232 420,228 400,235 380,230 360,225 340,220
+        320,215 300,210 280,215 260,208 240,212 220,205 200,200 180,195
+        160,198 140,192 120,188 100,182 80,178 60,175 40,170 20,165 0,160
+      " />
+    </svg>
+    <div class="site-footer__inner">
+      <div class="site-footer__cols">
+        <div class="site-footer__col site-footer__col--brand">
+          <a href="index.html" class="site-footer__logo" aria-label="Virginia Baseball Coaches Association — Home">
+            <span class="nav-logo__mark">VBCA</span>
+          </a>
+          <p class="site-footer__tagline">Unite. Educate. Develop. Support.</p>
+          <p class="site-footer__contact"><a href="mailto:tmerry@vbca.org" class="site-footer__link">tmerry@vbca.org</a></p>
+          <div class="site-footer__social">
+            <p class="site-footer__social-label">Follow VBCA</p>
+            <a href="#" class="site-footer__social-link" aria-label="VBCA on X (Twitter)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.261 5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="site-footer__social-link" aria-label="VBCA on Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="site-footer__social-link" aria-label="VBCA on Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="site-footer__col">
+          <h5 class="site-footer__heading">Membership</h5>
+          <ul class="site-footer__list" role="list">
+            <li class="site-footer__list-item"><a href="https://givebutter.com/9XMk3k" class="site-footer__link" target="_blank" rel="noopener noreferrer">Join the VBCA</a></li>
+            <li class="site-footer__list-item"><a href="pages/membership/membership.html" class="site-footer__link">Membership Tiers</a></li>
+            <li class="site-footer__list-item"><a href="pages/member-portal/member-portal.html" class="site-footer__link">Member Portal</a></li>
+            <li class="site-footer__list-item"><a href="https://abca.org/ABCA-VBCA" class="site-footer__link" target="_blank" rel="noopener noreferrer">VBCA &times; ABCA Joint</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h5 class="site-footer__heading">Programs</h5>
+          <ul class="site-footer__list" role="list">
+            <li class="site-footer__list-item"><a href="pages/convention/convention.html" class="site-footer__link">Annual Convention</a></li>
+            <li class="site-footer__list-item"><a href="pages/virginia-all-star-game/virginia-all-star-game.html" class="site-footer__link">Virginia All-Star Game</a></li>
+            <li class="site-footer__list-item"><a href="pages/hall-of-fame/hall-of-fame.html" class="site-footer__link">Hall of Fame</a></li>
+            <li class="site-footer__list-item"><a href="pages/scholarships/scholarships.html" class="site-footer__link">Scholarships</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h5 class="site-footer__heading">Resources</h5>
+          <ul class="site-footer__list" role="list">
+            <li class="site-footer__list-item"><a href="pages/events-calendar/events-calendar.html" class="site-footer__link">Events Calendar</a></li>
+            <li class="site-footer__list-item"><a href="pages/job-board/job-board.html" class="site-footer__link">Job Board</a></li>
+            <li class="site-footer__list-item"><a href="pages/resource-library/resource-library.html" class="site-footer__link">Resource Library</a></li>
+            <li class="site-footer__list-item"><a href="pages/news/news.html" class="site-footer__link">News</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h5 class="site-footer__heading">Organization</h5>
+          <ul class="site-footer__list" role="list">
+            <li class="site-footer__list-item"><a href="pages/about/about.html" class="site-footer__link">About Us</a></li>
+            <li class="site-footer__list-item"><a href="pages/board-of-directors/board-of-directors.html" class="site-footer__link">Board of Directors</a></li>
+            <li class="site-footer__list-item"><a href="pages/sponsors/sponsors.html" class="site-footer__link">Sponsors &amp; Partners</a></li>
+            <li class="site-footer__list-item"><a href="pages/contact/contact.html" class="site-footer__link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <p class="site-footer__legal-text">
+          &copy; <span id="copyright-year"></span> Virginia Baseball Coaches Association. All rights reserved. 501(c)3 Nonprofit Organization.
+        </p>
+        <div class="site-footer__legal-links">
+          <a href="pages/privacy-policy/privacy-policy.html" class="site-footer__legal-link">Privacy Policy &amp; Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- nav.js — mobile toggle, IntersectionObserver, copyright year -->
+  <script src="global/nav.js" defer></script>
+  <script src="global/carousel.js" defer></script>
+
+</body>
+</html>

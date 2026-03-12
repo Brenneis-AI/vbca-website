@@ -1,0 +1,470 @@
+/*
+ * sponsors.css
+ * Virginia Baseball Coaches Association — Sponsors & Partners Page
+ * UI/UX Designer output — 2026-03-11
+ *
+ * Imports: ../../global/brand.css (via global.css)
+ * Mobile-first — min-width media queries only
+ * No hardcoded colors — CSS vars only
+ * No inline styles — no style blocks in HTML
+ */
+
+/* ============================================================
+   SECTION UTILITIES
+   ============================================================ */
+
+.section-cream {
+  background-color: var(--color-surface-cream);
+}
+
+.section-dark {
+  background-color: var(--color-primary);
+  background-image: var(--texture-infield);
+}
+
+/* ============================================================
+   SECTION EYEBROW LABEL
+   ============================================================ */
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--label-weight);
+  color: var(--label-color);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-5);
+  line-height: 1;
+}
+
+.section-eyebrow--light {
+  color: var(--color-gold);
+  border-left-color: var(--color-gold-dark);
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--btn-primary-bg-hover);
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.sp-header {
+  padding-top: var(--space-11);
+  padding-bottom: var(--space-9);
+}
+
+.sp-header__inner {
+  max-width: 700px;
+}
+
+.sp-header__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+}
+
+.sp-header__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.80);
+  margin: 0;
+}
+
+/* ============================================================
+   SPONSOR TIERS
+   ============================================================ */
+
+.sp-tier {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.sp-tier__label-row {
+  margin-bottom: var(--space-4);
+}
+
+.sp-tier__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.sp-tier__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-7);
+  background-color: var(--color-white);
+}
+
+.sp-tier__section {
+  margin-bottom: var(--space-9);
+}
+
+.sp-tier__level {
+  font-family: var(--font-body);
+  font-size: var(--label-font-size);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+  border-left: var(--label-accent-border);
+  padding-left: var(--label-padding-left);
+  margin-bottom: var(--space-5);
+  line-height: 1;
+}
+
+.sp-tier__attribution {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   SPONSOR LOGOS GRIDS
+   ============================================================ */
+
+.sp-logos-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+/* Platinum: full cards with description */
+.sp-logos-grid--platinum {
+  grid-template-columns: 1fr;
+}
+
+/* Gold: compact cards */
+.sp-logos-grid--gold {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Silver/Community: minimal logo boxes */
+.sp-logos-grid--silver {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ============================================================
+   SPONSOR LOGO CARD
+   ============================================================ */
+
+.sp-logo-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.sp-logo-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Logo placeholder — dashed border, cream background (as specified) */
+.sp-logo-card__placeholder {
+  width: 100%;
+  height: 120px;
+  border: 2px dashed var(--color-border);
+  background-color: var(--color-surface-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.sp-logo-card__placeholder--compact {
+  height: 80px;
+}
+
+.sp-logo-card__placeholder--minimal {
+  height: 80px;
+  border-radius: var(--radius-sm);
+}
+
+.sp-logo-card__placeholder-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Card info area */
+.sp-logo-card__info {
+  padding: var(--space-4) var(--space-5);
+}
+
+.sp-logo-card__name {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.sp-logo-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
+  color: rgba(17, 24, 39, 0.70);
+  margin-bottom: var(--space-3);
+}
+
+.sp-logo-card__visit-placeholder {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  /* Placeholder — will become <a> once sponsor URLs are provided */
+}
+
+/* Compact card (gold tier) */
+.sp-logo-card--compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.sp-logo-card--compact .sp-logo-card__placeholder--compact {
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.sp-logo-card--compact .sp-logo-card__name {
+  margin: 0;
+}
+
+/* Minimal card (silver/community tier) */
+.sp-logo-card--minimal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  min-height: 90px;
+}
+
+.sp-logo-card--minimal .sp-logo-card__placeholder--minimal {
+  width: 100%;
+  margin: 0;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   ABCA PARTNERSHIP
+   ============================================================ */
+
+.sp-abca {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.sp-abca__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.sp-abca__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-white);
+  margin-bottom: var(--space-5);
+}
+
+.sp-abca__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: rgba(255, 255, 255, 0.80);
+  margin-bottom: var(--space-6);
+}
+
+.sp-abca__cta {
+  display: inline-block;
+}
+
+/* ABCA logo placeholder */
+.sp-abca__logo-area {
+  display: flex;
+  justify-content: center;
+}
+
+.sp-abca__logo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 120px;
+  border: 2px dashed rgba(255, 255, 255, 0.20);
+  border-radius: var(--radius);
+  background-color: rgba(255, 255, 255, 0.05);
+  /* CLIENT TO REPLACE: ABCA logo — confirm usage rights with client */
+}
+
+.sp-abca__logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: rgba(255, 255, 255, 0.50);
+  letter-spacing: var(--tracking-snug);
+}
+
+.sp-abca__logo-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.30);
+  text-align: center;
+  padding: 0 var(--space-4);
+  margin-top: var(--space-2);
+  line-height: var(--leading-body);
+}
+
+/* ============================================================
+   BECOME A SPONSOR CTA
+   ============================================================ */
+
+.sp-become {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.sp-become__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sp-become__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sp-become__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ============================================================
+   DESKTOP UPGRADES (min-width: 769px)
+   ============================================================ */
+
+@media (min-width: 769px) {
+
+  .sp-logos-grid--platinum {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sp-logos-grid--gold {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .sp-logos-grid--silver {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sp-abca__inner {
+    grid-template-columns: 1fr auto;
+    gap: var(--space-10);
+  }
+
+  .sp-become__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-9);
+  }
+
+  .sp-become__text {
+    flex: 1;
+  }
+
+  .sp-become__action {
+    flex-shrink: 0;
+  }
+
+  .sp-logo-card__placeholder {
+    height: 140px;
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOP (min-width: 1100px)
+   ============================================================ */
+
+@media (min-width: 1100px) {
+
+  .sp-logos-grid--silver {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
