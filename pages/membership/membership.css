@@ -266,7 +266,7 @@
 @media (min-width: 769px) {
   .membership-tiers__grid {
     grid-template-columns: repeat(3, 1fr);
-    align-items: start;
+    align-items: stretch;
   }
 }
 
@@ -374,6 +374,7 @@
 .tier-card__cta {
   width: 100%;
   text-align: center;
+  margin-top: auto;
 }
 
 /* ============================================================

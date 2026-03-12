@@ -29,8 +29,9 @@
    ============================================================ */
 
 .about-hero {
-  background: linear-gradient(160deg, #092678 0%, #0a1a4a 100%);
-  background-image: var(--texture-infield);
+  background-color: #092678;
+  background-image: var(--texture-infield),
+                    linear-gradient(160deg, #092678 0%, #0a1a4a 100%);
   padding: var(--space-11) var(--container-padding) var(--space-9);
   min-height: 380px;
   display: flex;

@@ -518,8 +518,12 @@
     flex-shrink: 0;
   }
 
+  .ec-past__item {
+    grid-template-columns: 80px 1fr;
+  }
+
   .ec-past__item-year {
-    font-size: 48px;
+    font-size: var(--text-h3);
     min-width: 80px;
   }
 }

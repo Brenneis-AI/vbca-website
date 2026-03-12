@@ -47,7 +47,7 @@
 
 .contact-header__direct-email {
   font-family: var(--font-display);
-  font-size: var(--text-h2);
+  font-size: clamp(28px, 5vw, 48px);
   font-weight: var(--weight-black);
   letter-spacing: var(--tracking-snug);
   color: var(--color-gold);

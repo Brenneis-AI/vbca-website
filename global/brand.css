@@ -14,7 +14,7 @@
    Archivo Black (900) — display headers
    Source Sans Pro (400, 600, 700) — body text
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black:wght@900&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
 /* ============================================================
    ROOT / MOBILE-FIRST DEFAULTS
@@ -140,7 +140,7 @@
      TYPOGRAPHY — FONT FAMILIES
      ---------------------------------------------------------- */
 
-  --font-display:            'Archivo Black', 'Impact', 'Arial Black', sans-serif;
+  --font-display:            'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   --font-body:               'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 
   /* ----------------------------------------------------------
@@ -185,8 +185,8 @@
      TYPOGRAPHY — LETTER SPACING
      ---------------------------------------------------------- */
 
-  --tracking-tight:          -0.02em;   /* H1 display */
-  --tracking-snug:           -0.01em;   /* H2 display */
+  --tracking-tight:          -0.01em;   /* H1 display */
+  --tracking-snug:           0em;       /* H2 display */
   --tracking-normal:         0;
   --tracking-wide:           0.04em;    /* Nav links */
   --tracking-wider:          0.06em;    /* Buttons */
@@ -200,7 +200,7 @@
   --weight-regular:          400;
   --weight-semibold:         600;
   --weight-bold:             700;
-  --weight-black:            900;
+  --weight-black:            800;
 
   /* ----------------------------------------------------------
      SPACING SCALE (8px base)
@@ -359,7 +359,7 @@
      Large ghost year rendered behind inductee grids
      ---------------------------------------------------------- */
 
-  --hof-ghost-size:          120px;       /* mobile */
+  --hof-ghost-size:          160px;       /* mobile */
   --hof-ghost-color:         rgba(13, 34, 64, 0.06);
 
 }
@@ -393,7 +393,7 @@
     --text-button:             15px;
 
     /* HOF ghost numeral — desktop */
-    --hof-ghost-size:          200px;
+    --hof-ghost-size:          260px;
 
     /* Nav height */
     --nav-height:              var(--nav-height-desktop);

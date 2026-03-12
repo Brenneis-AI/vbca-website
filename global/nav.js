@@ -192,24 +192,57 @@
 
   /* ============================================================
      HERO SCROLL BEHAVIOUR
-     On pages with .site-header--hero, transitions from transparent
-     to white background after scrolling 60px
+     On DOMContentLoaded, detect if a hero element exists on the page.
+     If so, apply site-header--hero immediately (transparent, white text).
+     Scroll listener transitions to site-header--scrolled after 60px.
+     On non-hero pages, apply site-header--scrolled immediately.
      ============================================================ */
 
-  if (siteHeader && siteHeader.classList.contains('site-header--hero')) {
-    var SCROLL_THRESHOLD = 60;
+  var SCROLL_THRESHOLD = 60;
+  var HERO_SELECTOR = [
+    '.hero',
+    '.about-hero',
+    '.membership-hero',
+    '.rl-hero',
+    '.contact-header',
+    '.ec-header',
+    '.convention-hero',
+    '.allstar-hero',
+    '.hof-hero',
+    '.sponsors-hero',
+    '.board-hero',
+    '.scholarships-hero',
+    '.job-board-hero',
+    '.news-hero',
+    '.privacy-hero',
+    '.member-portal-hero',
+    '.become-sponsor-hero'
+  ].join(', ');
 
-    function updateHeaderOnScroll() {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        siteHeader.classList.add('site-header--scrolled');
-      } else {
-        siteHeader.classList.remove('site-header--scrolled');
-      }
+  function applyHeroState() {
+    if (!siteHeader) { return; }
+    var heroEl = document.querySelector(HERO_SELECTOR);
+    if (heroEl) {
+      siteHeader.classList.add('site-header--hero');
+      updateHeaderOnScroll();
+      window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+    } else {
+      siteHeader.classList.add('site-header--scrolled');
     }
+  }
 
-    window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
-    // Run on load in case page is refreshed mid-scroll
-    updateHeaderOnScroll();
+  function updateHeaderOnScroll() {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      siteHeader.classList.add('site-header--scrolled');
+    } else {
+      siteHeader.classList.remove('site-header--scrolled');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyHeroState);
+  } else {
+    applyHeroState();
   }
 
   /* ============================================================
@@ -257,5 +290,29 @@
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  /* ============================================================
+     ACTIVE NAV LINK
+     Compares current pathname against each .nav-link href.
+     Applies .nav-link--active to the matching link.
+     ============================================================ */
+
+  var navLinks = document.querySelectorAll('.nav-link');
+  var currentPath = window.location.pathname;
+
+  navLinks.forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (!href) { return; }
+    // Normalize href: strip leading path components, keep page slug
+    // e.g. "../../pages/about/about.html" → "about"
+    // e.g. "pages/membership/membership.html" → "membership"
+    var slug = href
+      .replace(/^.*\/pages\//, '')   // remove everything up to /pages/
+      .replace(/\/[^/]+\.html$/, '') // remove /pagename.html
+      .replace(/\.html$/, '');       // remove .html if no folder
+    if (slug && currentPath.indexOf('/' + slug + '/') !== -1) {
+      link.classList.add('nav-link--active');
+    }
+  });
 
 })();
