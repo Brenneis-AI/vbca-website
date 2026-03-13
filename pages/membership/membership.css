@@ -671,13 +671,13 @@
    MEMBERSHIP FAQ
    ============================================================ */
 .membership-faq {
-  padding: var(--section-padding-y, 5rem) 0;
+  padding: var(--section-padding) 0;
   background: var(--color-white, #fff);
 }
 
 .membership-faq__heading {
-  font-size: var(--h2-size, 2rem);
-  color: var(--color-navy, #0D2240);
+  font-size: var(--text-h2);
+  color: var(--color-primary);
   margin-bottom: 2rem;
   text-align: center;
 }
