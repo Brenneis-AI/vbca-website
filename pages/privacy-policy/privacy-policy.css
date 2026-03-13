@@ -192,7 +192,7 @@
   font-weight: var(--weight-regular);
   color: var(--color-text-muted);
   text-decoration: none;
-  padding: 5px 0;
+  padding: var(--space-1) 0;
   transition: color var(--transition-fast);
 }
 
@@ -355,7 +355,7 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 10px;
+  top: var(--space-3);
   width: 8px;
   height: 2px;
   background-color: var(--color-gold);

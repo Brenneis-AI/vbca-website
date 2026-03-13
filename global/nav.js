@@ -46,7 +46,7 @@
       '  <li class="nav-mobile-item">',
       '    <span class="nav-mobile-group">Events</span>',
       '    <ul class="nav-mobile-sublist">',
-      '      <li><a href="' + getHref('annual-convention/annual-convention.html') + '">Annual Convention</a></li>',
+      '      <li><a href="' + getHref('convention/convention.html') + '">Annual Convention</a></li>',
       '      <li><a href="' + getHref('virginia-all-star-game/virginia-all-star-game.html') + '">Virginia All-Star Game</a></li>',
       '      <li><a href="' + getHref('events-calendar/events-calendar.html') + '">Events Calendar</a></li>',
       '    </ul>',
