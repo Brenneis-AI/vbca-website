@@ -203,10 +203,6 @@
 .about-statewide__inner {
   max-width: var(--container-max);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
-  align-items: center;
 }
 
 .about-statewide__label {
@@ -798,24 +794,6 @@
    ============================================================ */
 
 @media (min-width: 769px) {
-  .about-statewide__inner {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-10);
-  }
-
-  .about-statewide__map-col {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    /* Map column overflows container slightly to the right for boldness */
-    margin-right: calc(-1 * var(--container-padding));
-  }
-
-  .about-statewide__va-shape {
-    max-width: 520px;
-    width: 100%;
-  }
-
   .about-pillars__grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -834,11 +812,127 @@
 }
 
 /* ============================================================
-   RESPONSIVE — MIN-WIDTH: 1024px
+   COACHES AT EVERY LEVEL
    ============================================================ */
+.about-levels {
+  background: var(--color-navy);
+  padding: var(--section-padding-y) 0;
+}
 
-@media (min-width: 1024px) {
-  .about-statewide__va-shape {
-    max-width: 600px;
+.about-levels__inner {
+  text-align: center;
+}
+
+.about-levels .section-label {
+  color: var(--color-crimson);
+}
+
+.about-levels__heading {
+  color: var(--color-white);
+  font-size: var(--h2-size);
+  margin-bottom: 1rem;
+}
+
+.about-levels__intro {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.about-levels__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-levels__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.about-level-item {
+  border-left: 3px solid var(--color-crimson);
+  padding: 1rem 1rem 1rem 1.25rem;
+  text-align: left;
+}
+
+.about-level-item__title {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.375rem;
+}
+
+.about-level-item__desc {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   ABCA LOGO WRAPPER
+   ============================================================ */
+.about-abca__logo-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.about-abca__logo {
+  height: 48px;
+  width: auto;
+}
+
+/* ============================================================
+   BOARD PREVIEW
+   ============================================================ */
+.about-board-preview {
+  background: var(--color-cream);
+  padding: var(--section-padding-y) 0;
+  text-align: center;
+}
+
+.about-board-preview__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-board-preview__heading {
+  font-size: var(--h2-size);
+  color: var(--color-navy);
+}
+
+.about-board-preview__body {
+  max-width: 620px;
+  color: var(--color-text-muted);
+}
+
+.about-board-preview__faces {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-board-preview__person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.about-board-preview__photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-board-preview__name {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy);
+  text-align: center;
 }

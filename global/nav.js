@@ -63,7 +63,7 @@
       '    <span class="nav-mobile-group">About</span>',
       '    <ul class="nav-mobile-sublist">',
       '      <li><a href="' + getHref('about/about.html') + '">About Us</a></li>',
-      '      <li><a href="' + getHref('board-of-directors/board-of-directors.html') + '">Board of Directors</a></li>',
+      '      <li><a href="' + getHref('board-of-directors/board-of-directors.html') + '">Leadership</a></li>',
       '      <li><a href="' + getHref('hall-of-fame/hall-of-fame.html') + '">Hall of Fame</a></li>',
       '      <li><a href="' + getHref('scholarships/scholarships.html') + '">Scholarships</a></li>',
       '    </ul>',

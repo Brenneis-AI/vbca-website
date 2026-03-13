@@ -787,6 +787,12 @@ strong {
   transition: color var(--transition);
 }
 
+.nav-logo__img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
 /* Primary nav — hidden on mobile */
 .nav-primary {
   display: none;
