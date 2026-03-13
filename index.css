@@ -65,19 +65,15 @@
   position: relative;
   padding: 0;
   overflow: hidden;
+  background-color: var(--color-primary);
 }
 
+/* Split background removed — it produced a cream block artifact to the right
+   of the content container on wide viewports. The navy/cream visual contrast
+   is preserved by the individual mission-pillar--navy and mission-pillar--cream
+   background colors within the grid. */
 .section-mission__split {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    var(--color-primary) 0%,
-    var(--color-primary) 50%,
-    var(--color-surface-cream) 50%,
-    var(--color-surface-cream) 100%
-  );
-  z-index: 0;
+  display: none;
 }
 
 .section-mission__inner {

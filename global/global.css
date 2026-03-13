@@ -723,9 +723,11 @@ strong {
   transition: background-color var(--transition), box-shadow var(--transition);
 }
 
-/* Hero overlay variant — starts transparent, transitions to white on scroll */
+/* Hero overlay variant — starts with dark gradient so white nav text is readable,
+   transitions to white on scroll. Fully transparent caused invisible text over
+   the cream body background (sticky nav does not overlap the hero section). */
 .site-header--hero {
-  background-color: transparent;
+  background: linear-gradient(to bottom, rgba(13, 34, 64, 0.80) 0%, rgba(13, 34, 64, 0.00) 100%);
   box-shadow: none;
 }
 
