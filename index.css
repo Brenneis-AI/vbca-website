@@ -833,16 +833,21 @@
    ============================================================ */
 .sponsor-tier {
   margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .sponsor-tier__label {
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-primary);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-secondary);
+  display: inline-block;
 }
 
 .sponsor-logo-row {
@@ -854,6 +859,8 @@
 }
 
 .sponsor-logo-link img {
+  max-width: 150px;
+  width: auto;
   object-fit: contain;
   opacity: 0.75;
   transition: opacity var(--transition-standard);

@@ -788,9 +788,13 @@ strong {
 }
 
 .nav-logo__img {
-  height: 44px;
+  height: 53px;
   width: auto;
   display: block;
+}
+
+.site-footer .nav-logo__img {
+  height: 36px;
 }
 
 /* Primary nav — hidden on mobile */
@@ -1138,15 +1142,6 @@ body.nav-mobile__open {
   padding-bottom: var(--space-6);
   position: relative;
   overflow: hidden;
-}
-
-.footer-va-outline {
-  position: absolute;
-  right: -80px;
-  bottom: 40px;
-  pointer-events: none;
-  opacity: 1;
-  z-index: 0;
 }
 
 .site-footer__inner {
