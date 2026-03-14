@@ -195,181 +195,880 @@
   </section>
 
   <!-- ============================================================
-       CLASS TAB NAVIGATION + INDUCTEE GRIDS
-       Developer Handoff: Tab switching JS required. Each .hof-class-panel
-       should show/hide based on active tab. Tabs: #tab-2025, #tab-2024,
-       #tab-2023, #tab-2022. Active panel: .hof-class-panel--active.
-       Ghost numeral (.hof-class__ghost) is CSS ::before on .hof-class-panel
-       using --ghost-year custom property set per panel.
+       HOF TIMELINE — ACCORDION
+       2025 open by default. One year open at a time (JS enforced).
+       Bio modal (#hof-modal) below main — JS populates from data-* attrs.
        ============================================================ -->
-  <section class="hof-classes">
+  <section class="hof-timeline section section--cream">
     <div class="container">
 
-      <div class="hof-tabs" role="tablist" aria-label="HOF Induction Classes">
-        <button class="hof-tab hof-tab--active" id="tab-2025" role="tab" aria-selected="true" aria-controls="panel-2025">Class of 2025</button>
-        <button class="hof-tab" id="tab-2024" role="tab" aria-selected="false" aria-controls="panel-2024">Class of 2024</button>
-        <button class="hof-tab" id="tab-2023" role="tab" aria-selected="false" aria-controls="panel-2023">Class of 2023</button>
-        <button class="hof-tab" id="tab-2022" role="tab" aria-selected="false" aria-controls="panel-2022">Class of 2022</button>
-      </div>
+      <div class="section-label">Hall of Fame Classes</div>
+      <h2 class="hof-timeline__heading">36 Coaches. Four Classes. One Commonwealth.</h2>
+      <p class="hof-timeline__subhead">Click any class year to meet the coaches who made Virginia baseball what it is.</p>
 
-      <!-- Class of 2025 -->
-      <div class="hof-class-panel hof-class-panel--active" id="panel-2025" role="tabpanel" aria-labelledby="tab-2025" style="--ghost-year: '2025'">
-        <div class="hof-class-header">
-          <h2 class="hof-class-header__title">Class of 2025</h2>
-          <p class="hof-class-header__ceremony">Inducted at the VBCA Annual Convention — UVA Darden School of Business, Charlottesville, Virginia</p>
-        </div>
-        <div class="hof-inductee-grid">
+      <div class="hof-accordion" id="hof-accordion">
 
-          <article class="hof-card">
-            <div class="hof-card__photo">
-              <img src="https://vbca.org/wp-content/uploads/2025/11/Blackley.jpg" alt="Ken Blackley, VBCA Hall of Fame Class of 2025" width="240" height="300" loading="lazy">
-            </div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Ken Blackley</h3>
-              <p class="hof-card__school">Ladysmith / Rappahannock / Caroline / Essex / Northumberland HS</p>
-              <p class="hof-card__stats">493 career wins · 1993 &amp; 2003 Group A State Titles</p>
-              <p class="hof-card__bio">Full bio and career details to be added.</p>
-            </div>
-          </article>
+        <!-- ======================================================
+             2025 — OPEN BY DEFAULT
+             ====================================================== -->
+        <div class="hof-accordion__item hof-accordion__item--active" data-year="2025" id="class-2025">
+          <button class="hof-accordion__trigger" aria-expanded="true" aria-controls="hof-panel-2025">
+            <span class="hof-accordion__year">2025</span>
+            <span class="hof-accordion__meta">9 Coaches · UVA Darden School of Business</span>
+            <span class="hof-accordion__count-badge">Class of 2025</span>
+            <span class="hof-accordion__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="hof-accordion__panel" id="hof-panel-2025" role="region">
+            <div class="hof-ghost-wrap" data-year="2025">
 
-          <!-- Additional 2025 inductees — client to supply full roster -->
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2025 Class</p>
-            </div>
-          </article>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2025 Class</p>
-            </div>
-          </article>
+              <div class="hof-class-intro">
+                <p>The Hall of Fame Class of 2025 includes nine coaches — two from the collegiate ranks and seven from high school baseball — who made lasting contributions to the players and communities they coached.</p>
+              </div>
 
-        </div>
-      </div>
+              <div class="hof-card-grid">
 
-      <!-- Class of 2024 -->
-      <div class="hof-class-panel" id="panel-2024" role="tabpanel" aria-labelledby="tab-2024" hidden style="--ghost-year: '2024'">
-        <div class="hof-class-header">
-          <h2 class="hof-class-header__title">Class of 2024</h2>
-          <p class="hof-class-header__ceremony">Inducted at the VBCA Annual Convention — 2024</p>
-        </div>
-        <div class="hof-inductee-grid">
+                <div class="hof-card" data-name="Ken Blackley" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba48742df32c277.webp"
+                     data-school="Ladysmith / Rappahannock / Caroline / Essex / Northumberland HS"
+                     data-stat="493 Career Wins · 2× State Champion (1993, 2003)"
+                     data-award=""
+                     data-bio="Blackley enjoyed success as a boys basketball coach, girls basketball coach, baseball coach and athletic director at a handful of Virginia high schools: Ladysmith, Rappahannock, Caroline, Essex and Northumberland. In addition to 250 wins as a boys basketball coach (he coached future Atlanta Hawks first-round draft pick Cal Bowdler at Rappahannock), he finished with 493 wins as a baseball coach. Blackley's 1993 team at Rappahannock went 22-2 and edged Glenvar 4-3 in the Group A state championship to capture the school's first title. Ten years later, Blackley's Essex Trojans knocked off Glenvar 4-2 to win the 2003 Group A state crown. He was named the Virginia High School Coaches Association coach of the year three times and nominated twice for national coach of the year. Inducted into the Northern Neck Hall of Fame in 2003 and the Ferrum College Hall of Fame in 2024.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba48742df32c277.webp" alt="Ken Blackley — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Ken Blackley</h3>
+                    <p class="hof-card__school">Ladysmith / Rappahannock / Caroline / Essex / Northumberland HS</p>
+                    <p class="hof-card__stat">493 Career Wins · 2× State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Ken Blackley">Read Bio →</button>
+                  </div>
+                </div>
 
-          <article class="hof-card">
-            <div class="hof-card__photo">
-              <img src="https://vbca.org/wp-content/uploads/2025/10/1-1.jpg" alt="Gregg Conner, VBCA Hall of Fame Class of 2024" width="240" height="300" loading="lazy">
-            </div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Gregg Conner</h3>
-              <p class="hof-card__school">Powhatan High School</p>
-              <p class="hof-card__stats">521–237–1 career record · 2 State Titles · 37 years · VHSL Hall of Fame</p>
-              <p class="hof-card__bio">Full bio and career details to be added.</p>
-            </div>
-          </article>
+                <div class="hof-card" data-name="Nick Boothe" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c8295d7b1cc.webp"
+                     data-school="Virginia Wesleyan College"
+                     data-stat="611-461-6 · 28 Seasons · 6 ODAC Championships"
+                     data-award=""
+                     data-bio="After a stellar baseball career at Old Dominion University, Boothe put together a remarkable, nearly three-decade run as head coach at Virginia Wesleyan College. Over 28 seasons, Boothe led the Marlins to six Old Dominion Athletic Conference championships and six NCAA Division III tournaments, four of his teams winning two NCAA tourney games apiece. His record of 611-461-6 ranked 39th all-time in Division III baseball when he stepped down in 2014, and he was the first ODAC coach to be named conference coach of the year six times. Boothe, a teammate of VBCA Class of 2024 Hall of Famer Wiley Lee, was inducted into Old Dominion's Sports Hall of Fame in 2012.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c8295d7b1cc.webp" alt="Nick Boothe — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Nick Boothe</h3>
+                    <p class="hof-card__school">Virginia Wesleyan College</p>
+                    <p class="hof-card__stat">611-461-6 · 28 Seasons · 6 ODAC Championships</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Nick Boothe">Read Bio →</button>
+                  </div>
+                </div>
 
-          <article class="hof-card">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Mike Covington</h3>
-              <p class="hof-card__school">Potomac High School</p>
-              <p class="hof-card__stats">469–186 career record · 28 seasons</p>
-              <p class="hof-card__bio">Full bio and career details to be added.</p>
-            </div>
-          </article>
+                <div class="hof-card" data-name="Brad Babcock (In Memoriam)" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b48de3d5481781312ee726.webp"
+                     data-school="James Madison University"
+                     data-stat="558-251-4 · 19 Seasons · 1983 College World Series"
+                     data-award=""
+                     data-bio="Babcock, who passed away in 2020, took over a second-year baseball program at James Madison in 1971 and turned it into a powerhouse over the next 19 seasons. His Dukes went 558-251-4 during his tenure and advanced to the NCAA Tournament five times. The 1983 Dukes became the first team from Virginia to reach the College World Series in Omaha. Six of Babcock's players went on to become members of the JMU Sports Hall of Fame, and 30 played professionally, including major leaguers Billy Sample and Dana Allison. He had the opportunity to coach his son, Whit Babcock, now the Director of Athletics at Virginia Tech, in his last season in 1989. Inducted into James Madison's Hall of Fame in 1998.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b48de3d5481781312ee726.webp" alt="Brad Babcock — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Brad Babcock <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">James Madison University</p>
+                    <p class="hof-card__stat">558-251-4 · 19 Seasons · 1983 College World Series</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Brad Babcock">Read Bio →</button>
+                  </div>
+                </div>
 
-          <article class="hof-card">
-            <div class="hof-card__photo">
-              <img src="https://vbca.org/wp-content/uploads/2025/10/3-1.jpg" alt="Tony Guzzo, VBCA Hall of Fame Class of 2024" width="240" height="300" loading="lazy">
-            </div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Tony Guzzo</h3>
-              <p class="hof-card__school">VCU / ODU</p>
-              <p class="hof-card__bio">Full bio and career details to be added.</p>
-            </div>
-          </article>
+                <div class="hof-card" data-name="Rick Holcomb" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d548175ce82defe4.webp"
+                     data-school="Courtland HS / Spotsylvania HS"
+                     data-stat="370-265-1 · 32 Seasons · 2× State Champion (1995, 2000)"
+                     data-award=""
+                     data-bio="Holcomb's baseball coaching career spanned 34 years, 32 as a head coach, at Spotsylvania High School and Courtland High School. In 1995, the Cougars went 24-2 and won their first state baseball title in school history. Five years later, Courtland captured the 2000 Group AA state title. Holcomb earned VHSL state coach of the year honors in 1995 and 2000 and National Federation of High Schools Coach of the Year for Virginia in 2001. He was a founding member of Babe Ruth Baseball in the Fredericksburg region in 1976 and co-founded the Rappahannock Fall Baseball League in 1988. The baseball field at Courtland is named in Holcomb's honor.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d548175ce82defe4.webp" alt="Rick Holcomb — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Rick Holcomb</h3>
+                    <p class="hof-card__school">Courtland HS / Spotsylvania HS</p>
+                    <p class="hof-card__stat">370-265-1 · 32 Seasons · 2× State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Rick Holcomb">Read Bio →</button>
+                  </div>
+                </div>
 
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2024 Class</p>
-            </div>
-          </article>
+                <div class="hof-card" data-name="Gary Rice" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487e07732c278.webp"
+                     data-school="Alleghany HS / Valley HS"
+                     data-stat="565-269-5 · 48 Years · 3rd Most Wins in VHSL History"
+                     data-award=""
+                     data-bio="Rice's coaching career spanned 51 years, 48 at Alleghany High School, finishing with 565-269-5 — the third-most wins in Virginia High School League history when he retired in 2021. His teams captured 14 district championships, three regional titles and made six state tournament appearances. In his 37 years leading the baseball program at Alleghany, Rice's teams had only five losing seasons. A former baseball player at Ferrum College, Rice coached five players who played professional baseball. He is a member of three Halls of Fame: Covington High School, Alleghany High School, and the Salem-Roanoke Baseball Hall of Fame (inducted 2015).">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487e07732c278.webp" alt="Gary Rice — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Gary Rice</h3>
+                    <p class="hof-card__school">Alleghany HS / Valley HS</p>
+                    <p class="hof-card__stat">565-269-5 · 48 Years · 3rd Most Wins in VHSL History</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Gary Rice">Read Bio →</button>
+                  </div>
+                </div>
 
-        </div>
-      </div>
+                <div class="hof-card" data-name="Jeff Smoot" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c0c92d7b1cb.webp"
+                     data-school="Strasburg High School"
+                     data-stat="519-229 · 35 Seasons · 2007 State Champion"
+                     data-award=""
+                     data-bio="A graduate of Strasburg High School, Smoot returned to his alma mater and served as head baseball coach for 35 seasons from 1982-2016. He compiled a record of 519-229, leading the Rams to eight state tournaments, five state title games and one state championship in 2007. That year, Strasburg went 23-5 and knocked off Grayson County 9-5 in the final. His 2014 team went 24-2, falling in the championship game to end a 22-game winning streak. A longtime ABCA member, Smoot served on the VHSL committee responsible for drafting pitch count regulations and has assisted the University of Virginia baseball staff at the Dominican Baseball Camp for more than 10 years.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c0c92d7b1cb.webp" alt="Jeff Smoot — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Jeff Smoot</h3>
+                    <p class="hof-card__school">Strasburg High School</p>
+                    <p class="hof-card__stat">519-229 · 35 Seasons · 2007 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Jeff Smoot">Read Bio →</button>
+                  </div>
+                </div>
 
-      <!-- Class of 2023 -->
-      <div class="hof-class-panel" id="panel-2023" role="tabpanel" aria-labelledby="tab-2023" hidden style="--ghost-year: '2023'">
-        <div class="hof-class-header">
-          <h2 class="hof-class-header__title">Class of 2023</h2>
-          <p class="hof-class-header__ceremony">Inducted at the VBCA Annual Convention — 2023</p>
-        </div>
-        <div class="hof-inductee-grid hof-inductee-grid--pending">
-          <div class="hof-pending-notice">
-            <p class="hof-pending-notice__text">Inductee details being compiled from VBCA archives.</p>
-          </div>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2023 Class</p>
-            </div>
-          </article>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2023 Class</p>
-            </div>
-          </article>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2023 Class</p>
-            </div>
-          </article>
-        </div>
-      </div>
+                <div class="hof-card" data-name="Jim Snow (In Memoriam)" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0070c58fd446eed16.webp"
+                     data-school="Menchville HS / Warwick HS / Smithfield / West Point / Poquoson"
+                     data-stat="517 Career Wins · 19 District Titles · All-Time VHSL Wins Leader"
+                     data-award=""
+                     data-bio="Snow, who passed away in 2000 at the age of 74, taught and coached for 41 years at five high schools, primarily at Menchville (20 years) and Warwick (14). Known as 'The Chief,' his teams piled up 19 district titles and 517 wins. At the time of his retirement, he was the winningest coach in Virginia High School League history. In 1966, Warwick went 17-3 and fell in the state championship game — that same year, Snow suffered a heart attack and coached a playoff game from a wheelchair. His teams had a winning record in 37 of his 41 seasons.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0070c58fd446eed16.webp" alt="Jim Snow — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Jim Snow <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Menchville HS / Warwick HS / Smithfield / West Point / Poquoson</p>
+                    <p class="hof-card__stat">517 Career Wins · 19 District Titles</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Jim Snow">Read Bio →</button>
+                  </div>
+                </div>
 
-      <!-- Class of 2022 -->
-      <div class="hof-class-panel" id="panel-2022" role="tabpanel" aria-labelledby="tab-2022" hidden style="--ghost-year: '2022'">
-        <div class="hof-class-header">
-          <h2 class="hof-class-header__title">Class of 2022</h2>
-          <p class="hof-class-header__ceremony">Inaugural VBCA Hall of Fame Induction Class — 2022</p>
-        </div>
-        <div class="hof-inductee-grid hof-inductee-grid--pending">
-          <div class="hof-pending-notice">
-            <p class="hof-pending-notice__text">Inductee details being compiled from VBCA archives.</p>
-          </div>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2022 Class</p>
-            </div>
-          </article>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2022 Class</p>
-            </div>
-          </article>
-          <article class="hof-card hof-card--placeholder">
-            <div class="hof-card__photo hof-card__photo--placeholder" aria-hidden="true"></div>
-            <div class="hof-card__body">
-              <h3 class="hof-card__name">Inductee details being compiled from VBCA archives.</h3>
-              <p class="hof-card__school">2022 Class</p>
-            </div>
-          </article>
-        </div>
-      </div>
+                <div class="hof-card" data-name="Chuck Welch" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1070c58bc9c6eed17.webp"
+                     data-school="Langley HS / Westfield HS"
+                     data-stat="368-249 · 30 Seasons · 2004 State Finalist"
+                     data-award=""
+                     data-bio="Welch enjoyed a 30-year coaching career, spending 17 years at Langley High School before starting the program at Westfield in 2000 and spending 13 years there. Overall he had a record of 368-249. At Westfield, during one stretch he guided the Bulldogs to 10 straight region tournaments. Just four seasons after the program started, Westfield rallied from six runs down to stun Mills Godwin 8-7 in the state semifinals before falling in the 2004 state final to Cox 3-2. He was named the ABCA Regional Coach of the Year in 2009.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1070c58bc9c6eed17.webp" alt="Chuck Welch — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Chuck Welch</h3>
+                    <p class="hof-card__school">Langley HS / Westfield HS</p>
+                    <p class="hof-card__stat">368-249 · 30 Seasons · 2004 State Finalist</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Chuck Welch">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Jim White" data-class="2025"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d54817dc5e2defe5.webp"
+                     data-school="Brookville High School"
+                     data-stat="424-209 (.669) · 30 Seasons · 1987 State Champion"
+                     data-award=""
+                     data-bio="White holds the distinction of winning a state championship both as a player and a coach at his alma mater Brookville High School. He was a player on Brookville's 1973 state title team, and the highlight of his 30-year coaching career was leading the Bees to the 1987 state championship to cap a 20-6 season. White's teams won nine district titles with state final appearances in 1987 and 1995. His overall record was 424-209 for an average of 14 wins per season. He mentored two future Major League Baseball players in Phil Leftwich and Brandon Inge.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d54817dc5e2defe5.webp" alt="Jim White — VBCA Hall of Fame Class of 2025" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2025</p>
+                    <h3 class="hof-card__name">Jim White</h3>
+                    <p class="hof-card__school">Brookville High School</p>
+                    <p class="hof-card__stat">424-209 (.669) · 30 Seasons · 1987 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Jim White">Read Bio →</button>
+                  </div>
+                </div>
+
+              </div><!-- END card grid -->
+
+              <div class="hof-awards-row">
+                <h3 class="hof-awards-row__heading">2025 Annual Awards</h3>
+                <div class="hof-awards-row__grid">
+
+                  <div class="hof-award-card hof-award-card--coy"
+                       data-name="Larry Bowles" data-class="2025"
+                       data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0e8487c7a2086561b.webp"
+                       data-school="American Legion Post 280 / Indian River HS"
+                       data-stat="27-4 · American Legion World Series Champion"
+                       data-award="Coach of the Year"
+                       data-bio="Bowles guided American Legion Post 280 to the American Legion World Series championship with a 27-4 record — only the second time a Virginia team captured the title (Midlothian in 1985). In the regional round, his squad dropped its opener before reeling off five wins to reach the World Series. At the Series, Post 280 beat Oregon 7-3 in the semifinals and Texas 5-0 in the championship game. The team was recognized during Game 4 of the World Series in Los Angeles in October. Bowles leads the baseball program at Indian River High School.">
+                    <div class="hof-award-card__photo-wrap">
+                      <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0e8487c7a2086561b.webp" alt="Larry Bowles — 2025 VBCA Coach of the Year" width="400" height="400" loading="lazy" class="hof-award-card__photo">
+                    </div>
+                    <div class="hof-award-card__body">
+                      <p class="hof-award-card__award-name">Coach of the Year</p>
+                      <h4 class="hof-award-card__name">Larry Bowles</h4>
+                      <p class="hof-award-card__school">American Legion Post 280 / Indian River HS</p>
+                      <p class="hof-award-card__note">Led Post 280 to the American Legion World Series Championship · 27-4 record</p>
+                      <button class="hof-card__bio-btn" aria-label="Read full bio for Larry Bowles">Read Bio →</button>
+                    </div>
+                  </div>
+
+                  <div class="hof-award-card hof-award-card--bia"
+                       data-name="Dennis Womack" data-class="2025"
+                       data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1070c58f0816eed19.webp"
+                       data-school="University of Virginia"
+                       data-stat="23 Years as UVA Head Coach · 1996 ACC Championship"
+                       data-award="Baseball Impact Award"
+                       data-bio="Womack spent 23 years as head coach of the University of Virginia before retiring to an assistant athletic director position with the Cavaliers. During his tenure, Virginia won the 1996 Atlantic Coast Conference championship and made two NCAA tournament appearances. Among the players he coached were Ryan Zimmerman, Seth Greisinger, Mark Reynolds, Javier Baez, Brian Buchanan and Joe Koshansky. The 1985 ACC Coach of the Year, Womack also co-founded the Best in Virginia showcase camp in 1988 with Scott Gines — one of the biggest showcase events in the country, attracting players from 27 states and regularly selling out from 1992 on.">
+                    <div class="hof-award-card__photo-wrap">
+                      <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1070c58f0816eed19.webp" alt="Dennis Womack — 2025 VBCA Baseball Impact Award" width="400" height="400" loading="lazy" class="hof-award-card__photo">
+                    </div>
+                    <div class="hof-award-card__body">
+                      <p class="hof-award-card__award-name">Baseball Impact Award</p>
+                      <h4 class="hof-award-card__name">Dennis Womack</h4>
+                      <p class="hof-award-card__school">University of Virginia</p>
+                      <p class="hof-award-card__note">23 years as UVA head coach · 1996 ACC Championship · Coached Ryan Zimmerman, Javier Baez, Mark Reynolds</p>
+                      <button class="hof-card__bio-btn" aria-label="Read full bio for Dennis Womack">Read Bio →</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- END awards row -->
+
+            </div><!-- END ghost wrap -->
+          </div><!-- END panel -->
+        </div><!-- END 2025 item -->
+
+        <!-- ======================================================
+             2024 — COLLAPSED
+             ====================================================== -->
+        <div class="hof-accordion__item" data-year="2024" id="class-2024">
+          <button class="hof-accordion__trigger" aria-expanded="false" aria-controls="hof-panel-2024">
+            <span class="hof-accordion__year">2024</span>
+            <span class="hof-accordion__meta">10 Coaches · UVA Darden School of Business</span>
+            <span class="hof-accordion__count-badge">Class of 2024</span>
+            <span class="hof-accordion__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="hof-accordion__panel" id="hof-panel-2024" role="region" hidden>
+            <div class="hof-ghost-wrap" data-year="2024">
+
+              <div class="hof-card-grid">
+
+                <div class="hof-card" data-name="Gregg Conner" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487aae332c27a.webp"
+                     data-school="Powhatan High School"
+                     data-stat="521-237-1 · 37 Seasons · 2× State Champion (2008, 2012)"
+                     data-award=""
+                     data-bio="Conner's 37-year tenure at Powhatan High was recognized when he was inducted into the Virginia High School League Hall of Fame in 2020. Less than a year out of college, he became the Powhatan coach in 1985. He posted a mark of 521-237-1 and became the winningest baseball coach in the Richmond area. Conner led the Indians to 16 district titles, six regional championships and two state titles — in 2008 over Alleghany and 2012 over Brookville. In 2018, he posted his 500th win. More recently, former player Brandon Eike was selected in the 13th round of the 2024 draft by Seattle. Conner has also been a longtime national coach with Canes Baseball.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487aae332c27a.webp" alt="Gregg Conner — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Gregg Conner</h3>
+                    <p class="hof-card__school">Powhatan High School</p>
+                    <p class="hof-card__stat">521-237-1 · 37 Seasons · 2× State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Gregg Conner">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Mike Covington" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0fb38ca3e679ec3ad.webp"
+                     data-school="Potomac High School"
+                     data-stat="469-186 · 28 Seasons · 15 District Titles"
+                     data-award=""
+                     data-bio="Covington became the Potomac High coach in 1994 and retired in 2021. 'He's been the cornerstone of baseball in Prince William County,' said Hylton coach Jason Ritenour. Covington had a record of 469-186 in 28 seasons with 15 district titles, two regional crowns and two state championship runner-up teams. He had 76 players go on to the college level and five play pro ball. Covington coached in the Commonwealth Games of Virginia for 31 years, with 18 gold medals and seven silver. He also coached American Legion Post 28 four seasons and captured three district crowns.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0fb38ca3e679ec3ad.webp" alt="Mike Covington — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Mike Covington</h3>
+                    <p class="hof-card__school">Potomac High School</p>
+                    <p class="hof-card__stat">469-186 · 28 Seasons · 15 District Titles</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Mike Covington">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Tony Guzzo (In Memoriam)" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d54817c4252defe6.webp"
+                     data-school="VCU / Old Dominion University"
+                     data-stat="329-300-1 at VCU · 303-252 at ODU · Coached Justin Verlander"
+                     data-award=""
+                     data-bio="Guzzo, who passed away October 10, found success at two premier Division I programs in the mid-Atlantic region. Among his players at ODU were Justin Verlander, a three-time Cy Young Award winner with 262 major league wins, and Matt Quatraro, current manager of the Kansas City Royals. His players at VCU included Jerry Dipoto, now President of Baseball Operations for the Seattle Mariners. Guzzo posted a mark of 329-300-1 at VCU from 1983-94 and 303-252 at ODU from 1995-2004.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d54817c4252defe6.webp" alt="Tony Guzzo — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Tony Guzzo <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">VCU / Old Dominion University</p>
+                    <p class="hof-card__stat">329-300-1 at VCU · 303-252 at ODU</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Tony Guzzo">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Curt Kendall" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba02fdce03955.webp"
+                     data-school="Bridgewater College"
+                     data-stat="790-528-10 · 12 ODAC Tournament Titles · 6× ODAC Coach of Year"
+                     data-award=""
+                     data-bio="A former infielder for the Eagles, Kendall took over the Bridgewater program in 1985 and built it into an ODAC powerhouse. He compiled a record of 790-528-10 and led Bridgewater to 12 ODAC tournament championships and 13 ODAC regular season titles, being honored as conference Coach of the Year six times. He was the Virginia Sports Information state coach of the year in 2014. Kendall stepped down as coach in 2019 and continues as Bridgewater's athletic director, a role he has held since 2000.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba02fdce03955.webp" alt="Curt Kendall — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Curt Kendall</h3>
+                    <p class="hof-card__school">Bridgewater College</p>
+                    <p class="hof-card__stat">790-528-10 · 12 ODAC Tournament Titles</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Curt Kendall">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Gary Lavelle" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c539fd7b1ce.webp"
+                     data-school="Greenbrier Christian Academy / Bryant &amp; Stratton College"
+                     data-stat="500+ Wins · 12 State Titles · Former MLB All-Star"
+                     data-award=""
+                     data-bio="Lavelle pulled off a rare feat — a Major League veteran who won for the long haul at the high school level. A lefty pitcher, Lavelle was a two-time NL All-Star with the Giants, posting an overall record of 80-77 with 136 saves. His 647 mound appearances are the San Francisco franchise record. In two stints at Greenbrier Christian, Lavelle won more than 500 games, including four consecutive Virginia Independent Schools State Championships, and was named Coach of the Year for each of those years. He won his 500th game at Greenbrier Christian in 2014 and retired after the 2016 season with 12 state titles. Inducted into the Hampton Roads Sports Hall of Fame in 2019.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c539fd7b1ce.webp" alt="Gary Lavelle — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Gary Lavelle</h3>
+                    <p class="hof-card__school">Greenbrier Christian Academy / Bryant &amp; Stratton College</p>
+                    <p class="hof-card__stat">500+ Wins · 12 State Titles · Former MLB All-Star</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Gary Lavelle">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Wiley Lee" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487a94032c27b.webp"
+                     data-school="Great Bridge HS / Norfolk State University"
+                     data-stat="2× State Champion (2003, 2011) · Coached Justin Upton (#1 Pick)"
+                     data-award=""
+                     data-bio="A former baseball standout at ODU, Lee was a freshman All-American in 1985 and a fifth-round pick of California in 1987. After his playing career, he was head baseball coach at Great Bridge in Chesapeake, winning 11 Southeastern District titles and state championships in 2003 and 2011. His program produced 50 future collegiate players, and he helped four former Wildcats reach professional baseball, including Major League All-Star and 2005 top-overall pick Justin Upton, who hit 325 homers in the majors. Lee was inducted into Old Dominion University's Athletic Hall of Fame in 1994.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487a94032c27b.webp" alt="Wiley Lee — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Wiley Lee</h3>
+                    <p class="hof-card__school">Great Bridge HS / Norfolk State University</p>
+                    <p class="hof-card__stat">2× State Champion · Coached Justin Upton (#1 Pick)</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Wiley Lee">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Tim Lowery" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0d54817be912defe2.webp"
+                     data-school="Clover Hill HS / Cosby HS"
+                     data-stat="470 Career Wins · 1994 State Champion (Ranked #10 Nationally)"
+                     data-award=""
+                     data-bio="Lowery coached at Clover Hill from 1986 to 2006 and won 276 games with a winning percentage of .660. In 11 years at Cosby, he won 194 games for a total of 470 combined wins. His teams won 11 district titles and gained 21 regional berths, taking his team to the state tournament six times. His 1994 team won a state title and was ranked No. 10 in the nation by USA Today. His son Jake won the Johnny Bench Award as the top college catcher in the country at James Madison University and is now manager of the Fredericksburg Nationals.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0d54817be912defe2.webp" alt="Tim Lowery — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Tim Lowery</h3>
+                    <p class="hof-card__school">Clover Hill HS / Cosby HS</p>
+                    <p class="hof-card__stat">470 Career Wins · 1994 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Tim Lowery">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Del Norwood (In Memoriam)" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba0e3f0e03956.webp"
+                     data-school="Washington-Liberty High School"
+                     data-stat="384-180 · 28 Seasons · 19 District Titles · 14 Regional Titles"
+                     data-award=""
+                     data-bio="Norwood came to Virginia after an impressive pro career as a player and manager. In 28 seasons at then Washington-Lee, he won 19 district and 14 regional titles with a record of 384-180 from 1959 to 1989. He pitched in the minors for the Red Sox and Senators and managed in the minors for the Twins and Royals. In 1961, his top hitter at Wytheville was Tony Oliva — inducted into the Baseball Hall of Fame in 2022 — who batted .410 with 81 RBI in 249 at-bats under Norwood. A member of the Virginia High School Hall of Fame (1992) and Arlington Sports Hall of Fame (1998). Passed away in 2003.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba0e3f0e03956.webp" alt="Del Norwood — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Del Norwood <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Washington-Liberty High School</p>
+                    <p class="hof-card__stat">384-180 · 28 Seasons · 19 District Titles</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Del Norwood">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Lou Peery (In Memoriam)" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0d54817afe82defe3.webp"
+                     data-school="Tazewell High School"
+                     data-stat="400+ Wins · 34 Seasons · Coached Billy Wagner (422 MLB Saves)"
+                     data-award=""
+                     data-bio="Peery was the Tazewell coach from 1979 to 2013, missing just the 2005 season for health reasons. He won more than 400 games and helped send Billy Wagner — who had 422 saves in the Major Leagues, the most among Virginia natives — to Ferrum and a big-league career. The Bulldogs won 10 Southwest District titles, two Region IV championships and made five state tournament appearances. The school's baseball stadium is named in Peery's honor. He is also included in a mural depicting prominent local residents at the Tazewell County Courthouse, unanimously approved by local officials in 2022. Passed away in 2019.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0d54817afe82defe3.webp" alt="Lou Peery — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Lou Peery <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Tazewell High School</p>
+                    <p class="hof-card__stat">400+ Wins · 34 Seasons · Coached Billy Wagner</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Lou Peery">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Jim Thacker" data-class="2024"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1e8487cc09386561b.webp"
+                     data-school="Jefferson Forest High School"
+                     data-stat="424-205 · 28 Seasons · 1988 State Champion"
+                     data-award=""
+                     data-bio="Thacker started in left field on Liberty High School's 1977 state title team for Jim Cutler, a VBCA Hall of Fame member, and later played at Longwood for Buddy Bolding, another VBCA Hall of Famer. At Jefferson Forest, he retired in 2013 after 28 years with a mark of 424-205, 12 Seminole District titles, seven district tournament titles, three regional titles and the 1988 state title — the Cavaliers blanked York 5-0. He passed the reins to one of his former players, Ryan Gilleland, who is in the UVA baseball Hall of Fame. The field at Jefferson Forest is named in Thacker's honor.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1e8487cc09386561b.webp" alt="Jim Thacker — VBCA Hall of Fame Class of 2024" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2024</p>
+                    <h3 class="hof-card__name">Jim Thacker</h3>
+                    <p class="hof-card__school">Jefferson Forest High School</p>
+                    <p class="hof-card__stat">424-205 · 28 Seasons · 1988 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Jim Thacker">Read Bio →</button>
+                  </div>
+                </div>
+
+              </div><!-- END card grid -->
+
+              <div class="hof-awards-row">
+                <h3 class="hof-awards-row__heading">2024 Annual Awards</h3>
+                <div class="hof-awards-row__grid">
+
+                  <div class="hof-award-card hof-award-card--bia"
+                       data-name="Dr. William M.T. Forrester (In Memoriam)" data-class="2024"
+                       data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0277ba065c8e03953.webp"
+                       data-school="Metropolitan Junior Baseball League — Richmond, VA"
+                       data-stat="Founded MJBL 1966 · National Network Serving Disadvantaged Youth"
+                       data-award="Baseball Impact Award"
+                       data-bio="Dr. Forrester founded the Metropolitan Junior Baseball League in Richmond in 1966 to provide inner-city youth, especially African-American children, with opportunities to play organized baseball during the era of segregation. Inspired after his son was excluded from local Little League teams due to racial barriers, Dr. Forrester created MJBL as an inclusive league open to all youth. Beyond baseball, MJBL incorporated educational and cultural programs to develop well-rounded citizens. Over the decades, MJBL grew into a national network with teams across the United States and the Caribbean, continuing his mission to uplift disadvantaged youth through sports, education and cultural enrichment.">
+                    <div class="hof-award-card__photo-wrap">
+                      <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0277ba065c8e03953.webp" alt="Dr. William M.T. Forrester — 2024 VBCA Baseball Impact Award" width="400" height="400" loading="lazy" class="hof-award-card__photo">
+                    </div>
+                    <div class="hof-award-card__body">
+                      <p class="hof-award-card__award-name">Baseball Impact Award</p>
+                      <h4 class="hof-award-card__name">Dr. William M.T. Forrester <em>(In Memoriam)</em></h4>
+                      <p class="hof-award-card__school">Metropolitan Junior Baseball League — Richmond, VA</p>
+                      <p class="hof-award-card__note">Founded MJBL 1966 · National network serving disadvantaged youth through baseball, education, and cultural enrichment</p>
+                      <button class="hof-card__bio-btn" aria-label="Read full bio for Dr. William M.T. Forrester">Read Bio →</button>
+                    </div>
+                  </div>
+
+                  <div class="hof-award-card hof-award-card--coy"
+                       data-name="Daniel Rollins" data-class="2024"
+                       data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d54817a1032defe7.webp"
+                       data-school="Paul D. Camp Community College"
+                       data-stat="2× NJCAA Region 10 Coach of Year · 2× NJCAA D-III World Series"
+                       data-award="Coach of the Year"
+                       data-bio="Rollins is the VBCA Coach of the Year for 2024. Under his leadership, the Paul D. Camp Hurricanes qualified for the NJCAA Division III World Series for the second year in a row after winning the NJCAA Region 10 championship. Rollins was also named NJCAA Region 10 Coach of the Year for the second consecutive year. Named head coach at Paul D. Camp in 2019, he previously served as an associate scout for the Cincinnati Reds and Atlanta Braves, Director of College Recruiting Operations for the Baseball Factory, and as an assistant coach at George Washington University, Randolph-Macon College and George Mason University.">
+                    <div class="hof-award-card__photo-wrap">
+                      <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1d54817a1032defe7.webp" alt="Daniel Rollins — 2024 VBCA Coach of the Year" width="400" height="400" loading="lazy" class="hof-award-card__photo">
+                    </div>
+                    <div class="hof-award-card__body">
+                      <p class="hof-award-card__award-name">Coach of the Year</p>
+                      <h4 class="hof-award-card__name">Daniel Rollins</h4>
+                      <p class="hof-award-card__school">Paul D. Camp Community College</p>
+                      <p class="hof-award-card__note">2× NJCAA Region 10 Coach of Year · Led Hurricanes to 2× NJCAA D-III World Series</p>
+                      <button class="hof-card__bio-btn" aria-label="Read full bio for Daniel Rollins">Read Bio →</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- END awards row -->
+
+            </div><!-- END ghost wrap -->
+          </div><!-- END panel -->
+        </div><!-- END 2024 item -->
+
+        <!-- ======================================================
+             2023 — COLLAPSED
+             ====================================================== -->
+        <div class="hof-accordion__item" data-year="2023" id="class-2023">
+          <button class="hof-accordion__trigger" aria-expanded="false" aria-controls="hof-panel-2023">
+            <span class="hof-accordion__year">2023</span>
+            <span class="hof-accordion__meta">8 Coaches · UVA Darden School of Business</span>
+            <span class="hof-accordion__count-badge">Class of 2023</span>
+            <span class="hof-accordion__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="hof-accordion__panel" id="hof-panel-2023" role="region" hidden>
+            <div class="hof-ghost-wrap" data-year="2023">
+
+              <div class="hof-card-grid">
+
+                <div class="hof-card" data-name="Charles 'Doc' Adams" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0eba487a8d032c276.webp"
+                     data-school="Lebanon High School"
+                     data-stat="463 Career Wins · 2021 State Champion · Named Doc Adams Field"
+                     data-award=""
+                     data-bio="Adams won 463 games at Lebanon High before stepping down following the 2022 season. Named a Coach of the Year by various organizations at least 20 times, the diamond at Lebanon High was named 'Doc Adams Field' in 2016 and his No. 9 jersey was retired. Adams began his tenure at Lebanon in 1986 and led the school to its first state title in 2021 with a team that included Matthew Buchanan, a pitcher who appeared as a true freshman for the University of Virginia in 2022. His first regional title came in 1989, and his last team at Lebanon won another district title.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0eba487a8d032c276.webp" alt="Charles 'Doc' Adams — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Charles "Doc" Adams</h3>
+                    <p class="hof-card__school">Lebanon High School</p>
+                    <p class="hof-card__stat">463 Career Wins · 2021 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Charles Doc Adams">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Buddy Bolding" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0ba922c6448d7b1c9.webp"
+                     data-school="Longwood University"
+                     data-stat="953-544-4 · 35 Seasons · 26 Consecutive Winning Seasons"
+                     data-award=""
+                     data-bio="A former U.S. Army medic in Vietnam, Bolding compiled a record of 953-544-4 in 35 years at Longwood, guiding the program from Division III to Division I before retiring after the 2013 season. He led Longwood to 26 consecutive winning seasons through 2004, and six of his teams made the Division II national tournament, with two trips to the World Series at that level. His top player was Michael Tucker, the Bluestone High grad who was an outfielder in the majors from 1995 to 2006 after being named the top Division II player in the country in 1992 and drafted in the first round by Kansas City.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0ba922c6448d7b1c9.webp" alt="Buddy Bolding — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Buddy Bolding</h3>
+                    <p class="hof-card__school">Longwood University</p>
+                    <p class="hof-card__stat">953-544-4 · 35 Seasons · 26 Consecutive Winning Seasons</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Buddy Bolding">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Ray Heatwole" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0d54817cfb92defe1.webp"
+                     data-school="Turner Ashby HS / James Madison University"
+                     data-stat="303-66-2 at Turner Ashby · 3 State Titles · VHSL Hall of Fame"
+                     data-award=""
+                     data-bio="Heatwole began his coaching career at Division III Bridgewater before taking over at Turner Ashby High and building one of the top programs in the state. He led the Knights to three state titles (1974, 1975, 2002) and posted a record of 303-66-2 in 17 seasons over two stints. Heatwole was the pitching coach at JMU under Brad Babcock from 1990-93 and then head coach of the Dukes for the next four seasons. His 1993 JMU staff had four future Major League pitchers. Two of his Turner Ashby players, Alan Knicely and Brian Bocock, made it to the majors. Inducted into the VHSL Hall of Fame in 2015.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0d54817cfb92defe1.webp" alt="Ray Heatwole — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Ray Heatwole</h3>
+                    <p class="hof-card__school">Turner Ashby HS / James Madison University</p>
+                    <p class="hof-card__stat">303-66-2 at Turner Ashby · 3 State Titles</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Ray Heatwole">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Bob Menefee" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba06c42e03957.webp"
+                     data-school="Robinson High School"
+                     data-stat="Head Coach 1972-1989 · 1980 State Champion"
+                     data-award=""
+                     data-bio="A stabilizing force in transient Northern Virginia, Menefee was head coach at Robinson High in Fairfax from 1972 to 1989. He led the Rams to a state title in 1980. He played a key role in the development of Steve Dunn, a fourth-round pick out of Robinson in 1988 by Minnesota and a backup first baseman with the Twins behind Kent Hrbek in 1994. Robert M. Menefee Stadium was named in his honor in 2015.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba06c42e03957.webp" alt="Bob Menefee — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Bob Menefee</h3>
+                    <p class="hof-card__school">Robinson High School</p>
+                    <p class="hof-card__stat">Head Coach 1972-1989 · 1980 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Bob Menefee">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Abe Naff" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c1f08d7b1cf.webp"
+                     data-school="Ferrum College"
+                     data-stat="643-236-2 · 22 Seasons · Coached Billy Wagner and Eric Owens"
+                     data-award=""
+                     data-bio="Naff compiled a record of 643-236-2 as the Ferrum coach from 1985 to 2007, also serving as the school's athletic director. He coached 20 All-Americans and had 22 players earn pro contracts. Two of them reached the majors: Eric Owens, a Tunstall product who had 126 career steals as an outfielder, and Billy Wagner, who had 422 saves in the majors and is a future Hall of Famer. Naff's 2007 team was two outs away from the College World Series. Inducted into the Ferrum Athletic Hall of Fame in 2008.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c1f08d7b1cf.webp" alt="Abe Naff — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Abe Naff</h3>
+                    <p class="hof-card__school">Ferrum College</p>
+                    <p class="hof-card__stat">643-236-2 · 22 Seasons · Coached Billy Wagner</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Abe Naff">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Bill Pelot" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1e8487c57c486561c.webp"
+                     data-school="Louisa HS / Powhatan HS"
+                     data-stat="418 Career Wins · 1990 State Champion · 19 Regional Tournaments"
+                     data-award=""
+                     data-bio="Pelot continued the legacy of Louisa High baseball, leading his team to the regional tournament 19 times from 1984-2004 and the state title in 1990. An ODU product, Pelot also coached at Powhatan High from 1974-84. In 2018, the field was named Bradford-Pelot Field after Pelot and coach Joe Bradford, who guided the program for a combined 70 years. Pelot was co-founder of the Baseball Bash and coached in the Commonwealth Games for more than 25 years. One of his stars was pitcher Tommy Taylor, a second-round pick of the Orioles in 1989 who reached Double-A in the Baltimore system.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1e8487c57c486561c.webp" alt="Bill Pelot — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Bill Pelot</h3>
+                    <p class="hof-card__school">Louisa HS / Powhatan HS</p>
+                    <p class="hof-card__stat">418 Career Wins · 1990 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Bill Pelot">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Marvin 'Towny' Townsend (In Memoriam)" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0e8487c0f8a86561d.webp"
+                     data-school="Greenbrier Christian / Lake Taylor / Virginia Wesleyan / Travel Baseball"
+                     data-stat="Developed Wright, Zimmerman, Reynolds, Cuddyer, B.J. &amp; Justin Upton"
+                     data-award=""
+                     data-bio="Townsend was a pioneer in travel baseball and a legend in South Hampton Roads. He was instrumental in the development of six future big leaguers: B.J. and Justin Upton, David Wright, Ryan Zimmerman, Mark Reynolds and Michael Cuddyer. Amazingly, from 2005-07, Wright, Zimmerman, Reynolds and Cuddyer were all regular third basemen in the majors — meaning four of 30 at that position were from one corner of Virginia. His story is told in 'The Baseball Miracle of the Splendid 6 and Towny Townsend.' Inducted into the Hampton Roads Sports Hall of Fame in 2009. Passed away in 2007 at the age of 54.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0e8487c0f8a86561d.webp" alt="Marvin Towny Townsend — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Marvin "Towny" Townsend <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Greenbrier Christian / Lake Taylor / Virginia Wesleyan</p>
+                    <p class="hof-card__stat">Developed Wright, Zimmerman, Reynolds, Cuddyer, &amp; both Uptons</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Marvin Towny Townsend">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Al Worthington" data-class="2023"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c3340d7b1d0.webp"
+                     data-school="Liberty University (first ever baseball coach)"
+                     data-stat="343-189-1 · 2× NL All-Star · Coached Sid Bream and Randy Tomlin"
+                     data-award=""
+                     data-bio="Considered a man of faith and conviction, Worthington was the first baseball coach at what is now Liberty University, posting a mark of 343-189-1 from 1974-89. Three of his players reached the majors: first baseman Sid Bream, who played in two World Series with Atlanta, and pitchers Lee Gutterman and Randy Tomlin. Worthington also served as athletic director at Liberty. A right-hander in his playing days, he pitched in the majors from 1953-69, posting a mark of 75-82 with 111 saves in 602 games with the Giants, Red Sox, White Sox, Reds and Twins. Inducted into the Alabama Sports Hall of Fame in 2011.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c3340d7b1d0.webp" alt="Al Worthington — VBCA Hall of Fame Class of 2023" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Class of 2023</p>
+                    <h3 class="hof-card__name">Al Worthington</h3>
+                    <p class="hof-card__school">Liberty University (first ever baseball coach)</p>
+                    <p class="hof-card__stat">343-189-1 · 2× NL All-Star · Coached Sid Bream</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Al Worthington">Read Bio →</button>
+                  </div>
+                </div>
+
+              </div><!-- END card grid -->
+
+              <div class="hof-awards-row">
+                <h3 class="hof-awards-row__heading">2023 Annual Award</h3>
+                <div class="hof-awards-row__grid">
+
+                  <div class="hof-award-card hof-award-card--bia"
+                       data-name="W. Jeff Petty" data-class="2023"
+                       data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba0069ae03958.webp"
+                       data-school="Canes Baseball"
+                       data-stat="40+ MLB Players Developed · 350+ MLB Draft Picks · 550+ Power 5"
+                       data-award="Baseball Impact Award (Inaugural)"
+                       data-bio="Petty is the inaugural recipient of the VBCA Baseball Impact Award. President and CEO of Canes Baseball, he has built the organization into arguably the preeminent travel baseball organization in the country, attracting players from across the nation. Canes Baseball has helped develop 40 current or former Major League Baseball players, more than 350 MLB draft picks, more than 550 players committed to Power 5 college baseball programs and 3,250 players who have gone on to play baseball in college. Petty graduated from UNC Pembroke in 2019 and established PDG Baseball Academy, a year-round program based in Fredericksburg at the Single-A home of the Nationals.">
+                    <div class="hof-award-card__photo-wrap">
+                      <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1277ba0069ae03958.webp" alt="W. Jeff Petty — 2023 VBCA Baseball Impact Award (Inaugural)" width="400" height="400" loading="lazy" class="hof-award-card__photo">
+                    </div>
+                    <div class="hof-award-card__body">
+                      <p class="hof-award-card__award-name">Baseball Impact Award (Inaugural)</p>
+                      <h4 class="hof-award-card__name">W. Jeff Petty</h4>
+                      <p class="hof-award-card__school">Canes Baseball</p>
+                      <p class="hof-award-card__note">40+ MLB players developed · 350+ MLB draft picks · 3,250 players sent to college baseball</p>
+                      <button class="hof-card__bio-btn" aria-label="Read full bio for W. Jeff Petty">Read Bio →</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- END awards row -->
+
+            </div><!-- END ghost wrap -->
+          </div><!-- END panel -->
+        </div><!-- END 2023 item -->
+
+        <!-- ======================================================
+             2022 — INAUGURAL CLASS — COLLAPSED
+             ====================================================== -->
+        <div class="hof-accordion__item" data-year="2022" id="class-2022">
+          <button class="hof-accordion__trigger" aria-expanded="false" aria-controls="hof-panel-2022">
+            <span class="hof-accordion__year">2022</span>
+            <span class="hof-accordion__meta">9 Coaches · Inaugural Class</span>
+            <span class="hof-accordion__count-badge">Inaugural Class</span>
+            <span class="hof-accordion__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="hof-accordion__panel" id="hof-panel-2022" role="region" hidden>
+            <div class="hof-ghost-wrap" data-year="2022">
+
+              <div class="hof-card-grid">
+
+                <div class="hof-card" data-name="Ron Atkins" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0eba4876e0132c275.webp"
+                     data-school="J.R. Tucker HS / University of Richmond"
+                     data-stat="717-540-4 at Richmond · 5 CAA Titles · 7 NCAA Tournaments"
+                     data-award=""
+                     data-bio="Atkins excelled first as a high school baseball coach before thriving on the college stage. His teams at J.R. Tucker High School in Richmond won 81 percent of their games with four district championships and four state titles in his 17 years. He then led the University of Richmond program for 22 years, going 717-540-4 and guiding the Spiders to five CAA titles, four CAA tourney titles and seven NCAA tournaments. Atkins' 2002 team was one win from the College World Series, falling to Nebraska in the Super Regionals.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0eba4876e0132c275.webp" alt="Ron Atkins — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Ron Atkins</h3>
+                    <p class="hof-card__school">J.R. Tucker HS / University of Richmond</p>
+                    <p class="hof-card__stat">717-540-4 at Richmond · 5 CAA Titles</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Ron Atkins">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Bill Brown" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0ba922c8c82d7b1c8.webp"
+                     data-school="George Mason University"
+                     data-stat="1,083-1,056-7 · 41 Seasons · Top 10 NCAA D-I All-Time"
+                     data-award=""
+                     data-bio="For 41 years, Brown led the George Mason University baseball program, compiling a record of 1,083-1,056-7. At the time of his retirement, he ranked 10th in NCAA Division I history among active coaches and just outside the Top 50 all-time. He is one of 22 coaches in Division I history to have coached for 40 or more years and led the Patriots to the NCAA tournament seven times. Brown was named the Colonial Athletic Association coach of the year six times, won two CAA titles and coached six future major league players.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0ba922c8c82d7b1c8.webp" alt="Bill Brown — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Bill Brown</h3>
+                    <p class="hof-card__school">George Mason University</p>
+                    <p class="hof-card__stat">1,083-1,056-7 · 41 Seasons · Top 10 D-I All-Time</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Bill Brown">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Jim Cutler" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1e8487c62c186561a.webp"
+                     data-school="Liberty (Bedford) High School"
+                     data-stat="513 Wins · 46 Seasons · 1977 State Champion · VHSL Hall of Fame"
+                     data-award=""
+                     data-bio="Bedford's 'Mr. Baseball,' Cutler spent 46 seasons as head coach of Liberty High School, totaling 513 wins and leading the Minutemen to the 1977 Group AA state championship. He guided his teams to 38 winning seasons in 45 years and produced 15 district titles. Elected to the Virginia High School League Hall of Fame in 2001 and a member of the Salem/Roanoke Baseball Hall of Fame. Cutler is also the author of 'The Life Story of Mr. Baseball,' which chronicles his life on and off the diamond.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1e8487c62c186561a.webp" alt="Jim Cutler — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Jim Cutler</h3>
+                    <p class="hof-card__school">Liberty (Bedford) High School</p>
+                    <p class="hof-card__stat">513 Wins · 46 Seasons · 1977 State Champion</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Jim Cutler">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Tom Harding (In Memoriam)" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1070c586a686eed18.webp"
+                     data-school="Honaker High School"
+                     data-stat="633-226 · 46 Seasons · VHSL Career Wins Leader · 2011 State Champion"
+                     data-award=""
+                     data-bio="Harding's first season as baseball coach at Honaker High School was 1971. Over the next 46 years, he led the Tigers to a record of 633-226 — winning 74 percent of their games — becoming the VHSL's career wins leader. His teams won four regional titles and captured the 2011 state championship. A member of the VHSL Hall of Fame, Harding led Honaker to more than 20 district titles. Passed away in 2018.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1070c586a686eed18.webp" alt="Tom Harding — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Tom Harding <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Honaker High School</p>
+                    <p class="hof-card__stat">633-226 · 46 Seasons · VHSL Career Wins Leader</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Tom Harding">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Chuck Hartman (In Memoriam)" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0fb38ca182b9ec3ac.webp"
+                     data-school="Virginia Tech / High Point University"
+                     data-stat="961-591-8 at VT · 1,444-816-8 Combined · Top 10 D-I All-Time"
+                     data-award=""
+                     data-bio="Over 28 seasons leading the Virginia Tech baseball program, Hartman's teams went 961-591-8. Combined with his time at High Point, Hartman went 1,444-816-8 — placing him in the Top 10 of winningest Division I coaches of all time. The Hokies went to four NCAA tournaments during his tenure, and from 1969-2004 at High Point and Tech, he posted 35 winning seasons in 36 years. A member of nine Halls of Fame, including the ABCA Hall of Fame and the Virginia Sports Hall of Fame. Passed away in 2020.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0fb38ca182b9ec3ac.webp" alt="Chuck Hartman — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Chuck Hartman <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Virginia Tech / High Point University</p>
+                    <p class="hof-card__stat">1,444-816-8 Combined · Top 10 D-I All-Time</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Chuck Hartman">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Paul Keyes (In Memoriam)" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c4ca3d7b1cd.webp"
+                     data-school="Virginia Commonwealth University"
+                     data-stat="603-423-1 · 18 Seasons · 8 NCAA Tournaments · 5 CAA Titles"
+                     data-award=""
+                     data-bio="Keyes guided the VCU baseball program for 18 years before passing away from cancer in 2012 at the age of 50. The Rams went 603-423-1 as Keyes built VCU into a regional power. His teams made eight NCAA tournament appearances including winning five CAA championships. Named the CAA's coach of the year four times, his teams posted winning seasons for 12 straight years (1996-2007). Keyes led the Rams to 40 or more wins four times including two seasons with 46 wins.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1ba922c4ca3d7b1cd.webp" alt="Paul Keyes — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Paul Keyes <em>(In Memoriam)</em></h3>
+                    <p class="hof-card__school">Virginia Commonwealth University</p>
+                    <p class="hof-card__stat">603-423-1 · 18 Seasons · 8 NCAA Tournaments</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Paul Keyes">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Mack Shupe" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0277ba030c3e03954.webp"
+                     data-school="J.J. Kelly HS / J.I. Burton HS"
+                     data-stat="631-173 · 8 State Titles · 4 Consecutive (1981-84, 83-0) · VHSL Hall of Fame"
+                     data-award=""
+                     data-bio="Shupe retired in 2020 after 40 years at J.J. Kelly and J.I. Burton high schools in Southwest Virginia with eight state titles and three state runners-up. He went 631-173, posting the second-most wins in VHSL history. Under his guidance at J.J. Kelly, the Indians won four straight state titles from 1981-84 without losing a game (83-0). Additional state titles came in 1988, 1989, 1991 and 1998. A VHSL Hall of Famer.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c0277ba030c3e03954.webp" alt="Mack Shupe — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Mack Shupe</h3>
+                    <p class="hof-card__school">J.J. Kelly HS / J.I. Burton HS</p>
+                    <p class="hof-card__stat">631-173 · 8 State Titles · 83-0 Four-Peat (1981-84)</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Mack Shupe">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Ron Tugwell" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487e07732c279.webp"
+                     data-school="West Springfield High School"
+                     data-stat="431 Wins · 2× State Champion (1991, 1998) · 8 Consecutive Region Title Games"
+                     data-award=""
+                     data-bio="Tugwell guided the West Springfield baseball program for 27 years, racking up 431 wins and leading the Spartans to two state titles. The Spartans won 71 percent of their games and at one point played in eight straight region tournament title games. In addition to the state titles in 1991 and 1998, Tugwell's teams won six region titles and 12 district championships. Over his career, his teams never lost three games in a row.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1eba487e07732c279.webp" alt="Ron Tugwell — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Ron Tugwell</h3>
+                    <p class="hof-card__school">West Springfield High School</p>
+                    <p class="hof-card__stat">431 Wins · 2× State Champion (1991, 1998)</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Ron Tugwell">Read Bio →</button>
+                  </div>
+                </div>
+
+                <div class="hof-card" data-name="Norbie Wilson" data-class="2022"
+                     data-photo="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1bfc81fc509fec9af.webp"
+                     data-school="First Colonial High School"
+                     data-stat="417 Wins · 26 Seasons · 1993 State Champion (28-0, #6 Nationally)"
+                     data-award=""
+                     data-bio="Wilson racked up 417 wins in 26 seasons as coach of First Colonial High School in Virginia Beach. His squads won 14 district championships, seven Eastern Regional titles and the 1993 state Group AAA championship — that team went 28-0 and was ranked No. 6 in the nation by USA Today. After retiring from First Colonial, he spent two seasons leading the program at The College of The Albemarle and has since assisted at Norfolk Academy, Bryant &amp; Stratton and First Colonial.">
+                  <div class="hof-card__photo-wrap">
+                    <img src="https://assets.cdn.filesafe.space/wU0NfuEf5q6Bpeu8Brps/media/69b486c1bfc81fc509fec9af.webp" alt="Norbie Wilson — VBCA Hall of Fame Class of 2022" width="400" height="400" loading="lazy" class="hof-card__photo">
+                  </div>
+                  <div class="hof-card__body">
+                    <p class="hof-card__class-label">Inaugural Class · 2022</p>
+                    <h3 class="hof-card__name">Norbie Wilson</h3>
+                    <p class="hof-card__school">First Colonial High School</p>
+                    <p class="hof-card__stat">417 Wins · 26 Seasons · 1993 State Champion (28-0)</p>
+                    <button class="hof-card__bio-btn" aria-label="Read full bio for Norbie Wilson">Read Bio →</button>
+                  </div>
+                </div>
+
+              </div><!-- END card grid -->
+
+            </div><!-- END ghost wrap -->
+          </div><!-- END panel -->
+        </div><!-- END 2022 item -->
+
+      </div><!-- END accordion -->
+
+      <nav class="hof-jump-nav" aria-label="Jump to Hall of Fame class">
+        <span class="hof-jump-nav__label">Jump to:</span>
+        <a href="#class-2025" class="hof-jump-nav__link hof-jump-nav__link--active">2025</a>
+        <a href="#class-2024" class="hof-jump-nav__link">2024</a>
+        <a href="#class-2023" class="hof-jump-nav__link">2023</a>
+        <a href="#class-2022" class="hof-jump-nav__link">2022</a>
+      </nav>
 
     </div>
   </section>
@@ -413,6 +1112,27 @@
       </div>
     </div>
   </section>
+
+  <!-- BIO MODAL -->
+  <div class="hof-modal" id="hof-modal" role="dialog" aria-modal="true" aria-labelledby="hof-modal-name" hidden>
+    <div class="hof-modal__backdrop" id="hof-modal-backdrop"></div>
+    <div class="hof-modal__panel">
+      <button class="hof-modal__close" id="hof-modal-close" aria-label="Close bio">&#x2715;</button>
+      <div class="hof-modal__inner">
+        <div class="hof-modal__photo-col">
+          <img src="" alt="" class="hof-modal__photo" id="hof-modal-photo">
+          <p class="hof-modal__class-badge" id="hof-modal-class"></p>
+          <p class="hof-modal__award-label" id="hof-modal-award"></p>
+        </div>
+        <div class="hof-modal__content-col">
+          <h2 class="hof-modal__name" id="hof-modal-name"></h2>
+          <p class="hof-modal__school" id="hof-modal-school"></p>
+          <p class="hof-modal__stat" id="hof-modal-stat"></p>
+          <div class="hof-modal__bio" id="hof-modal-bio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </main>
 

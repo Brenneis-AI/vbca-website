@@ -2,7 +2,7 @@
  * hall-of-fame.css — VBCA Hall of Fame
  * Prestige page. Championship Gold is the DOMINANT color on this page.
  * Three boldness marks:
- *   1. Ghost year numerals (260px Barlow Condensed at 6% opacity via ::before)
+ *   1. Ghost year numerals (280px Barlow Condensed at 5% opacity, accordion-driven)
  *   2. Gold full-bleed inversion section (About HOF strip — gold bg, navy type)
  *   3. HOF card left-border gold accent per brand-guide
  */
@@ -43,7 +43,6 @@
   position: absolute;
   inset: 0;
   background: var(--scrim-heavy);
-  /* Subtle infield texture overlay */
   background-image: var(--scrim-heavy), var(--texture-infield);
 }
 
@@ -92,13 +91,11 @@
   display: block;
 }
 
-/* On gold background — navy eyebrow with gold rule (inverted) */
 .section-eyebrow--navy {
   color: var(--color-primary);
   border-left-color: var(--color-primary);
 }
 
-/* On dark navy background — gold eyebrow */
 .section-eyebrow--gold {
   color: var(--color-gold);
   border-left-color: var(--color-gold);
@@ -106,7 +103,6 @@
 
 /* ============================================================
    ABOUT THE HOF — CHAMPIONSHIP GOLD INVERSION
-   Gold is DOMINANT background; navy type reads as engraved brass.
    ============================================================ */
 
 .hof-about {
@@ -152,7 +148,6 @@
   margin-bottom: 0;
 }
 
-/* Stat cards on gold section — navy background (full inversion) */
 .hof-about__stats {
   display: flex;
   flex-direction: column;
@@ -281,133 +276,232 @@
 }
 
 /* ============================================================
-   HOF CLASS TABS
+   HOF TIMELINE — ACCORDION LAYOUT
+   Replaces former tab + panel system.
    ============================================================ */
 
-.hof-classes {
-  background: var(--bg-white);
+.hof-timeline {
   padding: var(--section-padding) 0;
 }
 
-.hof-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-8);
-  border-bottom: 2px solid var(--color-border);
-  padding-bottom: 0;
+.hof-timeline__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-3);
 }
 
-.hof-tab {
+.hof-timeline__subhead {
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  font-weight: var(--weight-bold);
+  font-size: var(--text-body-lg);
   color: var(--color-text-muted);
-  background: transparent;
-  border: none;
-  border-bottom: 3px solid transparent;
-  padding: var(--space-3) var(--space-5);
-  cursor: pointer;
-  transition: color var(--transition), border-color var(--transition);
-  margin-bottom: -2px;
-  letter-spacing: var(--tracking-wide);
-}
-
-.hof-tab:hover {
-  color: var(--color-primary);
-}
-
-.hof-tab--active,
-.hof-tab[aria-selected="true"] {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-gold);
+  margin-bottom: var(--space-9);
+  max-width: 600px;
 }
 
 /* ============================================================
-   HOF CLASS PANELS — Ghost Numeral via ::before
+   ACCORDION
    ============================================================ */
 
-.hof-class-panel {
-  position: relative;
-  overflow: hidden;
+.hof-accordion {
+  border-top: 1px solid var(--color-border);
 }
 
-/* Ghost year numeral — brand-guide spec: 200px desktop, 120px mobile */
-.hof-class-panel::before {
-  content: var(--ghost-year);
-  position: absolute;
-  top: -20px;
-  left: -10px;
+.hof-accordion__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hof-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition);
+}
+
+.hof-accordion__trigger:hover {
+  background-color: rgba(13, 34, 64, 0.02);
+}
+
+.hof-accordion__year {
   font-family: var(--font-display);
-  font-size: var(--hof-ghost-size);
+  font-size: var(--text-h1);
   font-weight: var(--weight-black);
-  color: var(--hof-ghost-color);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  min-width: 120px;
+  transition: color var(--transition);
+}
+
+.hof-accordion__item--active .hof-accordion__year,
+.hof-accordion__trigger:hover .hof-accordion__year {
+  color: var(--color-gold);
+}
+
+.hof-accordion__meta {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  flex: 1;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .hof-accordion__meta {
+    display: block;
+  }
+}
+
+.hof-accordion__count-badge {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+.hof-accordion__item--active .hof-accordion__count-badge {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.hof-accordion__chevron {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hof-accordion__chevron::before,
+.hof-accordion__chevron::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: transform var(--transition);
+}
+
+.hof-accordion__chevron::before {
+  left: 2px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hof-accordion__chevron::after {
+  right: 2px;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.hof-accordion__item--active .hof-accordion__chevron::before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.hof-accordion__item--active .hof-accordion__chevron::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Panel — open/close via max-height + hidden attribute */
+
+.hof-accordion__panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.45s ease;
+}
+
+.hof-accordion__panel:not([hidden]) {
+  max-height: 6000px;
+}
+
+/* Ghost Year Numeral */
+
+.hof-ghost-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-8) 0 var(--space-9);
+}
+
+.hof-ghost-wrap::before {
+  content: attr(data-year);
+  font-family: var(--font-display);
+  font-size: 280px;
+  font-weight: var(--weight-black);
+  color: rgba(13, 34, 64, 0.05);
+  position: absolute;
+  top: -0.1em;
+  right: -0.05em;
   line-height: 1;
   pointer-events: none;
   user-select: none;
   z-index: 0;
   white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.2s;
 }
 
-.hof-class-header {
+.hof-accordion__item--active .hof-ghost-wrap::before {
+  opacity: 1;
+}
+
+/* Class intro */
+
+.hof-class-intro {
+  max-width: 720px;
+  margin-bottom: var(--space-7);
   position: relative;
   z-index: 1;
-  margin-bottom: var(--space-7);
 }
 
-.hof-class-header__title {
-  font-family: var(--font-display);
-  font-size: var(--text-h2);
-  font-weight: var(--weight-black);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-snug);
-  color: var(--color-primary);
-  margin: 0 0 var(--space-3);
-}
-
-.hof-class-header__ceremony {
+.hof-class-intro p {
   font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  font-weight: var(--weight-regular);
-  color: var(--color-text-muted);
-  margin: 0;
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  line-height: var(--leading-body-lg);
 }
 
 /* ============================================================
-   HOF INDUCTEE GRID
+   HOF CARD GRID
    ============================================================ */
 
-.hof-inductee-grid {
+.hof-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-5);
+  margin-bottom: var(--space-8);
 }
 
-@media (min-width: 769px) {
-  .hof-inductee-grid {
+@media (min-width: 600px) {
+  .hof-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .hof-card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1100px) {
-  .hof-inductee-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+/* ============================================================
+   HOF CARD — new structure
+   Base styles retained; children rebuilt for accordion layout.
+   ============================================================ */
 
-.hof-inductee-grid--pending {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 769px) {
-  .hof-inductee-grid--pending {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-/* HOF Card — Championship Gold left border per brand-guide */
 .hof-card {
   background: var(--color-white);
   border: var(--card-border);
@@ -415,51 +509,51 @@
   box-shadow: var(--card-shadow);
   border-left: var(--card-hof-accent);
   overflow: hidden;
-  transition: box-shadow var(--transition), border-color var(--transition);
+  transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .hof-card:hover {
   box-shadow: var(--card-shadow-hover);
-  border-color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
-.hof-card--placeholder {
-  opacity: 0.7;
-}
-
-.hof-card__photo {
+.hof-card__photo-wrap {
   width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
 }
 
-.hof-card__photo img {
+.hof-card__photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-.hof-card__photo--placeholder {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hof-card__photo--placeholder::after {
-  content: 'Photo Coming';
-  font-family: var(--font-body);
-  font-size: var(--text-caption);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+.hof-card:hover .hof-card__photo {
+  transform: scale(1.03);
 }
 
 .hof-card__body {
   padding: var(--space-4) var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hof-card__class-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-2);
 }
 
 .hof-card__name {
@@ -467,6 +561,7 @@
   font-size: var(--text-h4);
   font-weight: var(--weight-black);
   color: var(--color-primary);
+  line-height: var(--leading-card);
   margin: 0 0 var(--space-2);
 }
 
@@ -474,42 +569,404 @@
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   font-weight: var(--weight-semibold);
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
   margin: 0 0 var(--space-2);
 }
 
-.hof-card__stats {
+.hof-card__stat {
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   font-weight: var(--weight-bold);
   color: var(--color-gold-dark);
+  margin: 0 0 var(--space-4);
+  flex: 1;
+}
+
+.hof-card__bio-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 2px;
+  transition: color var(--transition), text-decoration-color var(--transition);
+  align-self: flex-start;
+}
+
+.hof-card__bio-btn:hover {
+  color: var(--color-secondary);
+  text-decoration-color: var(--color-secondary);
+}
+
+/* ============================================================
+   HOF AWARDS ROW — inside accordion panels (2025, 2024, 2023)
+   Separate from the standalone Awards section above the accordion.
+   ============================================================ */
+
+.hof-awards-row {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--space-8);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--color-border);
+}
+
+.hof-awards-row__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-6);
+}
+
+.hof-awards-row__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .hof-awards-row__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Award cards inside accordion panels */
+
+.hof-award-card {
+  background: var(--color-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border-top: 3px solid var(--color-gold);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition);
+}
+
+.hof-award-card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.hof-award-card--coy {
+  border-top-color: var(--color-gold);
+}
+
+.hof-award-card--bia {
+  border-top-color: var(--color-secondary);
+}
+
+.hof-award-card__photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
+}
+
+.hof-award-card__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hof-award-card:hover .hof-award-card__photo {
+  transform: scale(1.03);
+}
+
+.hof-award-card__body {
+  padding: var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hof-award-card__award-name {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold-dark);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
   margin: 0 0 var(--space-2);
 }
 
-.hof-card__bio {
+.hof-award-card--bia .hof-award-card__award-name {
+  color: var(--color-secondary);
+}
+
+.hof-award-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: var(--leading-card);
+  margin: 0 0 var(--space-2);
+}
+
+.hof-award-card__school {
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.hof-award-card__note {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
   color: var(--color-text-muted);
   line-height: var(--leading-body);
-  margin: 0;
+  margin: 0 0 var(--space-4);
+  flex: 1;
 }
 
-/* Pending notice */
-.hof-pending-notice {
-  grid-column: 1 / -1;
-  background: rgba(var(--color-gold-rgb), 0.1);
-  border: 1px solid rgba(var(--color-gold-rgb), 0.3);
-  border-radius: var(--radius);
-  padding: var(--space-4) var(--space-5);
-  margin-bottom: var(--space-4);
+/* ============================================================
+   JUMP NAV
+   ============================================================ */
+
+.hof-jump-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-7);
+  margin-top: var(--space-7);
+  border-top: 1px solid var(--color-border);
 }
 
-.hof-pending-notice__text {
+.hof-jump-nav__label {
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.hof-jump-nav__link {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-black);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: var(--tracking-tight);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.hof-jump-nav__link:hover {
   color: var(--color-primary);
+  background-color: rgba(13, 34, 64, 0.06);
+}
+
+.hof-jump-nav__link--active {
+  color: var(--color-primary);
+  background-color: rgba(201, 168, 76, 0.15);
+}
+
+/* ============================================================
+   BIO MODAL
+   ============================================================ */
+
+.hof-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+.hof-modal[hidden] {
+  display: none;
+}
+
+.hof-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(8, 22, 41, 0.82);
+  cursor: pointer;
+}
+
+.hof-modal__panel {
+  position: relative;
+  z-index: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-elevated);
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hof-modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+  z-index: 2;
+  line-height: 1;
+}
+
+.hof-modal__close:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: rgba(13, 34, 64, 0.05);
+}
+
+.hof-modal__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+@media (min-width: 600px) {
+  .hof-modal__inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.hof-modal__photo-col {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .hof-modal__photo-col {
+    width: 220px;
+  }
+}
+
+.hof-modal__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .hof-modal__photo {
+    height: 100%;
+    min-height: 340px;
+    aspect-ratio: unset;
+  }
+}
+
+.hof-modal__class-badge {
+  background-color: var(--color-primary);
+  color: var(--color-gold-light);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--space-2) var(--space-4);
   margin: 0;
+}
+
+.hof-modal__content-col {
+  flex: 1;
+  padding: var(--space-7) var(--space-7) var(--space-7) var(--space-6);
+  padding-top: calc(var(--space-7) + 10px);
+}
+
+@media (max-width: 599px) {
+  .hof-modal__content-col {
+    padding: var(--space-6);
+  }
+}
+
+.hof-modal__award-label {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold-dark);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-2);
+  display: none;
+}
+
+.hof-modal__award-label:not(:empty) {
+  display: block;
+}
+
+.hof-modal__name {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  margin: 0 0 var(--space-3);
+  padding-right: var(--space-7);
+}
+
+.hof-modal__school {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.hof-modal__stat {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-gold-dark);
+  margin: 0 0 var(--space-5);
+}
+
+.hof-modal__bio {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-body);
+}
+
+.hof-modal__bio p {
+  margin-bottom: var(--space-3);
+}
+
+.hof-modal__bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Body scroll lock when modal open */
+body.hof-modal-open {
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -561,7 +1018,6 @@
   margin: 0;
 }
 
-/* Nomination Form */
 .hof-nominate__form {
   background: var(--color-white);
   border-radius: var(--radius);
@@ -666,7 +1122,7 @@
 }
 
 /* ============================================================
-   CONTAINER UTILITY (if not in global.css)
+   CONTAINER UTILITY
    ============================================================ */
 
 .container {
