@@ -578,10 +578,10 @@
   }
 }
 
-/* Desktop: 3 visible at ~10% larger size */
+/* Desktop: 3 visible */
 @media (min-width: 900px) {
   .hof-carousel__card {
-    flex: 0 0 calc(36.667% - 11px);
+    flex: 0 0 calc(33.333% - 11px);
   }
 }
 
