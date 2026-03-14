@@ -339,8 +339,8 @@
   --nav-link-tracking:       var(--tracking-wide);
   --nav-link-hover:          var(--color-secondary);
   --nav-link-active:         var(--color-secondary);
-  --nav-height:              64px;
-  --nav-height-desktop:      72px;
+  --nav-height:              72px;
+  --nav-height-desktop:      80px;
 
   /* ----------------------------------------------------------
      SECTION CATEGORY LABEL SYSTEM

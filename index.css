@@ -391,6 +391,13 @@
   padding-bottom: var(--space-10);
 }
 
+@media (min-width: 960px) {
+  .section-hof .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 .section-label--gold {
   color: var(--color-gold);
   border-left-color: var(--color-gold);
@@ -461,13 +468,13 @@
 }
 
 .hof-carousel__card {
-  flex: 0 0 calc(100%);
+  flex: 0 0 calc(85%);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .hof-carousel__photo {
@@ -475,32 +482,56 @@
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: top center;
-  border-radius: var(--radius);
   border: 1px solid var(--color-gold-dark);
   display: block;
 }
 
+.hof-carousel__banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-gold);
+  padding: 8px 12px 10px;
+  text-align: center;
+  z-index: 1;
+}
+
 .hof-carousel__name {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--text-body-sm);
-  font-weight: var(--weight-semibold);
-  color: var(--color-gold-light);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
   line-height: var(--leading-card);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .hof-carousel__memoriam {
   display: block;
-  font-size: var(--text-body-sm);
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  color: rgba(13, 34, 64, 0.65);
   font-style: italic;
   font-weight: var(--weight-normal);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .hof-carousel__award {
   font-family: var(--font-body);
-  font-size: var(--text-body-sm);
-  color: var(--color-gold);
+  font-size: 11px;
+  color: var(--color-primary);
   font-style: italic;
+  margin-top: 2px;
+}
+
+.hof-scroll-hint {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(201, 168, 76, 0.65);
+  margin-top: 10px;
+  letter-spacing: 0.05em;
 }
 
 /* Tablet: 2 visible */
@@ -541,12 +572,16 @@
   .hof-carousel__card {
     flex: 0 0 calc(50% - 8px);
   }
+
+  .hof-scroll-hint {
+    display: none;
+  }
 }
 
-/* Desktop: 3 visible */
+/* Desktop: 3 visible at ~10% larger size */
 @media (min-width: 900px) {
   .hof-carousel__card {
-    flex: 0 0 calc(33.333% - 11px);
+    flex: 0 0 calc(36.667% - 11px);
   }
 }
 
@@ -878,15 +913,15 @@
   /* HOF: side-by-side */
   .section-hof__inner {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .section-hof__copy {
-    flex: 1;
+    flex: 2;
   }
 
   .section-hof__inductees {
-    flex: 1;
+    flex: 3;
   }
 
   /* Steps: horizontal row on desktop */
