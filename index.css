@@ -499,7 +499,7 @@
 
 .hof-carousel__name {
   font-family: var(--font-display);
-  font-size: var(--text-body-sm);
+  font-size: calc(var(--text-body-sm) * 1.15);
   font-weight: var(--weight-bold);
   color: var(--color-primary);
   line-height: var(--leading-card);
