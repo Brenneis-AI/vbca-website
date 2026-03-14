@@ -433,43 +433,169 @@
   margin-bottom: var(--space-5);
 }
 
-.hof-inductee-row {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-5);
-  flex-wrap: wrap;
+/* ============================================================
+   HOF INDUCTEE CAROUSEL (home page)
+   ============================================================ */
+
+.hof-carousel {
+  position: relative;
 }
 
-.hof-inductee-card {
+.hof-carousel__arrow {
+  display: none; /* shown on tablet+ via media query */
+}
+
+.hof-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  outline: none;
+}
+
+.hof-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.hof-carousel__card {
+  flex: 0 0 calc(100%);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
-  width: 140px;
+  gap: 8px;
+  text-align: center;
 }
 
-.hof-inductee-card__photo {
-  width: 140px;
-  height: 175px;
+.hof-carousel__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: top;
-  border: var(--card-hof-accent);
+  object-position: top center;
   border-radius: var(--radius);
+  border: 1px solid var(--color-gold-dark);
+  display: block;
 }
 
-.hof-inductee-card__photo-placeholder {
-  width: 140px;
-  height: 175px;
-  border-radius: var(--radius);
-}
-
-.hof-inductee-card__name {
+.hof-carousel__name {
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   font-weight: var(--weight-semibold);
   color: var(--color-gold-light);
-  text-align: center;
   line-height: var(--leading-card);
+}
+
+.hof-carousel__memoriam {
+  display: block;
+  font-size: var(--text-body-sm);
+  color: rgba(255, 255, 255, 0.45);
+  font-style: italic;
+  font-weight: var(--weight-normal);
+}
+
+.hof-carousel__award {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+/* Tablet: 2 visible */
+@media (min-width: 600px) {
+  .hof-carousel {
+    padding: 0 44px;
+  }
+
+  .hof-carousel__arrow {
+    display: flex;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: rgba(13, 34, 64, 0.8);
+    border: 1px solid var(--color-gold-dark);
+    border-radius: 50%;
+    color: var(--color-gold);
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition), border-color var(--transition);
+    z-index: 2;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .hof-carousel__arrow--prev { left: 0; }
+  .hof-carousel__arrow--next { right: 0; }
+
+  .hof-carousel__arrow:hover {
+    background: rgba(201, 168, 76, 0.2);
+    border-color: var(--color-gold);
+  }
+
+  .hof-carousel__card {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+/* Desktop: 3 visible */
+@media (min-width: 900px) {
+  .hof-carousel__card {
+    flex: 0 0 calc(33.333% - 11px);
+  }
+}
+
+/* ============================================================
+   BOARD TEASER
+   Cream bg — YouTube video + leadership copy
+   ============================================================ */
+
+.section-board__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.section-board__video-wrap {
+  width: 100%;
+}
+
+.section-board__caption {
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.section-board__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-black);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-snug);
+  margin-bottom: var(--space-5);
+}
+
+.section-board__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-7);
+}
+
+@media (min-width: 769px) {
+  .section-board__inner {
+    grid-template-columns: 58fr 42fr;
+    gap: var(--space-10);
+  }
 }
 
 /* ============================================================
