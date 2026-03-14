@@ -49,14 +49,13 @@
         // Close all items
         items.forEach(function (i) { closeItem(i); });
 
-        // Open clicked item (unless it was already open — toggle off disabled per spec)
+        // Toggle: only open if it was not already active
         if (!isActive) {
           openItem(item);
-        } else {
-          // Re-open it anyway — spec says 2025 always open; no fully-collapsed state needed
-          // But allow toggle-closed if desired: just leave it closed (already done above)
-          // Re-open to keep at least one always visible:
-          openItem(item);
+          // Scroll to top of accordion header after animation completes
+          setTimeout(function () {
+            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 450);
         }
       });
 
@@ -96,11 +95,10 @@
         if (target) {
           items.forEach(function (i) { closeItem(i); });
           openItem(target);
-          // Scroll to section
-          var section = document.querySelector('.hof-timeline');
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          // Scroll to top of the opened accordion item after animation completes
+          setTimeout(function () {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 450);
         }
       });
     });
