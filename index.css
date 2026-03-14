@@ -468,7 +468,7 @@
 }
 
 .hof-carousel__card {
-  flex: 0 0 calc(85%);
+  flex: 0 0 calc(100%);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -528,7 +528,7 @@
 .hof-scroll-hint {
   display: block;
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
   color: rgba(201, 168, 76, 0.65);
   margin-top: 10px;
   letter-spacing: 0.05em;
