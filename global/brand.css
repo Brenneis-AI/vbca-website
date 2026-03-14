@@ -347,7 +347,7 @@
      The gold-rule + crimson-uppercase treatment for section entries
      ---------------------------------------------------------- */
 
-  --label-font-size:         11px;
+  --label-font-size:         14px;
   --label-weight:            var(--weight-bold);
   --label-color:             var(--color-secondary);
   --label-tracking:          var(--tracking-label);
